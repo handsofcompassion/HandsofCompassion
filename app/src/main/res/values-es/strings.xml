@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="doe_btn">haz tu donación</string>
+    <string name="receber_btn">recibir una donación</string>
+    <string name="perfil_btn">Perfil de asistente</string>
+
+
+</resources>
