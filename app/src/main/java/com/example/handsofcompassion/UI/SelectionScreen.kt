@@ -10,8 +10,6 @@ import com.example.handsofcompassion.R
 class SelectionScreen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_selection_screen)
-
+        setContentView(R.layout.activity_selection_screen2)
     }
 }
