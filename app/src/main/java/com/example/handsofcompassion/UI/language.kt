@@ -29,14 +29,14 @@ class language : AppCompatActivity() {
         }
         binding.imgEua.setOnClickListener {
 
-            LanguageManager.setLocale(this, "es")
+            LanguageManager.setLocale(this, "en")
             recreate()
             startSelectionActivity()
 
         }
         binding.imgEsp.setOnClickListener {
 
-            LanguageManager.setLocale(this, "en")
+            LanguageManager.setLocale(this, "es")
             recreate()
             startSelectionActivity()
 
