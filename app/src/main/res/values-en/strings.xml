@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-<string name="doe_btn">make your donation</string>
-<string name="receber_btn">receive a donation</string>
-<string name="perfil_btn">Attendant Profile</string>
+    <string name="doe_btn">make your donation</string>
+    <string name="receber_btn">receive a donation</string>
+    <string name="perfil_btn">Attendant Profile</string>
+    <string name="idiomatv">Elige un idioma.</string>
+    <string name="app_name">Hands of Compassion</string>
 
 </resources>

@@ -4,6 +4,8 @@
     <string name="doe_btn">haz tu donación</string>
     <string name="receber_btn">recibir una donación</string>
     <string name="perfil_btn">Perfil de asistente</string>
+    <string name="idiomatv">Choose a language.</string>
+    <string name="app_name">Hands of Compassion</string>
 
 
 </resources>

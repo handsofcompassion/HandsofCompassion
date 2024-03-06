@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, SelectionScreen::class.java)
+            val intent = Intent(this, language::class.java)
             startActivity(intent)
             finish()
         },1500)

@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Hands of Compassion</string>
     <string name="doe_btn">Faça sua Doação</string>
     <string name="receber_btn">Receba sua Doação</string>
     <string name="perfil_btn">Perfil do Atendente</string>
+    <string name="idiomatv">Escolha um Idioma.</string>
+    <string name="app_name">Hands of Compassion</string>
 </resources>
 
 
