@@ -15,6 +15,15 @@
         android:theme="@style/Theme.HandsOfCompassion"
         tools:targetApi="31">
         <activity
+            android:name=".UI.TypeYourName"
+            android:exported="false" />
+        <activity
+            android:name=".UI.LoginReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".UI.LoginDonation"
+            android:exported="false" />
+        <activity
             android:name=".UI.language"
             android:exported="false" />
         <activity

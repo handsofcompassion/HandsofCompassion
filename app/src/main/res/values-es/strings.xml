@@ -6,6 +6,14 @@
     <string name="perfil_btn">Perfil de asistente</string>
     <string name="idiomatv">Choose a language.</string>
     <string name="app_name">Hands of Compassion</string>
-
+    <string name="bemvindodoardortv">Bienvenido donante.</string>
+    <string name="instrucoestv">sigue las instrucciones de abajo:</string>
+    <string name="item1">item 1</string>
+    <string name="item2">item 2</string>
+    <string name="item3">item 3</string>
+    <string name="item4">item 4</string>
+    <string name="clickparadoar">Haga clic para donar</string>
+    <string name="bemvindorecebedortv">Bienvenido!</string>
+    <string name="digiteseunome">Escriba su nombre:</string>
 
 </resources>
