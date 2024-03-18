@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -13,7 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HandsOfCompassion"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".UI.SearchOrNewReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".UI.SearchOrNewDonation"
+            android:exported="false" />
         <activity
             android:name=".UI.TypeYourName"
             android:exported="false" />
@@ -31,7 +37,7 @@
             android:exported="false" />
         <activity
             android:name=".UI.MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

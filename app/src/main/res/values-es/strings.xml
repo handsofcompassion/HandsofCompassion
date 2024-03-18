@@ -13,7 +13,11 @@
     <string name="item3">item 3</string>
     <string name="item4">item 4</string>
     <string name="clickparadoar">Haga clic para donar</string>
-    <string name="bemvindorecebedortv">Bienvenido!</string>
+    <string name="bemvindorecebedortv"> sea Bienvenido!</string>
     <string name="digiteseunome">Escriba su nombre:</string>
+    <string name="clickparareceber">Haga clic para recibir su donación</string>
+    <string name="jaecadastrado">¿Já passui catastro?</string>
+    <string name="digiteCpf">   Digite su CPF</string>
+    <string name="buscar">BUSCAR</string>
 
 </resources>

@@ -19,7 +19,7 @@
             android:gravity="center"
             android:padding="30dp"
             android:text="@string/idiomatv"
-            android:textSize="25dp"
+            android:textSize="50dp"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="1dp"
             tools:layout_editor_absoluteY="71dp" />
@@ -28,47 +28,42 @@
 
     <ImageView
         android:id="@+id/imgBrasil"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="96dp"
         android:src="@drawable/brasil"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <ImageView
         android:id="@+id/imgEua"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="136dp"
         android:src="@drawable/eua"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgBrasil" />
 
     <ImageView
         android:id="@+id/imgEsp"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="104dp"
         android:src="@drawable/espanha"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgEua" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
         android:src="@drawable/minimalisthands"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,8 +11,12 @@
     <string name="item3">item 3</string>
     <string name="item4">item 4</string>
     <string name="clickparadoar">Clique para Doar</string>
-    <string name="bemvindorecebedortv">Bem-vindo!</string>
+    <string name="bemvindorecebedortv">Seja Bem-vindo!</string>
     <string name="digiteseunome">Digite seu Nome:</string>
+    <string name="clickparareceber">Clique para receber sua doação</string>
+    <string name="jaecadastrado">Já passui cadastrado?</string>
+    <string name="digiteCpf">   Digite seu CPF</string>
+    <string name="buscar">BUSCAR</string>
 
 
 </resources>

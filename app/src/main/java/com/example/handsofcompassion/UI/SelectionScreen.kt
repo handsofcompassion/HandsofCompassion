@@ -18,15 +18,20 @@ class SelectionScreen : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnDoar.setOnClickListener{
-
             startLoginDonationActivity()
+        }
 
+        binding.btnReceber.setOnClickListener {
+            startLoginReceiverActivity()
         }
 
     }
 
     private fun startLoginDonationActivity() {
         val intent = Intent(this, LoginDonation::class.java)
+        startActivity(intent)
+    }   private fun startLoginReceiverActivity() {
+        val intent = Intent(this, LoginReceiver::class.java)
         startActivity(intent)
     }
 }

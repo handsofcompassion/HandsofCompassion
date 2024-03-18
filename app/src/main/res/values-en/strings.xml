@@ -15,5 +15,9 @@
     <string name="clickparadoar">Click to Donate</string>
     <string name="bemvindorecebedortv">Welcome!</string>
     <string name="digiteseunome">Input your Name:</string>
+    <string name="clickparareceber">Click to receive your donation</string>
+    <string name="jaecadastrado">Have I already registered?</string>
+    <string name="digiteCpf">   Enter your CPF</string>
+    <string name="buscar">SEARCH</string>
 
 </resources>

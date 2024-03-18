@@ -1,0 +1,27 @@
+
+u
+Eapp/src/main/java/com/example/handsofcompassion/UI/SelectionScreen.kt,d/f/df12538ed75142f9f1341d00d7f63902357a764f
+y
+Iapp/src/main/java/com/example/handsofcompassion/UI/SearchOrNewDonation.kt,f/c/fc8cbfa950e580e47f74c3cf1cbf3bdfb7982ab1
+y
+Iapp/src/main/java/com/example/handsofcompassion/UI/SearchOrNewReceiver.kt,c/f/cfa89820ea9ba03d784286307ed0ad83e12862fc
+P
+ app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
+w
+G.idea/sonarlint/issuestore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e,3/2/32813322c99a6c8a141ab2dc12bc10af3425f1b4
+Å
+Q.idea/sonarlint/securityhotspotstore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e,1/f/1fe398aa86b382486ed27d0a69bf92f68bd5edaa
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
+w
+G.idea/sonarlint/issuestore/f/c/fc8cbfa950e580e47f74c3cf1cbf3bdfb7982ab1,b/4/b45cc47c8ee2063674e25bcc0f63e2a4ea258a7a
+Å
+Q.idea/sonarlint/securityhotspotstore/f/c/fc8cbfa950e580e47f74c3cf1cbf3bdfb7982ab1,2/9/2931c31b0730b2c50d16fff9fe7666e6d0477bab
+w
+G.idea/sonarlint/issuestore/c/f/cfa89820ea9ba03d784286307ed0ad83e12862fc,0/c/0c9a610321e9f7da7a469081a93517df9019952a
+Å
+Q.idea/sonarlint/securityhotspotstore/c/f/cfa89820ea9ba03d784286307ed0ad83e12862fc,8/7/873c590a5ba8d92f10b182e96b2bbce2274c18e6
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+Å
+Q.idea/sonarlint/securityhotspotstore/d/f/df12538ed75142f9f1341d00d7f63902357a764f,9/d/9d644f541e540b3a06c4355e3f54bec04407e26a
