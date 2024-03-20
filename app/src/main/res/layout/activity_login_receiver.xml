@@ -59,7 +59,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/item4"
+            android:text="@string/item4b"
             android:padding="20dp"
             android:textSize="45dp"
             />

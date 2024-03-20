@@ -8,10 +8,11 @@
     <string name="app_name">Hands of Compassion</string>
     <string name="bemvindodoardortv">Welcome Donor.</string>
     <string name="instrucoestv">follow the instructions below:</string>
-    <string name="item1">item 1</string>
-    <string name="item2">item 2</string>
-    <string name="item3">item 3</string>
-    <string name="item4">item 4</string>
+    <string name="item1">• Have your Documents at hand.</string>
+    <string name="item2">• Wait for the Attendants.</string>
+    <string name="item3">• Provide all necessary information.</string>
+    <string name="item4">• Make your donation.</string>
+    <string name="item4b">• Receive your Donation.</string>
     <string name="clickparadoar">Click to Donate</string>
     <string name="bemvindorecebedortv">Welcome!</string>
     <string name="digiteseunome">Input your Name:</string>
@@ -19,5 +20,15 @@
     <string name="jaecadastrado">Have I already registered?</string>
     <string name="digiteCpf">   Enter your CPF</string>
     <string name="buscar">SEARCH</string>
+    <string name="donationishere">Register to Donate</string>
+    <string name="donationanimous">Donate Anonymously</string>
+    <string name="cadastrarparareceber">Sign up to receive</string>
+    <string name="digitesuasenha">type your password</string>
+    <string name="digiteseuemail">Type your e-mail</string>
+    <string name="loginAtentendente">Welcome Attendant, Login.</string>
+    <string name="email">E-mail:</string>
+    <string name="password">Password:</string>
+    <string name="login">Login</string>
+    <string name="cadastrarnewatendente">Register New Employee</string>
 
 </resources>

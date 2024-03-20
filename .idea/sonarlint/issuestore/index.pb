@@ -25,3 +25,11 @@ Q.idea/sonarlint/securityhotspotstore/c/f/cfa89820ea9ba03d784286307ed0ad83e12862
 -.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
 Å
 Q.idea/sonarlint/securityhotspotstore/d/f/df12538ed75142f9f1341d00d7f63902357a764f,9/d/9d644f541e540b3a06c4355e3f54bec04407e26a
+s
+Capp/src/main/java/com/example/handsofcompassion/UI/LoginDonation.kt,7/a/7aeaebe8353100529c1d94dccc8ce3e1e34dd029
+s
+Capp/src/main/java/com/example/handsofcompassion/UI/LoginReceiver.kt,4/4/4410fc1f23987fa54d8461fb0d572dd2adabce1e
+|
+Lapp/src/main/java/com/example/handsofcompassion/UI/LoginOrSingInAttendant.kt,5/3/53effa42cf65b84d0fba7a42cb35c28384926914
+D
+app/build.gradle.kts,d/2/d2a4383452aad84a18429a5844d31330a012a9e6

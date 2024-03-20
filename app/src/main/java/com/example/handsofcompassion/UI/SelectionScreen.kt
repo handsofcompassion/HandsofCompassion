@@ -24,14 +24,23 @@ class SelectionScreen : AppCompatActivity() {
         binding.btnReceber.setOnClickListener {
             startLoginReceiverActivity()
         }
+        binding.btnPerfilAtendente.setOnClickListener {
+
+            startLoginOrSingInAttendantActivity()
+        }
 
     }
 
     private fun startLoginDonationActivity() {
         val intent = Intent(this, LoginDonation::class.java)
         startActivity(intent)
-    }   private fun startLoginReceiverActivity() {
+    }
+    private fun startLoginReceiverActivity() {
         val intent = Intent(this, LoginReceiver::class.java)
+        startActivity(intent)
+    }
+    private fun startLoginOrSingInAttendantActivity() {
+        val intent = Intent(this, LoginOrSingInAttendant::class.java)
         startActivity(intent)
     }
 }
