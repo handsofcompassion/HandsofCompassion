@@ -25,11 +25,31 @@
     <string name="cadastrarparareceber">Regístrese para recibir</string>
     <string name="digitesuasenha">escribe tu contraseña</string>
     <string name="digiteseuemail">Escribe tu correo electrónico</string>
+    <string name="digiteseuemail2">Escribe tu correo electrónico:</string>
     <string name="loginAtentendente">Bienvenido asistente, inicie sesión.</string>
     <string name="email">Correo electrónico:</string>
     <string name="password">Contraseña:</string>
     <string name="login">Login</string>
     <string name="cadastrarnewatendente">Registrar nuevo empleado</string>
+    <string name="escolhaOpcao">Elige una opcion</string>
+    <string name="doadores">Donante</string>
+    <string name="beneficiarios">Beneficiarios</string>
+    <string name="estoque">Existencias</string>
+    <string name="funcionarios">Empleados</string>
+    <string name="sair">SALIR</string>
+    <string name="forgotPassword">¿olvido la contraseña?</string>
+    <string name="resetPassword">Restablecer la contraseña</string>
+    <string name="CadastrarNOvoUser">Registre un nuevo asistente:</string>
+    <string name="nome">Nombre:</string>
+    <string name="digiteNome">Escriba su nombre</string>
+    <string name="cadastrar">Registrar</string>
+
+
+
+
+
+
+
 
 
 </resources>

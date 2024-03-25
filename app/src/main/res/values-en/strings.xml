@@ -25,10 +25,27 @@
     <string name="cadastrarparareceber">Sign up to receive</string>
     <string name="digitesuasenha">type your password</string>
     <string name="digiteseuemail">Type your e-mail</string>
+    <string name="digiteseuemail2">Type your e-mail:</string>
     <string name="loginAtentendente">Welcome Attendant, Login.</string>
     <string name="email">E-mail:</string>
     <string name="password">Password:</string>
     <string name="login">Login</string>
     <string name="cadastrarnewatendente">Register New Employee</string>
+    <string name="escolhaOpcao">Choose an Option</string>
+    <string name="doadores">Donor</string>
+    <string name="beneficiarios"> Beneficiaries</string>
+    <string name="estoque">Stock</string>
+    <string name="funcionarios">Employees</string>
+    <string name="sair">BACK</string>
+    <string name="forgotPassword">Forgot password?</string>
+    <string name="resetPassword">Reset Password</string>
+    <string name="CadastrarNOvoUser">Register a New Attendant:</string>
+    <string name="nome">Name:</string>
+    <string name="digiteNome">Input your Name</string>
+    <string name="cadastrar">register</string>
+
+
+
+
 
 </resources>
