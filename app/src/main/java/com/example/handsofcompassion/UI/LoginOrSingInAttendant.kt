@@ -4,11 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.ViewModel.ViewModelAuth
@@ -30,7 +27,7 @@ class LoginOrSingInAttendant : AppCompatActivity() {
         binding.textInputLayout.setOnClickListener {
             binding.textInputLayout.hint = null // Remover o hint quando clicar no TextInputLayout
         }
-        binding.edtPassword.setOnFocusChangeListener { v, hasFocus ->
+        binding.edtPassword.setOnFocusChangeListener { _, hasFocus ->
             if (hasFocus) {
                 binding.textInputLayout.hint = null // Remover o hint quando o foco é recebido
             } else {
