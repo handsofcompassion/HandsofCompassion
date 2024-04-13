@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.databinding.ActivityLoginDonationBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginDonation : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginDonationBinding

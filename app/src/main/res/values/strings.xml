@@ -41,6 +41,7 @@
     <string name="nome">Nome:</string>
     <string name="digiteNome">Digite seu Nome</string>
     <string name="cadastrar">Cadastrar</string>
+    <string name="digitenome">Digite o Nome do Funcionário</string>
 
 
 </resources>

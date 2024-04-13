@@ -4,10 +4,12 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.handsofcompassion.UI.Lists.EmployeesList
 import com.example.handsofcompassion.databinding.ActivityPrincipalattendantBinding
 import com.google.firebase.auth.FirebaseAuth
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class Principalattendant : AppCompatActivity() {
 
     private lateinit var binding: ActivityPrincipalattendantBinding
@@ -31,6 +33,11 @@ class Principalattendant : AppCompatActivity() {
             alertDialog.show()
 
         }
+        binding.CardViewFuncioarios.setOnClickListener {
+
+            startEmployeesActivity()
+
+        }
 
     }
 
@@ -38,4 +45,9 @@ class Principalattendant : AppCompatActivity() {
         val intent = Intent(this, SelectionScreen::class.java)
         startActivity(intent)
     }
+    private fun startEmployeesActivity() {
+        val intent = Intent(this, EmployeesList::class.java)
+        startActivity(intent)
+    }
+
 }

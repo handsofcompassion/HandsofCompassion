@@ -1,5 +1,7 @@
 package com.example.handsofcompassion.Data.Auth
 
+import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
+import com.example.handsofcompassion.Data.Employees
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
@@ -8,7 +10,6 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.rpc.context.AttributeContext
 import javax.inject.Inject
 
 
@@ -16,6 +17,7 @@ class Auth @Inject constructor(
     private val firebaseAuth: FirebaseAuth,
     private val firestore: FirebaseFirestore
 ) {
+
 
 
     fun createUserAttendant(
@@ -35,13 +37,14 @@ class Auth @Inject constructor(
 
                 if (it.isSuccessful) {
 
-                    var id =firebaseAuth.currentUser?.uid.toString()
+
                     val userMap = hashMapOf(
                         "name" to name,
                         "email" to email,
                         "password" to password
                     )
 
+                    var id = firebaseAuth.currentUser?.uid.toString()
                     firestore.collection("Users").document(id).set(userMap).addOnCompleteListener {
 
                         listneers.onSucess("Sucesso ao Cadastrar Usuário.")
@@ -78,13 +81,13 @@ class Auth @Inject constructor(
 
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
 
-             if (it.isSuccessful){
-                 listneers.onSucess("Login Realizado com Sucesso.")
-             }
+                if (it.isSuccessful) {
+                    listneers.onSucess("Login Realizado com Sucesso.")
+                }
 
-            }.addOnFailureListener {  Exception->
+            }.addOnFailureListener {
 
-                val errorMensage = when (Exception) {
+                val errorMensage = when (it) {
 
                     is FirebaseAuthInvalidCredentialsException -> "Senha Inválida."
                     is FirebaseAuthInvalidUserException -> "E-mail Inválido."
@@ -117,6 +120,5 @@ class Auth @Inject constructor(
             }
         }
     }
-
-
 }
+
