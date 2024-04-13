@@ -9,7 +9,9 @@ import com.example.handsofcompassion.Objects.LanguageManager
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.databinding.ActivityLanguageBinding
 import com.example.handsofcompassion.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class language : AppCompatActivity() {
 
     private lateinit var binding: ActivityLanguageBinding

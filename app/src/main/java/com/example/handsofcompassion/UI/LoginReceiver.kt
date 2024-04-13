@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.databinding.ActivityLoginReceiverBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginReceiver : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginReceiverBinding

@@ -7,7 +7,9 @@ import android.os.Handler
 import android.os.Looper
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

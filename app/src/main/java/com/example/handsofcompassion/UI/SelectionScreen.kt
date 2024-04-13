@@ -8,7 +8,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.databinding.ActivitySelectionScreen2Binding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SelectionScreen : AppCompatActivity() {
 
     private lateinit var binding: ActivitySelectionScreen2Binding

@@ -50,9 +50,9 @@ class LoginOrSingInAttendant : AppCompatActivity() {
 
                 }
 
-                override fun onFailure(Error: String) {
+                override fun onFailure(error: String) {
 
-                    Toast.makeText(applicationContext, Error, Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, error, Toast.LENGTH_LONG).show()
                 }
             })
 

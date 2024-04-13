@@ -31,8 +31,8 @@ class ForgotPassword : AppCompatActivity() {
                     startLoginActivity()
                 }
 
-                override fun onFailure(Error: String) {
-                    Toast.makeText(applicationContext, Error, Toast.LENGTH_LONG).show()
+                override fun onFailure(error: String) {
+                    Toast.makeText(applicationContext, error, Toast.LENGTH_LONG).show()
                 }
 
             }
