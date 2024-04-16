@@ -89,8 +89,8 @@ class Auth @Inject constructor(
 
                 val errorMensage = when (it) {
 
-                    is FirebaseAuthInvalidCredentialsException -> "Senha Inválida."
-                    is FirebaseAuthInvalidUserException -> "E-mail Inválido."
+                    is FirebaseAuthInvalidCredentialsException -> "E-mail ou Senha Inválidos."
+                    is FirebaseAuthInvalidUserException -> "E-mail ou Senha Inválidos."
                     is FirebaseNetworkException -> "Sem conexão a internet."
                     else -> "Server Error"
 
