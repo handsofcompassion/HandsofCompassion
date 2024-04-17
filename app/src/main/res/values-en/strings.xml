@@ -44,6 +44,9 @@
     <string name="digiteNome">Input your Name</string>
     <string name="cadastrar">register</string>
     <string name="digitenome">Enter Employee Name</string>
+    <string name="atualizeSeuCadastro">Update your Registration:</string>
+    <string name="atualizar">Update</string>
+    <string name="carregando">Loading...</string>
 
 
 

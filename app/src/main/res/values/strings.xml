@@ -42,6 +42,9 @@
     <string name="digiteNome">Digite seu Nome</string>
     <string name="cadastrar">Cadastrar</string>
     <string name="digitenome">Digite o Nome do Funcionário</string>
+    <string name="atualizeSeuCadastro">Atualize o seu Cadastro:</string>
+    <string name="atualizar">Atualizar</string>
+    <string name="carregando">Carregando...</string>
 
 
 </resources>

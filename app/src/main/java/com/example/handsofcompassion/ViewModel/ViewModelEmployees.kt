@@ -10,7 +10,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ViewModelEmployees @Inject constructor(private val repositoryEmployees: RepositoryEmployees): ViewModel() {
+class ViewModelEmployees @Inject constructor(private val repositoryEmployees: RepositoryEmployees) :
+    ViewModel() {
 
     // TODO: OUTROS MÉTODOS ESTÃO JUNTO COM A ESTRTURUA DE LOGIN DE USUÁRIO, CRIAR UM NOVO USUÁRIO SALVAM OS DADOS.
 
@@ -21,6 +22,18 @@ class ViewModelEmployees @Inject constructor(private val repositoryEmployees: Re
         viewModelScope.launch {
 
             repositoryEmployees.getEmployees(employeesList, adapter)
+        }
+    }
+
+    fun updateEMployees(
+        name: String,
+        email: String,
+        adapter: EmpplyeesAdapter
+    ){
+        viewModelScope.launch {
+
+            repositoryEmployees.updateEmployees(name, email, adapter)
+
         }
     }
 }

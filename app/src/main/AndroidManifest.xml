@@ -16,6 +16,9 @@
         android:theme="@style/Theme.HandsOfCompassion"
         tools:targetApi="31">
         <activity
+            android:name=".UI.Lists.DetailList.EmployeesListDetail"
+            android:exported="false" />
+        <activity
             android:name=".UI.Lists.EmployeesList"
             android:exported="false" />
         <activity

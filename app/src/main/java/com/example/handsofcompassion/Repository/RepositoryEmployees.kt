@@ -14,6 +14,15 @@ class RepositoryEmployees @Inject constructor(private val employeesFireStore: Em
         employeesList: MutableList<Employees>,
         adapter: EmpplyeesAdapter,
     ) {
-        employeesFireStore.getEmployees(employeesList,adapter)
+        employeesFireStore.getEmployees(employeesList, adapter)
+    }
+
+    fun updateEmployees(
+        name: String,
+        email: String,
+        adapter: EmpplyeesAdapter
+    ) {
+
+        employeesFireStore.updateEmployees(name,email, adapter)
     }
 }

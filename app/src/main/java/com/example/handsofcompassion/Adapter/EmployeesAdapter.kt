@@ -1,9 +1,11 @@
 package com.example.handsofcompassion.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.handsofcompassion.UI.Lists.DetailList.EmployeesListDetail
 import com.example.handsofcompassion.databinding.ItemEmployeesBinding
 
 class EmpplyeesAdapter(private val context: Context, private val employeesList: MutableList<com.example.handsofcompassion.Data.Employees>): RecyclerView.Adapter<EmpplyeesAdapter.EmployeesViewHolder>() {
@@ -19,12 +21,22 @@ class EmpplyeesAdapter(private val context: Context, private val employeesList: 
 
       holder.txtName.text = employeesList[position].name
       holder.txtEmail.text = employeesList[position].email
+
+      holder.edt.setOnClickListener {
+
+          val intent = Intent(context, EmployeesListDetail::class.java)
+          intent.putExtra("Users",employeesList[position].name)
+          context.startActivity(intent)
+
+      }
     }
 
     inner class EmployeesViewHolder(binding: ItemEmployeesBinding) : RecyclerView.ViewHolder(binding.root){
 
         val txtName = binding.tvName
         val txtEmail = binding.tvEmail
+        val edt = binding.imgEdit
+        val delete = binding.imgDelete
 
     }
 }
