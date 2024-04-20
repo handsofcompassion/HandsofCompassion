@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,7 +16,46 @@
         android:theme="@style/Theme.HandsOfCompassion"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".UI.Lists.DetailList.EmployeesListDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.EmployeesList"
+            android:exported="false" />
+        <activity
+            android:name=".UI.RegisterNewEmployee"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ForgotPassword"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Principalattendant"
+            android:exported="false" />
+        <activity
+            android:name=".UI.LoginOrSingInAttendant"
+            android:exported="false" />
+        <activity
+            android:name=".UI.SearchOrNewReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".UI.SearchOrNewDonation"
+            android:exported="false" />
+        <activity
+            android:name=".UI.TypeYourName"
+            android:exported="false" />
+        <activity
+            android:name=".UI.LoginReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".UI.LoginDonation"
+            android:exported="false" />
+        <activity
+            android:name=".UI.language"
+            android:exported="false" />
+        <activity
+            android:name=".UI.SelectionScreen"
+            android:exported="false" />
+        <activity
+            android:name=".UI.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

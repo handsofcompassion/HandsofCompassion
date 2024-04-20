@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="doe_btn">make your donation</string>
+    <string name="receber_btn">receive a donation</string>
+    <string name="perfil_btn">Attendant Profile</string>
+    <string name="idiomatv">Elige un idioma.</string>
+    <string name="app_name">Hands of Compassion</string>
+    <string name="bemvindodoardortv">Welcome Donor.</string>
+    <string name="instrucoestv">follow the instructions below:</string>
+    <string name="item1">• Have your Documents at hand.</string>
+    <string name="item2">• Wait for the Attendants.</string>
+    <string name="item3">• Provide all necessary information.</string>
+    <string name="item4">• Make your donation.</string>
+    <string name="item4b">• Receive your Donation.</string>
+    <string name="clickparadoar">Click to Donate</string>
+    <string name="bemvindorecebedortv">Welcome!</string>
+    <string name="digiteseunome">Input your Name:</string>
+    <string name="clickparareceber">Click to receive your donation</string>
+    <string name="jaecadastrado">Have I already registered?</string>
+    <string name="digiteCpf">   Enter your CPF</string>
+    <string name="buscar">SEARCH</string>
+    <string name="donationishere">Register to Donate</string>
+    <string name="donationanimous">Donate Anonymously</string>
+    <string name="cadastrarparareceber">Sign up to receive</string>
+    <string name="digitesuasenha">type your password</string>
+    <string name="digiteseuemail">Type your e-mail</string>
+    <string name="digiteseuemail2">Type your e-mail:</string>
+    <string name="loginAtentendente">Welcome Attendant, Login.</string>
+    <string name="email">E-mail:</string>
+    <string name="password">Password:</string>
+    <string name="login">Login</string>
+    <string name="cadastrarnewatendente">Register New Employee</string>
+    <string name="escolhaOpcao">Choose an Option</string>
+    <string name="doadores">Donor</string>
+    <string name="beneficiarios"> Beneficiaries</string>
+    <string name="estoque">Stock</string>
+    <string name="funcionarios">Employees</string>
+    <string name="sair">BACK</string>
+    <string name="forgotPassword">Forgot password?</string>
+    <string name="resetPassword">Reset Password</string>
+    <string name="CadastrarNOvoUser">Register a New Attendant:</string>
+    <string name="nome">Name:</string>
+    <string name="digiteNome">Input your Name</string>
+    <string name="cadastrar">register</string>
+    <string name="digitenome">Enter Employee Name</string>
+    <string name="atualizeSeuCadastro">Update your Registration:</string>
+    <string name="atualizar">Update</string>
+    <string name="carregando">Loading...</string>
+
+
+
+
+</resources>

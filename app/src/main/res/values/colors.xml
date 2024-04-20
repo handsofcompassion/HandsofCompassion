@@ -2,4 +2,24 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="green50">#E8F5E9</color>
+    <color name="green100">#C8E6C9</color>
+    <color name="green200">#A5D6A7</color>
+    <color name="green300">#81C784</color>
+
+
+    <color name="red">#D32F2F</color>
+    <color name="brown">#212121</color>
+    <color name="whitee">#FFFFFF</color>
+
+    <color name="itemList">#C9C9C9</color>
+
+
+
+    <color name="backgroudName">#EBEBEB</color>
+
+    <color name="purple">#CBAEFF</color>
+
 </resources>
