@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.handsofcompassion.Data.Employees
 import com.example.handsofcompassion.UI.Lists.DetailList.EmployeesListDetail
 import com.example.handsofcompassion.databinding.ItemEmployeesBinding
 
@@ -25,7 +26,7 @@ class EmpplyeesAdapter(private val context: Context, private val employeesList: 
       holder.edt.setOnClickListener {
 
           val intent = Intent(context, EmployeesListDetail::class.java)
-          intent.putExtra("Users",employeesList[position].name)
+          intent.putExtra("id",employeesList[position].id)
           context.startActivity(intent)
 
       }

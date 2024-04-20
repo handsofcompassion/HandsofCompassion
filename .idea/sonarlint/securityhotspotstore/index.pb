@@ -81,3 +81,5 @@ Japp/src/main/java/com/example/handsofcompassion/Data/EmployeesFireStore.kt,2/2
 Oapp/src/main/java/com/example/handsofcompassion/ViewModel/ViewModelEmployees.kt,1/0/10b6c8ba5db5b7d8f4a9aa8cf5a38715d3c6a40d
 Å
 Qapp/src/main/java/com/example/handsofcompassion/Repository/RepositoryEmployees.kt,a/7/a7cb6ab5408b30ad15748b8ee3172150c57e0706
+ä
+Zapp/src/main/java/com/example/handsofcompassion/UI/Lists/DetailList/EmployeesListDetail.kt,9/1/9104202412002ec276c6f29f73fbf757b94d78b8

@@ -3,6 +3,7 @@ package com.example.handsofcompassion.Repository
 import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
 import com.example.handsofcompassion.Data.Employees
 import com.example.handsofcompassion.Data.FireStore.EmployeesFireStore
+import com.example.handsofcompassion.Listneers.AuthListneers
 import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
 
@@ -20,9 +21,11 @@ class RepositoryEmployees @Inject constructor(private val employeesFireStore: Em
     fun updateEmployees(
         name: String,
         email: String,
-        adapter: EmpplyeesAdapter
+        id: String,
+        adapter: EmpplyeesAdapter,
+        listneers: AuthListneers
     ) {
 
-        employeesFireStore.updateEmployees(name,email, adapter)
+        employeesFireStore.updateEmployees(name,email,id, adapter,listneers)
     }
 }

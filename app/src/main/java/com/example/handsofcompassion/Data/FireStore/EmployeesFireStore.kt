@@ -1,16 +1,17 @@
 package com.example.handsofcompassion.Data.FireStore
 
-import android.util.Log
+
 import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
 import com.example.handsofcompassion.Data.Employees
+import com.example.handsofcompassion.Listneers.AuthListneers
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import javax.inject.Inject
-import kotlin.math.log
+
 
 class EmployeesFireStore @Inject constructor(
     private val firestore: FirebaseFirestore,
-    private val firebaseauth: FirebaseAuth
+    private val firebaseAuth: FirebaseAuth
 ) {
 
     // TODO: OUTROS MÉTODOS ESTÃO JUNTO COM A ESTRTURUA DE LOGIN DE USUÁRIO, CRIAR UM NOVO USUÁRIO SALVAM OS DADOS.//
@@ -38,16 +39,44 @@ class EmployeesFireStore @Inject constructor(
     fun updateEmployees(
         name: String,
         email: String,
-        adapter: EmpplyeesAdapter
+        id: String,
+        adapter: EmpplyeesAdapter,
+        listeners: AuthListneers
     ) {
-        var id = firebaseauth.currentUser?.uid.toString()
-        firestore.collection("Users").document(id).update("name", name, "email", email)
-            .addOnCompleteListener {
+        if (name.isEmpty() || email.isEmpty()) {
+            listeners.onFailure("Preencha Todos os Campos.")
+        } else {
 
-             adapter.notifyDataSetChanged()
+            val userData = hashMapOf(
+                "name" to name,
+                "email" to email
+            )
 
-            }.addOnFailureListener {
+                firestore.collection("Users").document(id)
+                    .update(userData.toMap())
+                    .addOnSuccessListener {
+                        listeners.onSucess("Dados atualizados com sucesso.")
+                        adapter.notifyDataSetChanged()
 
-         }
+                        val user = firebaseAuth.currentUser
+                        if (user != null) {
+                            user.updateEmail(email)
+                                .addOnSuccessListener {
+                                    // Sucesso ao atualizar o e-mail
+                                }
+                                .addOnFailureListener { exception ->
+                                    // Tratamento de falha ao atualizar o e-mail
+                                }
+                        } else {
+                            // Tratamento se o usuário atual for nulo
+                        }
+
+
+
+                    }
+                    .addOnFailureListener { exception ->
+                        listeners.onFailure("Falha ao atualizar os dados: ${exception.message}")
+            }
+        }
     }
 }

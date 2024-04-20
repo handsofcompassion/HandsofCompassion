@@ -10,6 +10,8 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.UUID
+
 import javax.inject.Inject
 
 
@@ -37,15 +39,17 @@ class Auth @Inject constructor(
 
                 if (it.isSuccessful) {
 
-
+                    val id = UUID.randomUUID().toString()
                     val userMap = hashMapOf(
+                        "id" to id,
                         "name" to name,
                         "email" to email,
                         "password" to password
                     )
 
-                    var id = firebaseAuth.currentUser?.uid.toString()
-                    firestore.collection("Users").document(id).set(userMap).addOnCompleteListener {
+             val userReference = firestore.collection("Users").document(id)
+
+             userReference.set(userMap).addOnCompleteListener {
 
                         listneers.onSucess("Sucesso ao Cadastrar Usuário.")
 
