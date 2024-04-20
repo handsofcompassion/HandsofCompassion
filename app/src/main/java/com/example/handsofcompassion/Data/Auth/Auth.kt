@@ -1,7 +1,6 @@
 package com.example.handsofcompassion.Data.Auth
 
-import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
-import com.example.handsofcompassion.Data.Employees
+
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth

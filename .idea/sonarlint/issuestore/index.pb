@@ -75,8 +75,6 @@ y
 Iapp/src/main/java/com/example/handsofcompassion/UI/Lists/EmployeesList.kt,3/0/30713da15c8890caab4e653ea7ee8a3cabf3254e
 Ñ
 Tapp/src/main/java/com/example/handsofcompassion/Data/FireStore/EmployeesFireStore.kt,f/9/f9df081a77b27eeac9fa1e68f2aec14b96f9173e
-z
-Japp/src/main/java/com/example/handsofcompassion/Data/EmployeesFireStore.kt,2/2/2220ffdceabd96ac04e743193ef2113bab4188e2
 
 Oapp/src/main/java/com/example/handsofcompassion/ViewModel/ViewModelEmployees.kt,1/0/10b6c8ba5db5b7d8f4a9aa8cf5a38715d3c6a40d
 Å
