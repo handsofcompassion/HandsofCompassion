@@ -58,18 +58,6 @@ class EmployeesFireStore @Inject constructor(
                         listeners.onSucess("Dados atualizados com sucesso.")
                         adapter.notifyDataSetChanged()
 
-                        val user = firebaseAuth.currentUser
-                        if (user != null) {
-                            user.updateEmail(email)
-                                .addOnSuccessListener {
-                                    // Sucesso ao atualizar o e-mail
-                                }
-                                .addOnFailureListener { exception ->
-                                    // Tratamento de falha ao atualizar o e-mail
-                                }
-                        } else {
-                            // Tratamento se o usuário atual for nulo
-                        }
 
 
 
