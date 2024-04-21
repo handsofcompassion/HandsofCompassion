@@ -47,6 +47,28 @@
     <string name="atualizeSeuCadastro">Actualice su Registro:</string>
     <string name="atualizar">Actualizar</string>
     <string name="carregando">Cargando...</string>
+    <string name="preencha">Complete todos los campos.</string>
+    <string name="dadosatualizados">Datos actualizados exitosamente.</string>
+    <string name="falhaDados">No se pudieron actualizar los datos:</string>
+    <string name="sucessoUser">Registro de usuario exitoso.</string>
+    <string name="erroserver">Error del Servidor</string>
+    <string name="senha6digitos">Ingrese una Contraseña con al menos 6 Caracteres.</string>
+    <string name="emailvalido">Introduzca una dirección de correo electrónico válida.</string>
+    <string name="emailemuso">Este correo electrónico ya está en uso.</string>
+    <string name="semconexao">Sin conexión a Internet.</string>
+    <string name="errocadastar">Error al registrar usuario.</string>
+    <string name="loginRealizado">Inicio de sesión correcto.</string>
+    <string name="emailousenha">Correo electrónico o contraseña no válidos.</string>
+    <string name="verificaremailoulixo">Revisa tu correo electrónico, bandeja de entrada y correo no deseado.</string>
+    <string name="sim">Sí</string>
+    <string name="nao">No</string>
+    <string name="excluirfuncionario">Eliminar empleado.</string>
+    <string name="desejaexcluirmsm">¿QUIERES ELIMINAR AL EMPLEADO?</string>
+    <string name="deslogar">Cerrar Sesión</string>
+    <string name="deslogarmsm">¿QUIERES SALIR DE TU CUENTA?</string>
+
+
+
 
 
 

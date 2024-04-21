@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.Lists.EmployeesList
 import com.example.handsofcompassion.databinding.ActivityPrincipalattendantBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -20,17 +21,7 @@ class Principalattendant : AppCompatActivity() {
 
         binding.BtnSair.setOnClickListener {
 
-            val alertDialog = AlertDialog.Builder(this)
-            alertDialog.setTitle("Deslogar")
-            alertDialog.setMessage("DESEJA SAIR DA SUA CONTA?")
-            alertDialog.setPositiveButton("Sim") { _, _ ->
-
-                FirebaseAuth.getInstance().signOut()
-                startSelectionActivity()
-
-            }
-            alertDialog.setNegativeButton("Não") { _, _ -> }
-            alertDialog.show()
+            alertDialog()
 
         }
         binding.CardViewFuncioarios.setOnClickListener {
@@ -45,9 +36,24 @@ class Principalattendant : AppCompatActivity() {
         val intent = Intent(this, SelectionScreen::class.java)
         startActivity(intent)
     }
+
     private fun startEmployeesActivity() {
         val intent = Intent(this, EmployeesList::class.java)
         startActivity(intent)
+    }
+
+    private fun alertDialog() {
+        val alertDialog = AlertDialog.Builder(this)
+        alertDialog.setTitle(R.string.deslogar.toString())
+        alertDialog.setMessage(R.string.deslogarmsm)
+        alertDialog.setPositiveButton(R.string.sim) { _, _ ->
+
+            FirebaseAuth.getInstance().signOut()
+            startSelectionActivity()
+
+        }
+        alertDialog.setNegativeButton(R.string.nao) { _, _ -> }
+        alertDialog.show()
     }
 
 }

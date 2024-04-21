@@ -47,6 +47,29 @@
     <string name="atualizeSeuCadastro">Update your Registration:</string>
     <string name="atualizar">Update</string>
     <string name="carregando">Loading...</string>
+    <string name="preencha">Fill in all fields.</string>
+    <string name="dadosatualizados">Data updated successfully.</string>
+    <string name="falhaDados">Failed to update data:</string>
+    <string name="sucessoUser">Successful User Registration.</string>
+    <string name="erroserver">Server Error.</string>
+    <string name="senha6digitos">Enter a Password with at least 6 Characters.</string>
+    <string name="emailvalido">Enter a valid email address.</string>
+    <string name="emailemuso">This email is already in use.</string>
+    <string name="semconexao">No Internet Connection.</string>
+    <string name="errocadastar">Error Registering User.</string>
+    <string name="loginRealizado">Login Successful.</string>
+    <string name="emailousenha">Invalid Email or Password.</string>
+    <string name="verificaremailoulixo">Check your Email, Inbox and Junk Email.</string>
+    <string name="sim">Yes</string>
+    <string name="nao">Not</string>
+    <string name="excluirfuncionario">Delete Employee.</string>
+    <string name="desejaexcluirmsm">DO YOU WANT TO DELETE EMPLOYEE?</string>
+    <string name="deslogar">Log Out</string>
+    <string name="deslogarmsm">DO YOU WANT TO EXIT YOUR ACCOUNT?</string>
+
+
+
+
 
 
 

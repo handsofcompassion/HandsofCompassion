@@ -6,6 +6,7 @@ import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
 import com.example.handsofcompassion.Data.Employees
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.example.handsofcompassion.Repository.RepositoryEmployees
+import com.example.handsofcompassion.UI.ForgotPassword
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -29,13 +30,14 @@ class ViewModelEmployees @Inject constructor(private val repositoryEmployees: Re
     fun updateEMployees(
         name: String,
         email: String,
+        password: String,
         id: String,
         adapter: EmpplyeesAdapter,
         listneers: AuthListneers
-    ){
+    ) {
         viewModelScope.launch {
 
-            repositoryEmployees.updateEmployees(name, email,id,adapter,listneers)
+            repositoryEmployees.updateEmployees(name, email, password, id, adapter, listneers)
 
         }
     }

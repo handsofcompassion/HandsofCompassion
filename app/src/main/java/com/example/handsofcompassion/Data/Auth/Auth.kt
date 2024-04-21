@@ -2,6 +2,7 @@ package com.example.handsofcompassion.Data.Auth
 
 
 import com.example.handsofcompassion.Listneers.AuthListneers
+import com.example.handsofcompassion.R
 import com.google.firebase.FirebaseNetworkException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -30,7 +31,7 @@ class Auth @Inject constructor(
 
         if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
 
-            listneers.onFailure("Erro ao Cadastrar Funcionário")
+            listneers.onFailure(R.string.preencha.toString())
 
         } else {
 
@@ -50,11 +51,11 @@ class Auth @Inject constructor(
 
              userReference.set(userMap).addOnCompleteListener {
 
-                        listneers.onSucess("Sucesso ao Cadastrar Usuário.")
+                        listneers.onSucess(R.string.sucessoUser.toString())
 
                     }.addOnFailureListener {
 
-                        listneers.onFailure("Server Error.")
+                        listneers.onFailure(R.string.erroserver.toString())
 
                     }
                 }
@@ -63,11 +64,11 @@ class Auth @Inject constructor(
 
                 val errorMensage = when (it) {
 
-                    is FirebaseAuthWeakPasswordException -> "Digite uma Senha com no Mínimo 6 Caracteres."
-                    is FirebaseAuthInvalidCredentialsException -> "Digite um E-mail válido."
-                    is FirebaseAuthUserCollisionException -> "Esse E-mail já está em Uso."
-                    is FirebaseNetworkException -> "Sem Conecxão a Internet."
-                    else -> "Erro ao Cadastar Usuário."
+                    is FirebaseAuthWeakPasswordException -> R.string.senha6digitos.toString()
+                    is FirebaseAuthInvalidCredentialsException -> R.string.emailvalido.toString()
+                    is FirebaseAuthUserCollisionException -> R.string.emailemuso.toString()
+                    is FirebaseNetworkException -> R.string.semconexao.toString()
+                    else -> R.string.errocadastar.toString()
 
                 }
                 listneers.onFailure(errorMensage)
@@ -79,23 +80,23 @@ class Auth @Inject constructor(
 
         if (email.isEmpty() || password.isEmpty()) {
 
-            listneers.onFailure("Preencha Todos os Campos")
+            listneers.onFailure(R.string.preencha.toString())
         } else {
 
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
 
                 if (it.isSuccessful) {
-                    listneers.onSucess("Login Realizado com Sucesso.")
+                    listneers.onSucess(R.string.loginRealizado.toString())
                 }
 
             }.addOnFailureListener {
 
                 val errorMensage = when (it) {
 
-                    is FirebaseAuthInvalidCredentialsException -> "E-mail ou Senha Inválidos."
-                    is FirebaseAuthInvalidUserException -> "E-mail ou Senha Inválidos."
-                    is FirebaseNetworkException -> "Sem conexão a internet."
-                    else -> "Server Error"
+                    is FirebaseAuthInvalidCredentialsException -> R.string.emailousenha.toString()
+                    is FirebaseAuthInvalidUserException -> R.string.emailousenha.toString()
+                    is FirebaseNetworkException -> R.string.semconexao.toString()
+                    else -> R.string.sucessoUser.toString()
 
                 }
 
@@ -108,17 +109,17 @@ class Auth @Inject constructor(
 
         if (email.isEmpty()) {
 
-            listneers.onFailure("Digite seu E-mail.")
+            listneers.onFailure(R.string.digiteseuemail.toString())
 
         } else {
 
             firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener {
 
-                listneers.onSucess("Verifique seu E-mail, Caixa de Entrada e Lixo Eletrônico")
+                listneers.onSucess(R.string.verificaremailoulixo.toString())
 
             }.addOnFailureListener {
 
-                listneers.onFailure("Server Error.")
+                listneers.onFailure(R.string.sucessoUser.toString())
 
             }
         }

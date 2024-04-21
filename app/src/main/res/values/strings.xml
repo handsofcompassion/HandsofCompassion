@@ -45,6 +45,25 @@
     <string name="atualizeSeuCadastro">Atualize o seu Cadastro:</string>
     <string name="atualizar">Atualizar</string>
     <string name="carregando">Carregando...</string>
+    <string name="preencha">Preencha Todos os Campos.</string>
+    <string name="dadosatualizados">Dados atualizados com sucesso.</string>
+    <string name="falhaDados">Falha ao atualizar os dados:</string>
+    <string name="sucessoUser">Sucesso ao Cadastrar Usuário.</string>
+    <string name="erroserver">Erro no servidor.</string>
+    <string name="senha6digitos">Digite uma Senha com no Mínimo 6 Caracteres.</string>
+    <string name="emailvalido">Digite um E-mail válido.</string>
+    <string name="emailemuso">Esse E-mail já está em Uso.</string>
+    <string name="semconexao">Sem Conecxão a Internet.</string>
+    <string name="errocadastar">Erro ao Cadastar Usuário.</string>
+    <string name="loginRealizado">Login Realizado com Sucesso.</string>
+    <string name="emailousenha">E-mail ou Senha Inválidos.</string>
+    <string name="verificaremailoulixo">Verifique seu E-mail, Caixa de Entrada e Lixo Eletrônico.</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="excluirfuncionario">Excluir Funcionário.</string>
+    <string name="desejaexcluirmsm">DESEJA EXCLUIR FUNCIONÁRIO?</string>
+    <string name="deslogar">Deslogar</string>
+    <string name="deslogarmsm">DESEJA SAIR DA SUA CONTA?</string>
 
 
 </resources>

@@ -4,8 +4,10 @@ package com.example.handsofcompassion.Data.FireStore
 import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
 import com.example.handsofcompassion.Data.Employees
 import com.example.handsofcompassion.Listneers.AuthListneers
+import com.example.handsofcompassion.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.util.UUID
 import javax.inject.Inject
 
 
@@ -14,7 +16,7 @@ class EmployeesFireStore @Inject constructor(
     private val firebaseAuth: FirebaseAuth
 ) {
 
-    // TODO: OUTROS MÉTODOS ESTÃO JUNTO COM A ESTRTURUA DE LOGIN DE USUÁRIO, CRIAR UM NOVO USUÁRIO SALVAM OS DADOS.//
+    val id = UUID.randomUUID().toString()
 
     fun getEmployees(
         employeesList: MutableList<Employees>,
@@ -39,31 +41,36 @@ class EmployeesFireStore @Inject constructor(
     fun updateEmployees(
         name: String,
         email: String,
+        password: String,
         id: String,
         adapter: EmpplyeesAdapter,
         listeners: AuthListneers
     ) {
         if (name.isEmpty() || email.isEmpty()) {
-            listeners.onFailure("Preencha Todos os Campos.")
+            listeners.onFailure(R.string.preencha.toString())
         } else {
 
             val userData = hashMapOf(
                 "name" to name,
-                "email" to email
+                "email" to email,
+                "password" to password
             )
 
                 firestore.collection("Users").document(id)
                     .update(userData.toMap())
                     .addOnSuccessListener {
-                        listeners.onSucess("Dados atualizados com sucesso.")
+                        listeners.onSucess(R.string.dadosatualizados.toString())
                         adapter.notifyDataSetChanged()
 
 
+                        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
+
+                        }.addOnFailureListener {  }
 
 
                     }
                     .addOnFailureListener { exception ->
-                        listeners.onFailure("Falha ao atualizar os dados: ${exception.message}")
+                        listeners.onFailure(R.string.falhaDados.toString())
             }
         }
     }
