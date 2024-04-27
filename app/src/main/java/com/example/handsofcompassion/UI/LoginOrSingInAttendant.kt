@@ -72,15 +72,18 @@ class LoginOrSingInAttendant : AppCompatActivity() {
     private fun startPrincipalAttendentActivity() {
         val intent = Intent(this, Principalattendant::class.java)
         startActivity(intent)
+        finish()
     }
 
     private fun startFOrgotPasswordActivity() {
         val intent = Intent(this, ForgotPassword::class.java)
         startActivity(intent)
+        finish()
     }
 
     private fun startSingUpActivity() {
         val intent = Intent(this, RegisterNewEmployee::class.java)
         startActivity(intent)
+        finish()
     }
 }

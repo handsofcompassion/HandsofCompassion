@@ -19,6 +19,16 @@ class RepositoryEmployees @Inject constructor(private val employeesFireStore: Em
         employeesFireStore.getEmployees(employeesList, adapter)
     }
 
+    fun searchEmployees(
+        typedText: String,
+        employeesList: MutableList<Employees>,
+        adapter: EmpplyeesAdapter
+    ) {
+
+        employeesFireStore.searchEmployees(typedText, employeesList, adapter)
+
+    }
+
     fun updateEmployees(
         name: String,
         email: String,
@@ -30,4 +40,5 @@ class RepositoryEmployees @Inject constructor(private val employeesFireStore: Em
 
         employeesFireStore.updateEmployees(name,email,password,id,adapter,listneers)
     }
+
 }

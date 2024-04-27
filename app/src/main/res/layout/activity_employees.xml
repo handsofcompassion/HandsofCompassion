@@ -7,61 +7,41 @@
     android:layout_height="match_parent"
     tools:context=".UI.Lists.EmployeesList">
 
-    <TextView
-        android:id="@+id/textView6"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarEmployees"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="25dp"
-        android:text="@string/funcionarios"
+        android:background="@color/purple"
         android:textAlignment="center"
-        android:textSize="50dp"
-        android:textStyle="bold"
+        app:subtitleTextColor="@color/white"
+        android:padding="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/edit_name"
+        android:queryHint="@string/digiteNome"
+        android:iconifiedByDefault="false"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="50dp"
+        android:layout_height="80dp"
         android:background="@drawable/roundend_backhroundedttext"
-        android:drawableEnd="@drawable/baseline_search_24"
-        android:hint="@string/digitenome"
-        android:inputType="number"
-        android:padding="30dp"
-        android:textSize="30dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/tv_buscar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:padding="15dp"
-        android:text="@string/buscar"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_name" />
+        app:layout_constraintTop_toBottomOf="@id/toolbarEmployees" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvEmployees"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="44dp"
        android:paddingBottom="100dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_buscar"
+        app:layout_constraintTop_toBottomOf="@+id/edit_name"
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp" />
 

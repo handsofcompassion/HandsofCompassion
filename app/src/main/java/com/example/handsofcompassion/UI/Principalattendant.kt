@@ -40,6 +40,7 @@ class Principalattendant : AppCompatActivity() {
     private fun startEmployeesActivity() {
         val intent = Intent(this, EmployeesList::class.java)
         startActivity(intent)
+        finish()
     }
 
     private fun alertDialog() {

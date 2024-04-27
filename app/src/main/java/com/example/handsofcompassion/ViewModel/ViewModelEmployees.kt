@@ -27,6 +27,18 @@ class ViewModelEmployees @Inject constructor(private val repositoryEmployees: Re
         }
     }
 
+    fun searchEmployees(
+        typedText: String,
+        employeesList: MutableList<Employees>,
+        adapter: EmpplyeesAdapter
+    ) {
+        viewModelScope.launch {
+
+            repositoryEmployees.searchEmployees(typedText, employeesList, adapter)
+
+        }
+    }
+
     fun updateEMployees(
         name: String,
         email: String,
@@ -41,4 +53,5 @@ class ViewModelEmployees @Inject constructor(private val repositoryEmployees: Re
 
         }
     }
+
 }

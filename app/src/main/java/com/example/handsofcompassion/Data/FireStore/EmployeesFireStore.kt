@@ -1,6 +1,7 @@
 package com.example.handsofcompassion.Data.FireStore
 
 
+import android.annotation.SuppressLint
 import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
 import com.example.handsofcompassion.Data.Employees
 import com.example.handsofcompassion.Listneers.AuthListneers
@@ -18,26 +19,54 @@ class EmployeesFireStore @Inject constructor(
 
     val id = UUID.randomUUID().toString()
 
+    @SuppressLint("NotifyDatasetChanged")
     fun getEmployees(
         employeesList: MutableList<Employees>,
         adapter: EmpplyeesAdapter
     ) {
 
-        firestore.collection("Users").get().addOnCompleteListener { task ->
+        firestore.collection("Users")
+            .orderBy("name").get()
+            .addOnCompleteListener { task ->
 
+                if (task.isSuccessful) {
+                    for (document in task.result) {
+
+                        val employees = document.toObject(Employees::class.java)
+                        employeesList.add(employees)
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
+    }
+
+    @SuppressLint("NotifyDatasetChanged")
+    fun searchEmployees(
+        typedText: String,
+        employeesList: MutableList<Employees>,
+        adapter: EmpplyeesAdapter
+    ) {
+        val query = firestore.collection("Users").orderBy("name")
+            .startAt(typedText).endAt(typedText + "\uf8ff").limit(3)
+
+        query.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
+                val newEmployeesList = mutableListOf<Employees>()
 
                 for (document in task.result) {
-
                     val employees = document.toObject(Employees::class.java)
-                    employeesList.add(employees)
-                    adapter.notifyDataSetChanged()
-
+                    newEmployeesList.add(employees)
                 }
+
+                employeesList.clear()
+                employeesList.addAll(newEmployeesList)
+                adapter.notifyDataSetChanged()
             }
         }
     }
 
+
+    @SuppressLint("NotifyDatasetChanged")
     fun updateEmployees(
         name: String,
         email: String,
@@ -46,7 +75,7 @@ class EmployeesFireStore @Inject constructor(
         adapter: EmpplyeesAdapter,
         listeners: AuthListneers
     ) {
-        if (name.isEmpty() || email.isEmpty()) {
+        if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
             listeners.onFailure(R.string.preencha.toString())
         } else {
 
@@ -56,22 +85,24 @@ class EmployeesFireStore @Inject constructor(
                 "password" to password
             )
 
-                firestore.collection("Users").document(id)
-                    .update(userData.toMap())
-                    .addOnSuccessListener {
-                        listeners.onSucess(R.string.dadosatualizados.toString())
-                        adapter.notifyDataSetChanged()
+            firestore.collection("Users").document(id)
+                .update(userData.toMap())
+                .addOnSuccessListener {
+                    listeners.onSucess(R.string.dadosatualizados.toString())
+                    adapter.notifyDataSetChanged()
 
 
-                        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener {
+                    firebaseAuth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener {
 
-                        }.addOnFailureListener {  }
+                        }.addOnFailureListener { }
 
-
-                    }
-                    .addOnFailureListener { exception ->
-                        listeners.onFailure(R.string.falhaDados.toString())
-            }
+                }
+                .addOnFailureListener { exception ->
+                    listeners.onFailure(R.string.falhaDados.toString())
+                }
         }
     }
+
+
 }
