@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.Lists.DetailList.EmployeesListDetail
+import com.example.handsofcompassion.ViewModel.ViewModelEmployees
 import com.example.handsofcompassion.databinding.ItemEmployeesBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -47,6 +48,8 @@ class EmpplyeesAdapter(
             if (context is AppCompatActivity) {
                 val intent = Intent(context, EmployeesListDetail::class.java)
                 intent.putExtra("id", employeesList[position].id)
+                intent.putExtra(ViewModelEmployees.EXTRA_NAME, employeesList[position].name)
+                intent.putExtra(ViewModelEmployees.EXTRA_EMAIL, employeesList[position].email)
                 context.startActivity(intent)
                 context.finish()
             }
@@ -65,9 +68,9 @@ class EmpplyeesAdapter(
 
     private fun alertDialog(id: String, position: Int) {
         val alertDialog = AlertDialog.Builder(context)
-        alertDialog.setTitle(R.string.excluirfuncionario.toString())
-        alertDialog.setMessage(R.string.desejaexcluirmsm.toString())
-        alertDialog.setPositiveButton(R.string.sim.toString()) { dialog, whintch ->
+        alertDialog.setTitle(R.string.excluirfuncionario)
+        alertDialog.setMessage(R.string.desejaexcluirmsm)
+        alertDialog.setPositiveButton(context.getString(R.string.sim)) { dialog, whintch ->
 
             firestore.collection("Users").document(id).delete()
                 .addOnCompleteListener {
@@ -86,7 +89,7 @@ class EmpplyeesAdapter(
 
 
         }
-        alertDialog.setNegativeButton(R.string.nao.toString()) { dialog, whintch -> }
+        alertDialog.setNegativeButton(R.string.nao) { dialog, whintch -> }
         dialog = alertDialog.create()
         dialog.show()
     }

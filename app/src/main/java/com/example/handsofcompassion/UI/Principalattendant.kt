@@ -45,7 +45,7 @@ class Principalattendant : AppCompatActivity() {
 
     private fun alertDialog() {
         val alertDialog = AlertDialog.Builder(this)
-        alertDialog.setTitle(R.string.deslogar.toString())
+        alertDialog.setTitle(R.string.deslogar)
         alertDialog.setMessage(R.string.deslogarmsm)
         alertDialog.setPositiveButton(R.string.sim) { _, _ ->
 

@@ -66,17 +66,14 @@
     <string name="desejaexcluirmsm">¿QUIERES ELIMINAR AL EMPLEADO?</string>
     <string name="deslogar">Cerrar Sesión</string>
     <string name="deslogarmsm">¿QUIERES SALIR DE TU CUENTA?</string>
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="digiteSobrenome">Ingrese su Nombre y Apellido</string>
+    <string name="digiteseuendereco">Ingrese su dirección completa</string>
+    <string name="digitedatadenascimento">Ingrese su fecha de nacimiento</string>
+    <string name="digiteTelefone">Ingresa tu teléfono</string>
+    <string name="tipodedoacao">Tipo de donación</string>
+    <string name="cpf">CPF:</string>
+    <string name="endereco">Dirección:</string>
+    <string name="telefone"> Teléfono:</string>
+    <string name="data"> Fecha de Nacimiento:</string>
 
 </resources>

@@ -2,6 +2,7 @@ package com.example.handsofcompassion.Data.FireStore
 
 
 import android.annotation.SuppressLint
+import android.content.Context
 import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
 import com.example.handsofcompassion.Data.Employees
 import com.example.handsofcompassion.Listneers.AuthListneers
@@ -14,7 +15,8 @@ import javax.inject.Inject
 
 class EmployeesFireStore @Inject constructor(
     private val firestore: FirebaseFirestore,
-    private val firebaseAuth: FirebaseAuth
+    private val firebaseAuth: FirebaseAuth,
+    private val context: Context
 ) {
 
     val id = UUID.randomUUID().toString()
@@ -65,7 +67,6 @@ class EmployeesFireStore @Inject constructor(
         }
     }
 
-
     @SuppressLint("NotifyDatasetChanged")
     fun updateEmployees(
         name: String,
@@ -76,7 +77,7 @@ class EmployeesFireStore @Inject constructor(
         listeners: AuthListneers
     ) {
         if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
-            listeners.onFailure(R.string.preencha.toString())
+            listeners.onFailure(context.getString(R.string.preencha))
         } else {
 
             val userData = hashMapOf(
@@ -88,7 +89,7 @@ class EmployeesFireStore @Inject constructor(
             firestore.collection("Users").document(id)
                 .update(userData.toMap())
                 .addOnSuccessListener {
-                    listeners.onSucess(R.string.dadosatualizados.toString())
+                    listeners.onSucess(context.getString(R.string.dadosatualizados))
                     adapter.notifyDataSetChanged()
 
 
@@ -99,10 +100,9 @@ class EmployeesFireStore @Inject constructor(
 
                 }
                 .addOnFailureListener { exception ->
-                    listeners.onFailure(R.string.falhaDados.toString())
-                }
+                    listeners.onFailure(context.getString(R.string.falhaDados))
+            }
         }
     }
-
 
 }

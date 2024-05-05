@@ -81,3 +81,7 @@ Oapp/src/main/java/com/example/handsofcompassion/ViewModel/ViewModelEmployees.kt
 Qapp/src/main/java/com/example/handsofcompassion/Repository/RepositoryEmployees.kt,a/7/a7cb6ab5408b30ad15748b8ee3172150c57e0706
 Š
 Zapp/src/main/java/com/example/handsofcompassion/UI/Lists/DetailList/EmployeesListDetail.kt,9/1/9104202412002ec276c6f29f73fbf757b94d78b8
+t
+Dapp/src/main/java/com/example/handsofcompassion/UI/CreateNewDonor.kt,d/2/d2e33ea4cd455569e64e38483771245b6e545354
+}
+Mapp/src/main/java/com/example/handsofcompassion/UI/ReceiveNewDonationsType.kt,b/8/b81cbec588ec055f511e23b852674836dbe6437a

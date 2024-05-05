@@ -1,6 +1,7 @@
 package com.example.handsofcompassion.Data.Auth
 
 
+import android.content.Context
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.example.handsofcompassion.R
 import com.google.firebase.FirebaseNetworkException
@@ -11,13 +12,13 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.UUID
-
 import javax.inject.Inject
 
 
 class Auth @Inject constructor(
     private val firebaseAuth: FirebaseAuth,
-    private val firestore: FirebaseFirestore
+    private val firestore: FirebaseFirestore,
+    private val context: Context
 ) {
 
 
@@ -31,7 +32,7 @@ class Auth @Inject constructor(
 
         if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
 
-            listneers.onFailure(R.string.preencha.toString())
+            listneers.onFailure(context.getString(R.string.preencha))
 
         } else {
 
@@ -51,11 +52,11 @@ class Auth @Inject constructor(
 
              userReference.set(userMap).addOnCompleteListener {
 
-                        listneers.onSucess(R.string.sucessoUser.toString())
+                        listneers.onSucess(context.getString(R.string.sucessoUser))
 
                     }.addOnFailureListener {
 
-                        listneers.onFailure(R.string.erroserver.toString())
+                        listneers.onFailure(context.getString(R.string.erroserver))
 
                     }
                 }
@@ -64,11 +65,11 @@ class Auth @Inject constructor(
 
                 val errorMensage = when (it) {
 
-                    is FirebaseAuthWeakPasswordException -> R.string.senha6digitos.toString()
-                    is FirebaseAuthInvalidCredentialsException -> R.string.emailvalido.toString()
-                    is FirebaseAuthUserCollisionException -> R.string.emailemuso.toString()
-                    is FirebaseNetworkException -> R.string.semconexao.toString()
-                    else -> R.string.errocadastar.toString()
+                    is FirebaseAuthWeakPasswordException -> context.getString(R.string.senha6digitos)
+                    is FirebaseAuthInvalidCredentialsException -> context.getString(R.string.emailvalido)
+                    is FirebaseAuthUserCollisionException -> context.getString(R.string.emailemuso)
+                    is FirebaseNetworkException -> context.getString(R.string.semconexao)
+                    else -> context.getString(R.string.errocadastar)
 
                 }
                 listneers.onFailure(errorMensage)
@@ -80,23 +81,23 @@ class Auth @Inject constructor(
 
         if (email.isEmpty() || password.isEmpty()) {
 
-            listneers.onFailure(R.string.preencha.toString())
+            listneers.onFailure(context.getString(R.string.preencha))
         } else {
 
             firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
 
                 if (it.isSuccessful) {
-                    listneers.onSucess(R.string.loginRealizado.toString())
+                    listneers.onSucess(context.getString(R.string.loginRealizado))
                 }
 
             }.addOnFailureListener {
 
                 val errorMensage = when (it) {
 
-                    is FirebaseAuthInvalidCredentialsException -> R.string.emailousenha.toString()
-                    is FirebaseAuthInvalidUserException -> R.string.emailousenha.toString()
-                    is FirebaseNetworkException -> R.string.semconexao.toString()
-                    else -> R.string.sucessoUser.toString()
+                    is FirebaseAuthInvalidCredentialsException ->   context.getString(R.string.emailousenha)
+                    is FirebaseAuthInvalidUserException -> context.getString(R.string.emailousenha)
+                    is FirebaseNetworkException -> context.getString(R.string.semconexao)
+                    else -> context.getString(R.string.sucessoUser)
 
                 }
 
@@ -109,17 +110,17 @@ class Auth @Inject constructor(
 
         if (email.isEmpty()) {
 
-            listneers.onFailure(R.string.digiteseuemail.toString())
+            listneers.onFailure(context.getString(R.string.digiteseuemail))
 
         } else {
 
             firebaseAuth.sendPasswordResetEmail(email).addOnCompleteListener {
 
-                listneers.onSucess(R.string.verificaremailoulixo.toString())
+                listneers.onSucess(context.getString(R.string.verificaremailoulixo))
 
             }.addOnFailureListener {
 
-                listneers.onFailure(R.string.sucessoUser.toString())
+                listneers.onFailure(context.getString(R.string.sucessoUser))
 
             }
         }

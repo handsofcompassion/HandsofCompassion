@@ -64,6 +64,15 @@
     <string name="desejaexcluirmsm">DESEJA EXCLUIR FUNCIONÁRIO?</string>
     <string name="deslogar">Deslogar</string>
     <string name="deslogarmsm">DESEJA SAIR DA SUA CONTA?</string>
+    <string name="digiteSobrenome">Digite seu Nome e Sobrenome</string>
+    <string name="digiteseuendereco">Digite seu Endereço Completo.</string>
+    <string name="digitedatadenascimento">Digite sua Data de Nascimento</string>
+    <string name="digiteTelefone">Digite seu Telefone</string>
+    <string name="tipodedoacao">Tipo de Doação</string>
+    <string name="cpf">CPF:</string>
+    <string name="endereco">Endereço:</string>
+    <string name="telefone">Telefone:</string>
+    <string name="data">Data de Nascimento:</string>
 
 
 </resources>

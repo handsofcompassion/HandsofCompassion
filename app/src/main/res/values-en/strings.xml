@@ -66,12 +66,14 @@
     <string name="desejaexcluirmsm">DO YOU WANT TO DELETE EMPLOYEE?</string>
     <string name="deslogar">Log Out</string>
     <string name="deslogarmsm">DO YOU WANT TO EXIT YOUR ACCOUNT?</string>
-
-
-
-
-
-
-
+    <string name="digiteSobrenome">Enter your First Name and Last Name</string>
+    <string name="digiteseuendereco">Enter your Full Address</string>
+    <string name="digitedatadenascimento">Enter your birth date</string>
+    <string name="digiteTelefone">Enter your Phone</string>
+    <string name="tipodedoacao">Type of Donation</string>
+    <string name="cpf">CPF:</string>
+    <string name="endereco">Address:</string>
+    <string name="telefone"> Telephone:</string>
+    <string name="data">Date of birth:</string>
 
 </resources>

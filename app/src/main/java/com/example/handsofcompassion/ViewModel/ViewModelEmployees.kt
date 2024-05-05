@@ -16,7 +16,10 @@ class ViewModelEmployees @Inject constructor(private val repositoryEmployees: Re
     ViewModel() {
 
     // TODO: OUTROS MÉTODOS ESTÃO JUNTO COM A ESTRTURUA DE LOGIN DE USUÁRIO, CRIAR UM NOVO USUÁRIO SALVAM OS DADOS.
-
+    companion object {
+        const val EXTRA_NAME = "extra_name"
+        const val EXTRA_EMAIL = "extra_email"
+    }
     fun getEmployees(
         employeesList: MutableList<Employees>,
         adapter: EmpplyeesAdapter
@@ -53,5 +56,6 @@ class ViewModelEmployees @Inject constructor(private val repositoryEmployees: Re
 
         }
     }
+
 
 }
