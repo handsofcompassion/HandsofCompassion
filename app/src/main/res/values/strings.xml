@@ -73,7 +73,8 @@
     <string name="endereco">Endereço:</string>
     <string name="telefone">Telefone:</string>
     <string name="data">Data de Nascimento:</string>
-
+    <string name="cadastrarDoador">CADASTRAR DOADOR</string>
+    <string name="cadatrarDonatario">CADASTRAR DONATÁRIO</string>
 
 </resources>
 

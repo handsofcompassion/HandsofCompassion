@@ -85,3 +85,9 @@ t
 Dapp/src/main/java/com/example/handsofcompassion/UI/CreateNewDonor.kt,d/2/d2e33ea4cd455569e64e38483771245b6e545354
 }
 Mapp/src/main/java/com/example/handsofcompassion/UI/ReceiveNewDonationsType.kt,b/8/b81cbec588ec055f511e23b852674836dbe6437a
+w
+Gapp/src/main/java/com/example/handsofcompassion/UI/CreateNewReceiver.kt,5/0/50e8b459f38fbf56df52f715644eba434e8905d0
+y
+Iapp/src/main/java/com/example/handsofcompassion/UI/TypeOfDonationDonor.kt,c/e/cee7e6751da28601981bac0a9927382c7d0b12c7
+|
+Lapp/src/main/java/com/example/handsofcompassion/UI/TypeOfDonationReceiver.kt,7/c/7c4979a0a806ee011617b9ca662d57b8d93d055d

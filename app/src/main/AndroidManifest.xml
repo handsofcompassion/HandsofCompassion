@@ -16,6 +16,15 @@
         android:theme="@style/Theme.HandsOfCompassion"
         tools:targetApi="31">
         <activity
+            android:name=".UI.TypeOfDonationReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".UI.TypeOfDonationDonor"
+            android:exported="false" />
+        <activity
+            android:name=".UI.CreateNewReceiver"
+            android:exported="false" />
+        <activity
             android:name=".UI.ReceiveNewDonationsType"
             android:exported="false" />
         <activity

@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.CreateNewDonor">
-
+    tools:context=".UI.CreateNewReceiver">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarCreateNewDonor"
         android:layout_width="match_parent"
@@ -231,7 +230,7 @@
                 android:background="@drawable/rectangle_button"
                 android:backgroundTint="@color/green200"
                 android:padding="10dp"
-                android:text="@string/cadastrarDoador"
+                android:text="@string/cadatrarDonatario"
                 android:textAlignment="center"
                 android:textSize="35dp"
                 android:textStyle="bold"
@@ -252,5 +251,6 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

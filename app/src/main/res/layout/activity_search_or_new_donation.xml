@@ -44,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="332dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/rectangle_button"
         android:backgroundTint="@color/green200"
@@ -54,26 +54,9 @@
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.35"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_cpf" />
-
-    <Button
-        android:id="@+id/btn_receber_anonimo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="144dp"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/rectangle_button"
-        android:backgroundTint="@color/green200"
-        android:drawableLeft="@drawable/baseline_person_24"
-        android:padding="25dp"
-        android:text="@string/donationanimous"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_receber" />
 
     <ImageView
         android:id="@+id/imageView2"

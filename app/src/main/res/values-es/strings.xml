@@ -75,5 +75,7 @@
     <string name="endereco">Dirección:</string>
     <string name="telefone"> Teléfono:</string>
     <string name="data"> Fecha de Nacimiento:</string>
+    <string name="cadastrarDoador">REGISTRAR DONANTE</string>
+    <string name="cadatrarDonatario">REGISTRAR DONATARIO</string>
 
 </resources>

@@ -27,19 +27,9 @@ class SearchOrNewDonation : AppCompatActivity() {
 
         }
 
-        binding.btnReceberAnonimo.setOnClickListener {
-
-            startReceiveNewDonationsTypeActivity()
-
-        }
 
     }
     private fun startCreateNewDonorActivity() {
-        val intent = Intent(this, CreateNewDonor::class.java)
-        startActivity(intent)
-        finish()
-    }
-    private fun startReceiveNewDonationsTypeActivity() {
         val intent = Intent(this, CreateNewDonor::class.java)
         startActivity(intent)
         finish()
