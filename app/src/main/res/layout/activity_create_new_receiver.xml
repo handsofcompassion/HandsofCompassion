@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".UI.CreateNewReceiver">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarCreateNewDonor"
         android:layout_width="match_parent"
@@ -26,8 +27,7 @@
         android:layout_marginTop="125dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarCreateNewDonor">
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraint"
@@ -81,7 +81,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <EditText
+            <com.vicmikhailau.maskededittext.MaskedEditText
                 android:id="@+id/edit_cpf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -90,6 +90,7 @@
                 android:layout_marginEnd="50dp"
                 android:background="@drawable/roundend_backhroundedttext"
                 android:hint="@string/digiteCpf"
+                app:mask="###.###.###-##"
                 android:inputType="number"
                 android:padding="25dp"
                 android:textSize="30dp"
@@ -112,7 +113,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <EditText
+            <com.vicmikhailau.maskededittext.MaskedEditText
                 android:id="@+id/edit_telefone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -121,6 +122,7 @@
                 android:layout_marginEnd="50dp"
                 android:background="@drawable/roundend_backhroundedttext"
                 android:hint="@string/digiteTelefone"
+                app:mask="(##) #####-####"
                 android:inputType="number"
                 android:padding="25dp"
                 android:textSize="30dp"
@@ -203,7 +205,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
+            <com.vicmikhailau.maskededittext.MaskedEditText
                 android:id="@+id/edit_nascimento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -212,6 +214,7 @@
                 android:layout_marginEnd="50dp"
                 android:background="@drawable/roundend_backhroundedttext"
                 android:hint="@string/digitedatadenascimento"
+                app:mask="##/##/####"
                 android:inputType="number"
                 android:padding="25dp"
                 android:textSize="30dp"
@@ -221,7 +224,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/edit_endereco_completo" />
 
             <Button
-                android:id="@+id/btn_atualizar"
+                android:id="@+id/btn_cadastrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -251,6 +254,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

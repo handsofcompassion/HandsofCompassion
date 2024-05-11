@@ -11,8 +11,7 @@ import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.databinding.ActivityTypeOfDonationReceiverBinding
 
@@ -23,16 +22,17 @@ class TypeOfDonationReceiver : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTypeOfDonationReceiverBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_type_of_donation_receiver)
+        setContentView(binding.root)
 
+        settingsToolBar()
 
 
     }
     private fun settingsToolBar() {
-        val toolbar = binding.toolbarCreateNewDonor
+        val toolbar = binding.toolbarTypeOfDonationReceiver
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setTitleTextColor(Color.WHITE)
-        val titleText = resources.getString(R.string.donationishere).toUpperCase()
+        val titleText = resources.getString(R.string.receber_btn).toUpperCase()
         val title = SpannableString(titleText)
 
         title.setSpan(
@@ -49,11 +49,11 @@ class TypeOfDonationReceiver : AppCompatActivity() {
         toolbar.title = title
 
         toolbar.setNavigationOnClickListener {
-            startSearchOrNewReceiverActivity()
+           startSearchOrNewDonationActivity()
         }
     }
-    private fun startSearchOrNewReceiverActivity() {
-        val intent = Intent(this, SearchOrNewDonation::class.java)
+    private fun startSearchOrNewDonationActivity() {
+        val intent = Intent(this, SearchOrNewReceiver::class.java)
         startActivity(intent)
         finish()
     }

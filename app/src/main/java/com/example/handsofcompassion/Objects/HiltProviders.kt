@@ -3,9 +3,13 @@ package com.example.handsofcompassion.Objects
 import android.app.Application
 import android.content.Context
 import com.example.handsofcompassion.Data.Auth.Auth
+import com.example.handsofcompassion.Data.FireStore.DonorFireStore
 import com.example.handsofcompassion.Data.FireStore.EmployeesFireStore
+import com.example.handsofcompassion.Data.FireStore.ReceiverFireStore
 import com.example.handsofcompassion.Repository.RepositoryAuth
+import com.example.handsofcompassion.Repository.RepositoryDonor
 import com.example.handsofcompassion.Repository.RepositoryEmployees
+import com.example.handsofcompassion.Repository.RepositoryReceiver
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
@@ -61,6 +65,36 @@ object HiltProviders {
 
         return com.example.handsofcompassion.Repository.RepositoryEmployees(employeesFireStore)
 
+    }
+
+    @Provides
+    @Singleton
+    fun donorFireStore(firestore: FirebaseFirestore, context: Context): DonorFireStore {
+
+        return DonorFireStore(firestore, context)
+
+    }
+
+    @Provides
+    @Singleton
+    fun repositoryDonor(donorFireStore: DonorFireStore):RepositoryDonor {
+
+        return RepositoryDonor(donorFireStore)
+    }
+
+    @Provides
+    @Singleton
+    fun receiverFireStore(firestore: FirebaseFirestore, context: Context): ReceiverFireStore {
+
+        return ReceiverFireStore(firestore, context)
+
+    }
+
+    @Provides
+    @Singleton
+    fun repositoryReceiver(receiverFireStore: ReceiverFireStore):RepositoryReceiver {
+
+        return RepositoryReceiver(receiverFireStore)
     }
 
 }

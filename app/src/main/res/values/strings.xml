@@ -75,6 +75,28 @@
     <string name="data">Data de Nascimento:</string>
     <string name="cadastrarDoador">CADASTRAR DOADOR</string>
     <string name="cadatrarDonatario">CADASTRAR DONATÁRIO</string>
+    <string name="selecionetipo">SELECIONE O TIPO DE DOAÇÃO</string>
+    <string name="oqueDesejaReceber">Oque Deseja Receber?</string>
+    <string name="oqueDesejaDoar">Oque Deseja Doar?</string>
+    <string name="alimento">ALIMENTO</string>
+    <string name="roupas">ROUPAS</string>
+    <string name="brinquedos">BRINQUEDOS</string>
+    <string name="higiene">HIGIENE PESSOAL</string>
+    <string name="produtos">PRODUTOS DE LIMPEZA</string>
+    <string name="bebes">PRODUTOS PARA BEBES</string>
+    <string name="itensBasicos">ITENS BÁSICOS</string>
+    <string name="moveis">MÓVEIS</string>
+    <string name="eletro">ELETRODOMÉSTICOS</string>
+    <string name="pix">DOAÇÃO MONETÁRIA</string>
+    <string name="sucessoDoardo">Sucesso ao Cadastrar Doador.</string>
+    <string name="sucessodonatario">Sucesso ao Cadastrar Donatário.</string>
+    <string name="digitenomedoador">Digite o Nome do Doador...</string>
+    <string name="digiteteNomedonatario">Digite o Nome do Dontário...</string>
+    <string name="excluirDoador">Excluir Doador.</string>
+    <string name="desejaexcluirmsmm">DESEJA EXCLUIR Doador?</string>
+    <string name="excluirDonatario">Excluir Donatário.</string>
+    <string name="desejaexcluirmsmmm">DESEJA EXCLUIR Donatário?</string>
+
 
 </resources>
 

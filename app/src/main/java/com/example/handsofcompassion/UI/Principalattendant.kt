@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.handsofcompassion.R
+import com.example.handsofcompassion.UI.Lists.DonorsList
 import com.example.handsofcompassion.UI.Lists.EmployeesList
+import com.example.handsofcompassion.UI.Lists.ReceiversList
 import com.example.handsofcompassion.databinding.ActivityPrincipalattendantBinding
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,6 +32,17 @@ class Principalattendant : AppCompatActivity() {
 
         }
 
+        binding.cardViewDoadores.setOnClickListener {
+
+            startDonorsActivity()
+
+        }
+
+        binding.cardViewBeneficiarios.setOnClickListener {
+
+            startReceiversActivity()
+
+        }
     }
 
     private fun startSelectionActivity() {
@@ -39,6 +52,17 @@ class Principalattendant : AppCompatActivity() {
 
     private fun startEmployeesActivity() {
         val intent = Intent(this, EmployeesList::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun startDonorsActivity() {
+        val intent = Intent(this, DonorsList::class.java)
+        startActivity(intent)
+        finish()
+    }
+    private fun startReceiversActivity() {
+        val intent = Intent(this, ReceiversList::class.java)
         startActivity(intent)
         finish()
     }

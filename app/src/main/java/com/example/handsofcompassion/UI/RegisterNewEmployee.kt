@@ -66,5 +66,6 @@ class RegisterNewEmployee : AppCompatActivity() {
     private fun startLoginActivity() {
         val intent = Intent(this, LoginOrSingInAttendant::class.java)
         startActivity(intent)
+        finish()
     }
 }
