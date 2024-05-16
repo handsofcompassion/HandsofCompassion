@@ -88,9 +88,13 @@ class ReceiverFireStore @Inject constructor(
         receiversList: MutableList<Receiver>,
         adapter: ReceiverAdapter
     ) {
-        val query = firestore.collection("Receivers").orderBy("name")
-            .startAt(typedText).endAt(typedText + "\uf8ff").limit(3)
+        val query = firestore.collection("Receivers")
+            .orderBy("name")
+            .startAt(typedText)
+            .endAt(typedText + "\uf8ff")
+            .limit(3)
 
+        receiversList.clear()
         query.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val newReceiversList = mutableListOf<Receiver>()
@@ -100,9 +104,8 @@ class ReceiverFireStore @Inject constructor(
                     newReceiversList.add(receiver)
                 }
 
-                receiversList.clear()
-                receiversList.addAll(receiversList)
-                adapter.notifyDataSetChanged()
+                receiversList.addAll(newReceiversList) // Adiciona os novos receptores à lista existente
+                adapter.notifyDataSetChanged() // Notifica o RecyclerView sobre as mudanças
             }
         }
     }
@@ -113,9 +116,13 @@ class ReceiverFireStore @Inject constructor(
         receiversList: MutableList<Receiver>,
         adapter: ReceiverAdapter
     ) {
-        val query = firestore.collection("Receivers").orderBy("cpf")
-            .startAt(typedText).endAt(typedText + "\uf8ff").limit(3)
+        val query = firestore.collection("Receivers")
+            .orderBy("cpf")
+            .startAt(typedText)
+            .endAt(typedText + "\uf8ff")
+            .limit(1)
 
+        receiversList.clear()
         query.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val newReceiversList = mutableListOf<Receiver>()
@@ -125,11 +132,13 @@ class ReceiverFireStore @Inject constructor(
                     newReceiversList.add(receiver)
                 }
 
-                receiversList.clear()
-                receiversList.addAll(receiversList)
-                adapter.notifyDataSetChanged()
+                receiversList.addAll(newReceiversList) // Adiciona os novos receptores à lista existente
+                adapter.notifyDataSetChanged() // Notifica o RecyclerView sobre as mudanças
             }
         }
     }
+
+
+
 
 }

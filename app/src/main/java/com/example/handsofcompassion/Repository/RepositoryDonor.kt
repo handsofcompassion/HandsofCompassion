@@ -48,7 +48,7 @@ class RepositoryDonor @Inject constructor(private val donorFireStore: DonorFireS
         adapter: DonorAdapter
     ) {
 
-        donorFireStore.searchReceivers(typedText, donorsList, adapter)
+        donorFireStore.searchDonor(typedText, donorsList, adapter)
 
     }
 
@@ -59,7 +59,7 @@ class RepositoryDonor @Inject constructor(private val donorFireStore: DonorFireS
         adapter: DonorAdapter
     ) {
 
-        donorFireStore.searchReceiversCPF(typedText, donorsList, adapter)
+        donorFireStore.searchDonorsCPF(typedText, donorsList, adapter)
 
     }
 }

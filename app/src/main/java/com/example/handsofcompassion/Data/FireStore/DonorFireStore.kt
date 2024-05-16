@@ -83,15 +83,20 @@ class DonorFireStore @Inject constructor(
     }
 
 
+
     @SuppressLint("NotifyDatasetChanged")
-    fun searchReceivers(
+    fun searchDonor(
         typedText: String,
         donorsList: MutableList<Donor>,
         adapter: DonorAdapter
     ) {
-        val query = firestore.collection("Donors").orderBy("name")
-            .startAt(typedText).endAt(typedText + "\uf8ff").limit(3)
+        val query = firestore.collection("Donors")
+            .orderBy("name")
+            .startAt(typedText)
+            .endAt(typedText + "\uf8ff")
+            .limit(3)
 
+        donorsList.clear()
         query.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val newDonorsList = mutableListOf<Donor>()
@@ -101,22 +106,25 @@ class DonorFireStore @Inject constructor(
                     newDonorsList.add(donor)
                 }
 
-                donorsList.clear()
-                donorsList.addAll(donorsList)
-                adapter.notifyDataSetChanged()
+                donorsList.addAll(newDonorsList) // Adiciona os novos receptores à lista existente
+                adapter.notifyDataSetChanged() // Notifica o RecyclerView sobre as mudanças
             }
         }
     }
 
     @SuppressLint("NotifyDatasetChanged")
-    fun searchReceiversCPF(
+    fun searchDonorsCPF(
         typedText: String,
         donorsList: MutableList<Donor>,
         adapter: DonorAdapter
     ) {
-        val query = firestore.collection("Donors").orderBy("cpf")
-            .startAt(typedText).endAt(typedText + "\uf8ff").limit(3)
+        val query = firestore.collection("Donors")
+            .orderBy("cpf")
+            .startAt(typedText)
+            .endAt(typedText + "\uf8ff")
+            .limit(2)
 
+        donorsList.clear()
         query.get().addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val newDonorsList = mutableListOf<Donor>()
@@ -126,10 +134,12 @@ class DonorFireStore @Inject constructor(
                     newDonorsList.add(donor)
                 }
 
-                donorsList.clear()
-                donorsList.addAll(donorsList)
-                adapter.notifyDataSetChanged()
+                donorsList.addAll(newDonorsList) // Adiciona os novos receptores à lista existente
+                adapter.notifyDataSetChanged() // Notifica o RecyclerView sobre as mudanças
             }
         }
     }
+
+
+
 }
