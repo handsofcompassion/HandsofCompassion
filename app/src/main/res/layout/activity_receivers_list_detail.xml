@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.CreateNewReceiver">
+    tools:context=".UI.Lists.DetailList.ReceiversListDetail">
 
     <ProgressBar
         android:id="@+id/progress"
@@ -234,7 +234,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/edit_endereco_completo" />
 
             <Button
-                android:id="@+id/btn_cadastrar"
+                android:id="@+id/btn_atualizar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
@@ -243,7 +243,7 @@
                 android:background="@drawable/rectangle_button"
                 android:backgroundTint="@color/green200"
                 android:padding="10dp"
-                android:text="@string/cadatrarDonatario"
+                android:text="@string/atualizarRecebedor"
                 android:textAlignment="center"
                 android:textSize="35dp"
                 android:textStyle="bold"
@@ -264,5 +264,8 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

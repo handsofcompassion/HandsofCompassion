@@ -2,11 +2,17 @@ package com.example.handsofcompassion.Adapter
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.handsofcompassion.Data.Receiver
 import com.example.handsofcompassion.R
+import com.example.handsofcompassion.UI.Lists.DetailList.EmployeesListDetail
+import com.example.handsofcompassion.UI.Lists.DetailList.ReceiversListDetail
+import com.example.handsofcompassion.ViewModel.ViewModelEmployees
+import com.example.handsofcompassion.ViewModel.ViewModelReceiver
 import com.example.handsofcompassion.databinding.ItemReceiversBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -39,6 +45,24 @@ private val receiverList: MutableList<Receiver>
             alertDialog(id.toString(), position)
 
         }
+
+        holder.edt.setOnClickListener {
+
+            if (context is AppCompatActivity) {
+                val intent = Intent(context, ReceiversListDetail::class.java)
+                intent.putExtra("id", receiverList[position].id)
+                intent.putExtra(ViewModelReceiver.EXTRA_NAME, receiverList[position].name)
+                intent.putExtra(ViewModelReceiver.EXTRA_CPF, receiverList[position].cpf)
+                intent.putExtra(ViewModelReceiver.EXTRA_PHONE, receiverList[position].phone)
+                intent.putExtra(ViewModelReceiver.EXTRA_EMAIL, receiverList[position].email)
+                intent.putExtra(ViewModelReceiver.EXTRA_ADRESS, receiverList[position].address)
+                intent.putExtra(ViewModelReceiver.EXTRA_BIRTH, receiverList[position].birth)
+                context.startActivity(intent)
+                context.finish()
+            }
+
+        }
+
     }
 
 
@@ -53,6 +77,7 @@ private val receiverList: MutableList<Receiver>
         val txtBirth = binding.tvNascimento
         val edt = binding.imgEdit
         val delete = binding.imgDelete
+        val profile = binding.cardProfile
 
     }
 

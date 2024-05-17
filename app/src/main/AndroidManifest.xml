@@ -16,6 +16,15 @@
         android:theme="@style/Theme.HandsOfCompassion"
         tools:targetApi="31">
         <activity
+            android:name=".UI.Profile.ProfileDonors"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.DetailList.ReceiversListDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.DetailList.DonorsListDetail"
+            android:exported="false" />
+        <activity
             android:name=".UI.Lists.ReceiversList"
             android:exported="false" />
         <activity

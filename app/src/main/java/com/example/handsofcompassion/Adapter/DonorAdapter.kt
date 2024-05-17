@@ -2,11 +2,18 @@ package com.example.handsofcompassion.Adapter
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.handsofcompassion.Data.Donor
 import com.example.handsofcompassion.R
+import com.example.handsofcompassion.UI.Lists.DetailList.DonorsListDetail
+import com.example.handsofcompassion.UI.Lists.DetailList.EmployeesListDetail
+import com.example.handsofcompassion.UI.Profile.ProfileDonors
+import com.example.handsofcompassion.ViewModel.ViewModelDonor
+import com.example.handsofcompassion.ViewModel.ViewModelReceiver
 import com.example.handsofcompassion.databinding.ItemDonorsBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -41,6 +48,39 @@ class DonorAdapter(
             alertDialog(id.toString(), position)
 
         }
+
+        holder.edt.setOnClickListener {
+
+            if (context is AppCompatActivity) {
+                val intent = Intent(context, DonorsListDetail::class.java)
+                intent.putExtra("id", donorList[position].id)
+                intent.putExtra(ViewModelDonor.EXTRA_NAME, donorList[position].name)
+                intent.putExtra(ViewModelDonor.EXTRA_CPF, donorList[position].cpf)
+                intent.putExtra(ViewModelDonor.EXTRA_PHONE, donorList[position].phone)
+                intent.putExtra(ViewModelDonor.EXTRA_EMAIL, donorList[position].email)
+                intent.putExtra(ViewModelDonor.EXTRA_ADRESS, donorList[position].address)
+                intent.putExtra(ViewModelDonor.EXTRA_BIRTH, donorList[position].birth)
+                context.startActivity(intent)
+                context.finish()
+            }
+        }
+
+        holder.profile.setOnClickListener {
+
+
+            if (context is AppCompatActivity) {
+                val intent = Intent(context, ProfileDonors::class.java)
+                intent.putExtra("id", donorList[position].id)
+                intent.putExtra(ViewModelDonor.EXTRA_NAME, donorList[position].name)
+                intent.putExtra(ViewModelDonor.EXTRA_CPF, donorList[position].cpf)
+                intent.putExtra(ViewModelDonor.EXTRA_PHONE, donorList[position].phone)
+                intent.putExtra(ViewModelDonor.EXTRA_EMAIL, donorList[position].email)
+                intent.putExtra(ViewModelDonor.EXTRA_ADRESS, donorList[position].address)
+                intent.putExtra(ViewModelDonor.EXTRA_BIRTH, donorList[position].birth)
+                context.startActivity(intent)
+                context.finish()
+            }
+        }
     }
 
 
@@ -55,6 +95,7 @@ class DonorAdapter(
         val txtBirth = binding.tvNascimento
         val edt = binding.imgEdit
         val delete = binding.imgDelete
+        val profile = binding.cardProfile
 
     }
 

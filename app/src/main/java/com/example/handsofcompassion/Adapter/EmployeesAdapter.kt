@@ -36,6 +36,7 @@ class EmpplyeesAdapter(
 
         holder.txtName.text = employeesList[position].name
         holder.txtEmail.text = employeesList[position].email
+
         holder.delete.setOnClickListener {
 
             val id = employeesList[position].id

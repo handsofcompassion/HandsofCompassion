@@ -1,6 +1,7 @@
 package com.example.handsofcompassion.Repository
 
 import android.annotation.SuppressLint
+import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
 import com.example.handsofcompassion.Adapter.ReceiverAdapter
 import com.example.handsofcompassion.Data.FireStore.ReceiverFireStore
 import com.example.handsofcompassion.Data.Receiver
@@ -60,6 +61,23 @@ class RepositoryReceiver @Inject constructor(private val receiverFireStore: Rece
     ) {
 
         receiverFireStore.searchReceiversCPF(typedText, receiversList, adapter)
+    }
+
+    @SuppressLint("NotifyDatasetChanged")
+    fun updateReceivers(
+        name: String,
+        cpf: String,
+        phone: String,
+        email: String,
+        address: String,
+        birth: String,
+        id: String,
+        adapter: ReceiverAdapter,
+        listeners: AuthListneers
+    ) {
+
+        receiverFireStore.updateReceivers(name, cpf, phone, email, address, birth, id, adapter, listeners)
+
     }
 
 }

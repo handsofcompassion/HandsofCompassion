@@ -97,6 +97,8 @@
     <string name="excluirDonatario">Excluir Donatário.</string>
     <string name="desejaexcluirmsmmm">DESEJA EXCLUIR Donatário?</string>
     <string name="digiteseucpf">Introduzca su CPF:</string>
+    <string name="atualizarDoador">ATUALIZAR DOADOR</string>
+    <string name="atualizarRecebedor">ATUALIZAR DONATÁRIO</string>
 
 
 </resources>

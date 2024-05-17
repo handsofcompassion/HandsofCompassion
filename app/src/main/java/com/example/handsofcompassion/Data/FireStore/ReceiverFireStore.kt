@@ -2,11 +2,8 @@ package com.example.handsofcompassion.Data.FireStore
 
 import android.annotation.SuppressLint
 import android.content.Context
-import com.example.handsofcompassion.Adapter.DonorAdapter
 import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
 import com.example.handsofcompassion.Adapter.ReceiverAdapter
-import com.example.handsofcompassion.Data.Donor
-import com.example.handsofcompassion.Data.Employees
 import com.example.handsofcompassion.Data.Receiver
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.example.handsofcompassion.R
@@ -138,7 +135,43 @@ class ReceiverFireStore @Inject constructor(
         }
     }
 
+    @SuppressLint("NotifyDatasetChanged")
+    fun updateReceivers(
+        name: String,
+        cpf: String,
+        phone: String,
+        email: String,
+        address: String,
+        birth: String,
+        id: String,
+        adapter: ReceiverAdapter,
+        listeners: AuthListneers
+    ) {
+        if (name.isEmpty() || cpf.isEmpty() || phone.isEmpty() ||
+            email.isEmpty() || address.isEmpty() || birth.isEmpty()) {
+            listeners.onFailure(context.getString(R.string.preencha))
+        } else {
 
+            val userData = hashMapOf(
+                "id" to id,
+                "name" to name,
+                "cpf" to cpf,
+                "phone" to phone,
+                "email" to email,
+                "address" to address,
+                "birth" to birth
+            )
 
+            firestore.collection("Receivers").document(id)
+                .update(userData.toMap())
+                .addOnSuccessListener {
+                    listeners.onSucess(context.getString(R.string.dadosatualizados))
+                    adapter.notifyDataSetChanged()
 
+                }
+                .addOnFailureListener { exception ->
+                    listeners.onFailure(context.getString(R.string.falhaDados))
+                }
+        }
+    }
 }

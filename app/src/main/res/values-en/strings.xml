@@ -99,6 +99,8 @@
     <string name="excluirDonatario">Delete Donee.</string>
     <string name="desejaexcluirmsmmm">DO YOU WANT TO DELETE Donee?</string>
     <string name="digiteseucpf">Enter your CPF:</string>
+    <string name="atualizarDoador">UPDATE DONOR</string>
+    <string name="atualizarRecebedor">UPDATE DONATOR</string>
 
 
 

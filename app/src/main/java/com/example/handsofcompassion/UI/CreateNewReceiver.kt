@@ -9,6 +9,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -45,6 +46,7 @@ class CreateNewReceiver : AppCompatActivity() {
                     override fun onSucess(mensage: String) {
 
                         Toast.makeText(applicationContext, mensage, Toast.LENGTH_LONG).show()
+                        binding.progress.visibility = View.VISIBLE
                         startTypeDonationActivity()
 
                     }

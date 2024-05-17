@@ -2,6 +2,7 @@ package com.example.handsofcompassion.Repository
 
 import android.annotation.SuppressLint
 import com.example.handsofcompassion.Adapter.DonorAdapter
+import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
 import com.example.handsofcompassion.Data.Donor
 import com.example.handsofcompassion.Data.FireStore.DonorFireStore
 import com.example.handsofcompassion.Listneers.AuthListneers
@@ -60,6 +61,23 @@ class RepositoryDonor @Inject constructor(private val donorFireStore: DonorFireS
     ) {
 
         donorFireStore.searchDonorsCPF(typedText, donorsList, adapter)
+
+    }
+
+    @SuppressLint("NotifyDatasetChanged")
+    fun updateDonors(
+        name: String,
+        cpf: String,
+        phone: String,
+        email: String,
+        address: String,
+        birth: String,
+        id: String,
+        adapter: DonorAdapter,
+        listeners: AuthListneers
+    ) {
+
+        donorFireStore.updateDonors(name, cpf, phone, email, address, birth, id, adapter, listeners)
 
     }
 }

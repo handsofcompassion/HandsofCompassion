@@ -117,3 +117,9 @@ Fapp/src/main/java/com/example/handsofcompassion/UI/Lists/DonorsList.kt,2/5/253
 Papp/src/main/java/com/example/handsofcompassion/Objects/ItemSpacingDecoration.kt,d/2/d20094d690f2d4ecfd8de068a67406c0e9ca6dbe
 y
 Iapp/src/main/java/com/example/handsofcompassion/UI/Lists/ReceiversList.kt,3/3/3334247edafe5aa10b72bf84965549211600c369
+‡
+Wapp/src/main/java/com/example/handsofcompassion/UI/Lists/DetailList/DonorsListDetail.kt,e/a/ea2fcbf727bb909eceb580eed4e3f5c88da5bf61
+Š
+Zapp/src/main/java/com/example/handsofcompassion/UI/Lists/DetailList/ReceiversListDetail.kt,6/6/666226b39484f00263a5610e3a99b11999b510c8
+{
+Kapp/src/main/java/com/example/handsofcompassion/UI/Profile/ProfileDonors.kt,4/9/49346158df0c458135557403ebfe1c38dbdcb57e

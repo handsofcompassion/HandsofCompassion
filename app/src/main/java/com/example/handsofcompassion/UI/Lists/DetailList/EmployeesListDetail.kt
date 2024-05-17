@@ -10,6 +10,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
@@ -66,6 +67,7 @@ class EmployeesListDetail : AppCompatActivity() {
             viewModel.updateEMployees(name, email, password, id!!, adapter, object : AuthListneers {
                 override fun onSucess(mensage: String) {
                     Toast.makeText(applicationContext, mensage, Toast.LENGTH_LONG).show()
+                    binding.progress.visibility = View.VISIBLE
                     startEmployeesListActivity()
                 }
 

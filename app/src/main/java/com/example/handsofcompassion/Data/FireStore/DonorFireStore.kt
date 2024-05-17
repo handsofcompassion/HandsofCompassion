@@ -140,6 +140,45 @@ class DonorFireStore @Inject constructor(
         }
     }
 
+    @SuppressLint("NotifyDatasetChanged")
+    fun updateDonors(
+        name: String,
+        cpf: String,
+        phone: String,
+        email: String,
+        address: String,
+        birth: String,
+        id: String,
+        adapter: DonorAdapter,
+        listeners: AuthListneers
+    ) {
+        if (name.isEmpty() || cpf.isEmpty() || phone.isEmpty() ||
+            email.isEmpty() || address.isEmpty() || birth.isEmpty()) {
+            listeners.onFailure(context.getString(R.string.preencha))
+        } else {
+
+            val userData = hashMapOf(
+                "id" to id,
+                "name" to name,
+                "cpf" to cpf,
+                "phone" to phone,
+                "email" to email,
+                "address" to address,
+                "birth" to birth
+            )
+
+            firestore.collection("Donors").document(id)
+                .update(userData.toMap())
+                .addOnSuccessListener {
+                    listeners.onSucess(context.getString(R.string.dadosatualizados))
+                    adapter.notifyDataSetChanged()
+
+                }
+                .addOnFailureListener { exception ->
+                    listeners.onFailure(context.getString(R.string.falhaDados))
+                }
+        }
+    }
 
 
 }
