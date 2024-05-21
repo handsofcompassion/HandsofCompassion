@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.handsofcompassion.Adapter.DonorAdapter
-import com.example.handsofcompassion.Adapter.EmpplyeesAdapter
 import com.example.handsofcompassion.Data.Donor
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.example.handsofcompassion.Repository.RepositoryDonor
@@ -110,6 +109,17 @@ class ViewModelDonor @Inject constructor(private val repositoryDonor: Repository
             repositoryDonor.updateDonors(name, cpf, phone, email, address, birth, id, adapter, listeners)
 
         }
+    }
+     fun formatCpf(cpf: String?): String {
+        return cpf?.replace("(\\d{3})(\\d{3})(\\d{3})(\\d{2})".toRegex(), "$1.$2.$3-$4") ?: ""
+    }
+
+     fun formatPhone(telefone: String?): String {
+        return telefone?.replace("(\\d{2})(\\d{5})(\\d{4})".toRegex(), "($1) $2-$3") ?: ""
+    }
+
+     fun formatBirth(data: String?): String {
+        return data?.replace("(\\d{4})(\\d{2})(\\d{2})".toRegex(), "$3/$2/$1") ?: ""
     }
 
     }

@@ -62,12 +62,12 @@ class SearchOrNewReceiver : AppCompatActivity() {
 
         binding.btnReceber.setOnClickListener {
 
-            startCreateNewDonorActivity()
+            startCreateNewReceiverActivity()
 
         }
 
         }
-    private fun startCreateNewDonorActivity() {
+    private fun startCreateNewReceiverActivity() {
         val intent = Intent(this, CreateNewReceiver::class.java)
         startActivity(intent)
         finish()

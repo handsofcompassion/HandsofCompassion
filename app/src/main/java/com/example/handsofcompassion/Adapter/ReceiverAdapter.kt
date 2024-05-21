@@ -11,6 +11,9 @@ import com.example.handsofcompassion.Data.Receiver
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.Lists.DetailList.EmployeesListDetail
 import com.example.handsofcompassion.UI.Lists.DetailList.ReceiversListDetail
+import com.example.handsofcompassion.UI.Profile.ProfileDonors
+import com.example.handsofcompassion.UI.Profile.ProfileReceivers
+import com.example.handsofcompassion.ViewModel.ViewModelDonor
 import com.example.handsofcompassion.ViewModel.ViewModelEmployees
 import com.example.handsofcompassion.ViewModel.ViewModelReceiver
 import com.example.handsofcompassion.databinding.ItemReceiversBinding
@@ -61,6 +64,23 @@ private val receiverList: MutableList<Receiver>
                 context.finish()
             }
 
+        }
+
+        holder.profile.setOnClickListener {
+
+
+            if (context is AppCompatActivity) {
+                val intent = Intent(context, ProfileReceivers::class.java)
+                intent.putExtra("id", receiverList[position].id)
+                intent.putExtra(ViewModelReceiver.EXTRA_NAME, receiverList[position].name)
+                intent.putExtra(ViewModelReceiver.EXTRA_CPF, receiverList[position].cpf)
+                intent.putExtra(ViewModelReceiver.EXTRA_PHONE, receiverList[position].phone)
+                intent.putExtra(ViewModelReceiver.EXTRA_EMAIL, receiverList[position].email)
+                intent.putExtra(ViewModelReceiver.EXTRA_ADRESS, receiverList[position].address)
+                intent.putExtra(ViewModelReceiver.EXTRA_BIRTH, receiverList[position].birth)
+                context.startActivity(intent)
+                context.finish()
+            }
         }
 
     }

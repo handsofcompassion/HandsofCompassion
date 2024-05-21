@@ -49,11 +49,11 @@ class ReceiversListDetail : AppCompatActivity() {
         val adressEdt = intent.getStringExtra(ViewModelReceiver.EXTRA_ADRESS)
         val birthEdt = intent.getStringExtra(ViewModelReceiver.EXTRA_BIRTH)
         binding.editName.setText(nameEdt)
-        binding.editCpf.setText(cpfEdt)
-        binding.editTelefone.setText(phoneEdt)
+        binding.editCpf.setText(viewModel.formatCpf(cpfEdt))
+        binding.editTelefone.setText(viewModel.formatPhone(phoneEdt))
         binding.editEmail.setText(emailEdt)
         binding.editEnderecoCompleto.setText(adressEdt)
-        binding.editNascimento.setText(birthEdt)
+        binding.editNascimento.setText(viewModel.formatBirth(birthEdt))
 
         binding.btnAtualizar.setOnClickListener {
 

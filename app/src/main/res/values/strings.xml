@@ -99,6 +99,8 @@
     <string name="digiteseucpf">Introduzca su CPF:</string>
     <string name="atualizarDoador">ATUALIZAR DOADOR</string>
     <string name="atualizarRecebedor">ATUALIZAR DONATÁRIO</string>
+    <string name="perfilReceberdor">Perfil do Donatário:</string>
+    <string name="perfilDoador">Perfil do Doador:</string>
 
 
 </resources>

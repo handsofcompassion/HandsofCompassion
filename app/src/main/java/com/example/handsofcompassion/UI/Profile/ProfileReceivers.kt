@@ -11,29 +11,31 @@ import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.example.handsofcompassion.Adapter.DonorAdapter
-import com.example.handsofcompassion.Data.Donor
+import com.example.handsofcompassion.Adapter.ReceiverAdapter
+import com.example.handsofcompassion.Data.Receiver
 import com.example.handsofcompassion.R
-import com.example.handsofcompassion.UI.SearchOrNewDonation
-import com.example.handsofcompassion.UI.TypeOfDonationDonor
+import com.example.handsofcompassion.UI.SearchOrNewReceiver
+import com.example.handsofcompassion.UI.TypeOfDonationReceiver
 import com.example.handsofcompassion.ViewModel.ViewModelDonor
-import com.example.handsofcompassion.databinding.ActivityProfileDonorsBinding
+import com.example.handsofcompassion.ViewModel.ViewModelReceiver
+import com.example.handsofcompassion.databinding.ActivityProfileReceiversBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProfileDonors : AppCompatActivity() {
+class ProfileReceivers : AppCompatActivity() {
 
-    private lateinit var binding: ActivityProfileDonorsBinding
-    private val viewModel: ViewModelDonor by viewModels()
-    private lateinit var adapter: DonorAdapter
-    private val donorsList: MutableList<Donor> = mutableListOf()
+    private lateinit var binding: ActivityProfileReceiversBinding
+    private val viewModel: ViewModelReceiver by viewModels()
+    private lateinit var adapter: ReceiverAdapter
+    private val receiversList: MutableList<Receiver> = mutableListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityProfileDonorsBinding.inflate(layoutInflater)
+        binding = ActivityProfileReceiversBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         settingsToolBar()
-        adapter = DonorAdapter(this, donorsList)
+
+        adapter = ReceiverAdapter(this, receiversList)
 
         val nameEdt = intent.getStringExtra(ViewModelDonor.EXTRA_NAME)
         val cpfEdt = intent.getStringExtra(ViewModelDonor.EXTRA_CPF)
@@ -48,18 +50,19 @@ class ProfileDonors : AppCompatActivity() {
         binding.tvEndereco.text = adressEdt
         binding.tvNascimento.text = viewModel.formatBirth(birthEdt)
 
-        binding.btnDoar.setOnClickListener {
+        binding.btnReceber.setOnClickListener {
 
             startTypeDonationActivity()
 
 
         }
+
     }
     private fun settingsToolBar() {
-        val toolbar = binding.toolbarProfileDonor
+        val toolbar = binding.toolbarCreateNewDonor
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setTitleTextColor(Color.WHITE)
-        val titleText = resources.getString(R.string.perfilDoador).toUpperCase()
+        val titleText = resources.getString(R.string.perfilReceberdor).toUpperCase()
         val title = SpannableString(titleText)
 
         title.setSpan(
@@ -81,12 +84,13 @@ class ProfileDonors : AppCompatActivity() {
         }
     }
     private fun startCreateNewDonorActivity() {
-        val intent = Intent(this, SearchOrNewDonation::class.java)
+        val intent = Intent(this, SearchOrNewReceiver::class.java)
         startActivity(intent)
         finish()
     }
+
     private fun startTypeDonationActivity() {
-        val intent = Intent(this, TypeOfDonationDonor::class.java)
+        val intent = Intent(this, TypeOfDonationReceiver::class.java)
         startActivity(intent)
         finish()
     }

@@ -101,12 +101,7 @@
     <string name="digiteseucpf">Digite seu CPF:</string>
     <string name="atualizarDoador">ACTUALIZACIÓN DONANTE</string>
     <string name="atualizarRecebedor">ACTUALIZACIÓN DONADOR</string>
-
-
-
-
-
-
-
+    <string name="perfilReceberdor">Perfil del donatario:</string>
+    <string name="perfilDoador">Perfil del donante:</string>
 
 </resources>

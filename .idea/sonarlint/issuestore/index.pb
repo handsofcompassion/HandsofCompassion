@@ -123,3 +123,7 @@ Wapp/src/main/java/com/example/handsofcompassion/UI/Lists/DetailList/DonorsListD
 Zapp/src/main/java/com/example/handsofcompassion/UI/Lists/DetailList/ReceiversListDetail.kt,6/6/666226b39484f00263a5610e3a99b11999b510c8
 {
 Kapp/src/main/java/com/example/handsofcompassion/UI/Profile/ProfileDonors.kt,4/9/49346158df0c458135557403ebfe1c38dbdcb57e
+~
+Napp/src/main/java/com/example/handsofcompassion/UI/Profile/ProfileReceivers.kt,d/4/d489f19e5b1019ca2fe5dd370f4912d6741b13f3
+‡
+Wapp/src/main/java/com/example/handsofcompassion/UI/Lists/DetailList/ReceiversDetail2.kt,e/a/eae80fe7aa5d87023ceee69a71bbaa778befebcf
