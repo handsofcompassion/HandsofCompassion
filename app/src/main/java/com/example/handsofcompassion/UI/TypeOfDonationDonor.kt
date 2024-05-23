@@ -14,6 +14,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.R
+import com.example.handsofcompassion.UI.DonationsType.ui.TypeOfClothesDonor
+import com.example.handsofcompassion.UI.DonationsType.ui.TypesOfFoodDonor
 import com.example.handsofcompassion.databinding.ActivityCreateNewDonorBinding
 import com.example.handsofcompassion.databinding.ActivityTypeOfDonationDonorBinding
 import com.example.handsofcompassion.databinding.ActivityTypeOfDonationReceiverBinding
@@ -27,6 +29,19 @@ class TypeOfDonationDonor : AppCompatActivity() {
         setContentView(binding.root)
 
         settingsToolBar()
+
+        binding.btnAlimento.setOnClickListener {
+
+            startTypesOfFoodDOnorActivity()
+
+        }
+
+        binding.btnRoupa.setOnClickListener {
+
+
+            startTypesOfClothesDOnorActivity()
+
+        }
 
 
     }
@@ -57,6 +72,17 @@ class TypeOfDonationDonor : AppCompatActivity() {
     }
     private fun startSearchOrNewReceiverActivity() {
         val intent = Intent(this, SearchOrNewDonation::class.java)
+        startActivity(intent)
+        finish()
+
+    }
+    private fun startTypesOfFoodDOnorActivity() {
+        val intent = Intent(this, TypesOfFoodDonor::class.java)
+        startActivity(intent)
+        finish()
+    }
+    private fun startTypesOfClothesDOnorActivity() {
+        val intent = Intent(this, TypeOfClothesDonor::class.java)
         startActivity(intent)
         finish()
     }

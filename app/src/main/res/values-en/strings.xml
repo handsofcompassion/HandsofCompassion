@@ -103,6 +103,12 @@
     <string name="atualizarRecebedor">UPDATE DONATOR</string>
     <string name="perfilReceberdor">Donee Profile:</string>
     <string name="perfilDoador">Donor Profile:</string>
+    <string name="cestaBasica">BASIC BASKETNON-</string>
+    <string name="naopereciveis">PERISHABLE FOODS</string>
+    <string name="masculino">MASCULINE</string>
+    <string name="infantilMasculino"> MALE CHILDREN</string>
+    <string name="feminino">FEMALE</string>
+    <string name="femininoInfntil">CHILDREN</string>
 
 
 </resources>

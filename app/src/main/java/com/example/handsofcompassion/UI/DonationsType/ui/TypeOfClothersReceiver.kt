@@ -1,4 +1,4 @@
-package com.example.handsofcompassion.UI
+package com.example.handsofcompassion.UI.DonationsType.ui
 
 import android.content.Intent
 import android.graphics.Color
@@ -11,37 +11,26 @@ import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.R
-import com.example.handsofcompassion.UI.DonationsType.ui.TypeOfClothersReceiver
-import com.example.handsofcompassion.UI.DonationsType.ui.TypeOfFoodReceiver
-import com.example.handsofcompassion.databinding.ActivityTypeOfDonationReceiverBinding
+import com.example.handsofcompassion.UI.SearchOrNewReceiver
+import com.example.handsofcompassion.UI.TypeOfDonationReceiver
+import com.example.handsofcompassion.databinding.ActivityTypeOfClothersReceiverBinding
 
-class TypeOfDonationReceiver : AppCompatActivity() {
+class TypeOfClothersReceiver : AppCompatActivity() {
 
-    private lateinit var binding: ActivityTypeOfDonationReceiverBinding
-
+    private lateinit var binding: ActivityTypeOfClothersReceiverBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTypeOfDonationReceiverBinding.inflate(layoutInflater)
+        binding = ActivityTypeOfClothersReceiverBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         settingsToolBar()
 
-        binding.btnAlimento.setOnClickListener {
-
-            startTypeOfFoodActivity()
-
-        }
-        binding.btnRoupa.setOnClickListener {
-
-            startTypeOfCothersActivity()
-
-        }
-
     }
     private fun settingsToolBar() {
-        val toolbar = binding.toolbarTypeOfDonationReceiver
+        val toolbar = binding.toolbartypeClothes
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setTitleTextColor(Color.WHITE)
         val titleText = resources.getString(R.string.receber_btn).toUpperCase()
@@ -61,21 +50,11 @@ class TypeOfDonationReceiver : AppCompatActivity() {
         toolbar.title = title
 
         toolbar.setNavigationOnClickListener {
-           startSearchOrNewDonationActivity()
+            startSearchOrNewDonationActivity()
         }
     }
     private fun startSearchOrNewDonationActivity() {
-        val intent = Intent(this, SearchOrNewReceiver::class.java)
-        startActivity(intent)
-        finish()
-    }
-    private fun startTypeOfFoodActivity() {
-        val intent = Intent(this, TypeOfFoodReceiver::class.java)
-        startActivity(intent)
-        finish()
-    }
-    private fun startTypeOfCothersActivity() {
-        val intent = Intent(this, TypeOfClothersReceiver::class.java)
+        val intent = Intent(this, TypeOfDonationReceiver::class.java)
         startActivity(intent)
         finish()
     }

@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.TypeOfDonationReceiver">
+    tools:context=".UI.DonationsType.ui.TypeOfFoodReceiver">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarTypeOfDonationReceiver"
+        android:id="@+id/toolbartypeFood"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
@@ -20,68 +20,53 @@
         app:layout_constraintTop_toTopOf="parent"
         app:subtitleTextColor="@color/white" />
 
+
     <TextView
         android:id="@+id/textView11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="84dp"
         android:padding="30dp"
-        android:text="@string/oqueDesejaReceber"
+        android:text="@string/oqueDesejaDoar"
         android:textSize="50dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarTypeOfDonationReceiver"
+        app:layout_constraintTop_toBottomOf="@+id/toolbartypeFood"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/btn_alimento"
+        android:id="@+id/btn_alimento_nao_perecivel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="316dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/rectangle_button"
         android:backgroundTint="@color/green200"
         android:padding="25dp"
-        android:text="@string/alimento"
+        android:text="@string/cestaBasica"
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbartypeFood" />
 
     <Button
-        android:id="@+id/btn_roupa"
+        android:id="@+id/btn_cesta_basica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="200dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/rectangle_button"
         android:backgroundTint="@color/green200"
         android:padding="25dp"
-        android:text="@string/roupas"
+        android:text="@string/naopereciveis"
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_alimento" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_alimento_nao_perecivel" />
 
-    <Button
-        android:id="@+id/btn_brinquedos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginRight="50dp"
-        android:background="@drawable/rectangle_button"
-        android:backgroundTint="@color/green200"
-        android:padding="25dp"
-        android:text="@string/brinquedos"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_roupa" />
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="400dp"
@@ -90,8 +75,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,10 +5,10 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.TypeOfDonationReceiver">
+    tools:context=".UI.DonationsType.ui.TypeOfClothersReceiver">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarTypeOfDonationReceiver"
+        android:id="@+id/toolbartypeClothes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
@@ -20,68 +20,88 @@
         app:layout_constraintTop_toTopOf="parent"
         app:subtitleTextColor="@color/white" />
 
+
     <TextView
         android:id="@+id/textView11"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="84dp"
         android:padding="30dp"
-        android:text="@string/oqueDesejaReceber"
+        android:text="@string/oqueDesejaDoar"
         android:textSize="50dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarTypeOfDonationReceiver"
+        app:layout_constraintTop_toBottomOf="@+id/toolbartypeClothes"
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/btn_alimento"
+        android:id="@+id/masculino"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="140dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/rectangle_button"
         android:backgroundTint="@color/green200"
         android:padding="25dp"
-        android:text="@string/alimento"
+        android:text="@string/masculino"
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <Button
-        android:id="@+id/btn_roupa"
+        android:id="@+id/infantil_masculino"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="36dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/rectangle_button"
         android:backgroundTint="@color/green200"
         android:padding="25dp"
-        android:text="@string/roupas"
+        android:text="@string/infantilMasculino"
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_alimento" />
+        app:layout_constraintTop_toBottomOf="@+id/masculino" />
 
     <Button
-        android:id="@+id/btn_brinquedos"
+        android:id="@+id/feminino"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="36dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/rectangle_button"
         android:backgroundTint="@color/green200"
         android:padding="25dp"
-        android:text="@string/brinquedos"
+        android:text="@string/feminino"
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_roupa" />
+        app:layout_constraintTop_toBottomOf="@+id/infantil_masculino" />
+
+    <Button
+        android:id="@+id/infantil_feminino"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rectangle_button"
+        android:backgroundTint="@color/green200"
+        android:padding="25dp"
+        android:text="@string/femininoInfntil"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feminino" />
+
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="400dp"
@@ -90,8 +110,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

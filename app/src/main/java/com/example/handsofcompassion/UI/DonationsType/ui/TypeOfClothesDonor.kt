@@ -1,4 +1,4 @@
-package com.example.handsofcompassion.UI
+package com.example.handsofcompassion.UI.DonationsType.ui
 
 import android.content.Intent
 import android.graphics.Color
@@ -11,40 +11,29 @@ import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.R
-import com.example.handsofcompassion.UI.DonationsType.ui.TypeOfClothersReceiver
-import com.example.handsofcompassion.UI.DonationsType.ui.TypeOfFoodReceiver
-import com.example.handsofcompassion.databinding.ActivityTypeOfDonationReceiverBinding
+import com.example.handsofcompassion.UI.SearchOrNewDonation
+import com.example.handsofcompassion.UI.TypeOfDonationDonor
+import com.example.handsofcompassion.databinding.ActivityTypeOfClothesDonorBinding
 
-class TypeOfDonationReceiver : AppCompatActivity() {
+class TypeOfClothesDonor : AppCompatActivity() {
 
-    private lateinit var binding: ActivityTypeOfDonationReceiverBinding
-
+    private lateinit var binding: ActivityTypeOfClothesDonorBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTypeOfDonationReceiverBinding.inflate(layoutInflater)
+        binding = ActivityTypeOfClothesDonorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         settingsToolBar()
 
-        binding.btnAlimento.setOnClickListener {
-
-            startTypeOfFoodActivity()
-
-        }
-        binding.btnRoupa.setOnClickListener {
-
-            startTypeOfCothersActivity()
-
-        }
-
     }
     private fun settingsToolBar() {
-        val toolbar = binding.toolbarTypeOfDonationReceiver
+        val toolbar = binding.toolbartypeClothes
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setTitleTextColor(Color.WHITE)
-        val titleText = resources.getString(R.string.receber_btn).toUpperCase()
+        val titleText = resources.getString(R.string.doe_btn).toUpperCase()
         val title = SpannableString(titleText)
 
         title.setSpan(
@@ -61,21 +50,12 @@ class TypeOfDonationReceiver : AppCompatActivity() {
         toolbar.title = title
 
         toolbar.setNavigationOnClickListener {
-           startSearchOrNewDonationActivity()
+            startSearchOrNewReceiverActivity()
+            finish()
         }
     }
-    private fun startSearchOrNewDonationActivity() {
-        val intent = Intent(this, SearchOrNewReceiver::class.java)
-        startActivity(intent)
-        finish()
-    }
-    private fun startTypeOfFoodActivity() {
-        val intent = Intent(this, TypeOfFoodReceiver::class.java)
-        startActivity(intent)
-        finish()
-    }
-    private fun startTypeOfCothersActivity() {
-        val intent = Intent(this, TypeOfClothersReceiver::class.java)
+    private fun startSearchOrNewReceiverActivity() {
+        val intent = Intent(this, TypeOfDonationDonor::class.java)
         startActivity(intent)
         finish()
     }

@@ -16,7 +16,16 @@
         android:theme="@style/Theme.HandsOfCompassion"
         tools:targetApi="31">
         <activity
-            android:name=".UI.Lists.DetailList.ReceiversDetail2"
+            android:name=".UI.DonationsType.ui.TypeOfFoodReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".UI.DonationsType.ui.TypeOfClothersReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".UI.DonationsType.ui.TypeOfClothesDonor"
+            android:exported="false" />
+        <activity
+            android:name=".UI.DonationsType.ui.TypesOfFoodDonor"
             android:exported="false" />
         <activity
             android:name=".UI.Profile.ProfileReceivers"
@@ -74,9 +83,6 @@
             android:exported="false" />
         <activity
             android:name=".UI.SearchOrNewDonation"
-            android:exported="false" />
-        <activity
-            android:name=".UI.TypeYourName"
             android:exported="false" />
         <activity
             android:name=".UI.LoginReceiver"

@@ -125,5 +125,13 @@ Zapp/src/main/java/com/example/handsofcompassion/UI/Lists/DetailList/ReceiversLi
 Kapp/src/main/java/com/example/handsofcompassion/UI/Profile/ProfileDonors.kt,4/9/49346158df0c458135557403ebfe1c38dbdcb57e
 ~
 Napp/src/main/java/com/example/handsofcompassion/UI/Profile/ProfileReceivers.kt,d/4/d489f19e5b1019ca2fe5dd370f4912d6741b13f3
+Ç
+Rapp/src/main/java/com/example/handsofcompassion/UI/DonationsType/ui/TypesOfFood.kt,f/3/f3952d40606bd49073e861e473f5b0298342f7b8
 á
-Wapp/src/main/java/com/example/handsofcompassion/UI/Lists/DetailList/ReceiversDetail2.kt,e/a/eae80fe7aa5d87023ceee69a71bbaa778befebcf
+Wapp/src/main/java/com/example/handsofcompassion/UI/DonationsType/ui/TypesOfFoodDonor.kt,d/b/db43a5991e48dd7c98294f9205dce57d6cacae79
+â
+Yapp/src/main/java/com/example/handsofcompassion/UI/DonationsType/ui/TypeOfClothesDonor.kt,1/e/1e900650baad7d3ede42e35bc1243c7dc590213d
+ç
+]app/src/main/java/com/example/handsofcompassion/UI/DonationsType/ui/TypeOfClothersReceiver.kt,2/1/211ebe2eca6914521763b68e2f42281e9ac45c36
+â
+Yapp/src/main/java/com/example/handsofcompassion/UI/DonationsType/ui/TypeOfFoodReceiver.kt,4/9/49e3ff91185dd4c7aaa691d3a17b4c9c2e637118

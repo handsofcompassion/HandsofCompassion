@@ -102,6 +102,12 @@
     <string name="atualizarDoador">ACTUALIZACIÓN DONANTE</string>
     <string name="atualizarRecebedor">ACTUALIZACIÓN DONADOR</string>
     <string name="perfilReceberdor">Perfil del donatario:</string>
-    <string name="perfilDoador">Perfil del donante:</string>
+    <string name="perfilDoador">Perfil del donante:</string>\
+    <string name="cestaBasica">CESTA BÁSICA </string>
+    <string name="naopereciveis">ALIMENTOS NO PERECEDOROS</string>
+    <string name="masculino">VARONES</string>
+    <string name="infantilMasculino">NIÑOS VARONES</string>
+    <string name="feminino">MUJERES</string>
+    <string name="femininoInfntil">NIÑOS MUJERES</string>
 
 </resources>
