@@ -35,7 +35,7 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <Button
-        android:id="@+id/btn_alimento_nao_perecivel"
+        android:id="@+id/btn_cesta_basica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbartypeFood" />
 
     <Button
-        android:id="@+id/btn_cesta_basica"
+        android:id="@+id/btn_alimento_nao_perecivel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
@@ -66,7 +66,7 @@
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_alimento_nao_perecivel" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_cesta_basica" />
 
     <ImageView
         android:id="@+id/imageView2"

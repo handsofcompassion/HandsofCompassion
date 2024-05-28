@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.DonationsType.ui.TypeOfClothesDonor
 import com.example.handsofcompassion.UI.DonationsType.ui.TypesOfFoodDonor
+import com.example.handsofcompassion.UI.Toys.ToysDonor
 import com.example.handsofcompassion.databinding.ActivityCreateNewDonorBinding
 import com.example.handsofcompassion.databinding.ActivityTypeOfDonationDonorBinding
 import com.example.handsofcompassion.databinding.ActivityTypeOfDonationReceiverBinding
@@ -40,6 +41,13 @@ class TypeOfDonationDonor : AppCompatActivity() {
 
 
             startTypesOfClothesDOnorActivity()
+
+        }
+
+        binding.btnBrinquedos.setOnClickListener {
+
+
+          startToysDOnorActivity()
 
         }
 
@@ -83,6 +91,12 @@ class TypeOfDonationDonor : AppCompatActivity() {
     }
     private fun startTypesOfClothesDOnorActivity() {
         val intent = Intent(this, TypeOfClothesDonor::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun startToysDOnorActivity() {
+        val intent = Intent(this, ToysDonor::class.java)
         startActivity(intent)
         finish()
     }

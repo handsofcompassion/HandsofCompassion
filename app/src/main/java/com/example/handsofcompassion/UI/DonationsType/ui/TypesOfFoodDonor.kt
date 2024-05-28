@@ -11,10 +11,14 @@ import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
 import androidx.appcompat.app.AppCompatActivity
 import com.example.handsofcompassion.R
+import com.example.handsofcompassion.UI.Foods.BasicBasketDonor
+import com.example.handsofcompassion.UI.Foods.NonPerishableFoodsDonor
 import com.example.handsofcompassion.UI.SearchOrNewDonation
 import com.example.handsofcompassion.UI.TypeOfDonationDonor
 import com.example.handsofcompassion.databinding.ActivityTypesOfFood2DonorBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TypesOfFoodDonor : AppCompatActivity() {
 
     private lateinit var binding: ActivityTypesOfFood2DonorBinding
@@ -24,6 +28,21 @@ class TypesOfFoodDonor : AppCompatActivity() {
         setContentView(binding.root)
 
         settingsToolBar()
+
+        binding.btnAlimentoNaoPerecivel.setOnClickListener {
+
+
+            startTypeNonPereciblesActivity()
+
+        }
+
+        binding.btnCestaBasica.setOnClickListener {
+
+
+          startTypebasicActivity()
+
+        }
+
 
     }
     private fun settingsToolBar() {
@@ -53,6 +72,17 @@ class TypesOfFoodDonor : AppCompatActivity() {
     }
     private fun startTypeOfDOnationDOnorActivity() {
         val intent = Intent(this, TypeOfDonationDonor::class.java)
+        startActivity(intent)
+        finish()
+    }
+    private fun startTypeNonPereciblesActivity() {
+        val intent = Intent(this, NonPerishableFoodsDonor::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun startTypebasicActivity() {
+        val intent = Intent(this, BasicBasketDonor::class.java)
         startActivity(intent)
         finish()
     }

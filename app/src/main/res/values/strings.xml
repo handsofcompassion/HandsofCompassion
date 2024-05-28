@@ -107,8 +107,54 @@
     <string name="infantilMasculino">MASCULINO INFANTIL</string>
     <string name="feminino">FEMININO</string>
     <string name="femininoInfntil">FEMININO INFANTIL</string>
-
-
+    <string name="selecioneAlimento">Selecione o Alimento que Gostaria de Receber.</string>
+    <string name="validade">Validade:</string>
+    <string name="digitevalidade">Digite a Validade do Produto</string>
+    <string name="quantoReceber">Quanto Você quer Receber?</string>
+    <string name="selcioneosALimentosdacestaa">Selecione os Alimentos da Cesta Básica:</string>
+    <string name="arroz">Arroz</string>
+    <string name="feijao">Feijão</string>
+    <string name="macarrao">Macarrão</string>
+    <string name="farinha_trigo">Farinha de Trigo</string>
+    <string name="graodebico">Grão-de-bico</string>
+    <string name="aveia">Aveia</string>
+    <string name="quinoa">Quinoa</string>
+    <string name="cereais_flocos">Cereais em Flocos</string>
+    <string name="cuscuz">Cuscuz</string>
+    <string name="massa_tomate">Massa de Tomate</string>
+    <string name="oleo_vegetal">Óleo Vegetal</string>
+    <string name="azeite_oliva">Azeite de Oliva</string>
+    <string name="vinagre">Vinagre</string>
+    <string name="sal">Sal</string>
+    <string name="acucar">Açúcar</string>
+    <string name="cafe">Café</string>
+    <string name="cha">Chá</string>
+    <string name="leite_po">Leite em Pó</string>
+    <string name="leite_condensado">Leite Condensado</string>
+    <string name="sopa_po">Sopa em Pó</string>
+    <string name="ervilhas">Ervilhas</string>
+    <string name="milho">Milho</string>
+    <string name="atum_enlatado">Atum Enlatado</string>
+    <string name="sardinha_enlatada">Sardinha Enlatada</string>
+    <string name="carne_enlatada">Carne Enlatada (como Carne de Porco Desfiada)</string>
+    <string name="sopa_enlatada">Sopa Enlatada</string>
+    <string name="leite_evaporado">Leite Evaporado</string>
+    <string name="tipodeRoupa">Selecione o Tipo de Roupa:</string>
+    <string name="estadodeRoupa">Selecione o Estado da Roupa:</string>
+    <string name="TamanhodeRoupa">Selecione o Tamanho da Roupa:</string>
+    <string name="tipoDeBrinquedo">Selecione o Tipo de Brinquedo:</string>
+    <string name="estadodeBrinquedo">Selecione o Estado do Brinquedo:</string>
+    <string name="quantidadeDeBrinquedo">Selecione a Quantidade dos Brinquedos:</string>
+    <string name="selecione5itens">Selecione no Mínimo 5 itens.</string>
+    <string name="selecione12itens">Selecione no Máximo 12 itens.</string>
+    <string name="sucessoCesta">Sucesso ao Cadastrar Cesta Básica.</string>
+    <string name="agradecemosdoacao">"Agradecemos a sua doação!"</string>
+    <string name="doacaofaradiferenca">Sua generosidade fará a diferença na vida de muitas pessoas. Volte sempre!</string>
+    <string name="redessociais">Nos acompanhe em nossas redes sociais</string>
+    <string name="fechar">FECHAR</string>
+    <string name="alimentosalvo">Alimento Salvo com Sucesso.</string>
+    <string name="roupasalvo">Roupa Salva com Sucesso.</string>
+    <string name="brinquedosalvo">Brinquedo Salvo com Sucesso.</string>
 </resources>
 
 

@@ -109,6 +109,56 @@
     <string name="infantilMasculino"> MALE CHILDREN</string>
     <string name="feminino">FEMALE</string>
     <string name="femininoInfntil">CHILDREN</string>
+    <string name="selecioneAlimento">Select the Food You Would Like to Receive.</string>
+    <string name="validade">Validity:</string>
+    <string name="digitevalidade">Enter the Product Expiration</string>
+    <string name="quantoReceber">How Much Do You Want to Receive?</string>
+    <string name="selcioneosALimentosdacestaa">Select the Foods from the Basic Basket:</string>
+    <string name="arroz">Rice</string>
+    <string name="feijao">Beans</string>
+    <string name="macarrao">Pasta</string>
+    <string name="farinha_trigo">Wheat Flour</string>
+    <string name="graodebico">Chickpeas</string>
+    <string name="aveia">Oats</string>
+    <string name="quinoa">Quinoa</string>
+    <string name="cereais_flocos">Cereal Flakes</string>
+    <string name="cuscuz">Couscous</string>
+    <string name="massa_tomate">Tomato Paste</string>
+    <string name="oleo_vegetal">Vegetable Oil</string>
+    <string name="azeite_oliva">Olive Oil</string>
+    <string name="vinagre">Vinegar</string>
+    <string name="sal">Salt</string>
+    <string name="acucar">Sugar</string>
+    <string name="cafe">Coffee</string>
+    <string name="cha">Tea</string>
+    <string name="leite_po">Powdered Milk</string>
+    <string name="leite_condensado">Condensed Milk</string>
+    <string name="sopa_po">Soup Powder</string>
+    <string name="ervilhas">Peas</string>
+    <string name="milho">Corn</string>
+    <string name="atum_enlatado">Canned Tuna</string>
+    <string name="sardinha_enlatada">Canned Sardines</string>
+    <string name="carne_enlatada">Canned Meat (like Shredded Pork)</string>
+    <string name="sopa_enlatada">Canned Soup</string>
+    <string name="leite_evaporado">Evaporated Milk</string>
+    <string name="tipodeRoupa">Select Clothing Type:</string>
+    <string name="estadodeRoupa">Select Clothing Condition:</string>
+    <string name="TamanhodeRoupa">Select Clothing Size:</string>
+    <string name="tipoDeBrinquedo">Select Toy Type:</string>
+    <string name="estadodeBrinquedo">Select Toy Condition:</string>
+    <string name="quantidadeDeBrinquedo">Select the Quantity of Toys:</string>
+    <string name="selecione5itens">Select at least 5 items.</string>
+    <string name="selecione12itens">Select at maximum 5 items.</string>
+    <string name="sucessoCesta">Success in Registering Basic Basket.</string>
+    <string name="agradecemosdoacao">"Agradecemos a sua doação!"</string>
+    <string name="doacaofaradiferenca">Sua generosidade fará a diferença na vida de muitas pessoas. Volte sempre!</string>
+    <string name="redessociais">Nos acompanhe em nossas redes sociais</string>
+    <string name="fechar">FECHAR</string>
+    <string name="alimentosalvo">Alimento Salvo com Sucesso.</string>
+    <string name="roupasalvo">Roupa Salva com Sucesso.</string>
+    <string name="brinquedosalvo">Brinquedo Salvo com Sucesso.</string>
+
+
 
 
 </resources>

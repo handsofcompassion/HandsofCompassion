@@ -1,4 +1,4 @@
-package com.example.handsofcompassion.UI.DonationsType.ui
+package com.example.handsofcompassion.UI.Foods
 
 import android.content.Intent
 import android.graphics.Color
@@ -14,37 +14,25 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.R
-import com.example.handsofcompassion.UI.Foods.BasicBasketReceiver
-import com.example.handsofcompassion.UI.Foods.NonPerishableFoodsReceiver
-import com.example.handsofcompassion.UI.SearchOrNewReceiver
-import com.example.handsofcompassion.UI.TypeOfDonationReceiver
-import com.example.handsofcompassion.databinding.ActivityTypeOfFoodReceiverBinding
+import com.example.handsofcompassion.UI.DonationsType.ui.TypesOfFoodDonor
+import com.example.handsofcompassion.databinding.ActivityBasicBasketReceiverBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-class TypeOfFoodReceiver : AppCompatActivity() {
+@AndroidEntryPoint
+class BasicBasketReceiver : AppCompatActivity() {
 
-    private lateinit var binding: ActivityTypeOfFoodReceiverBinding
+    private lateinit var binding : ActivityBasicBasketReceiverBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityTypeOfFoodReceiverBinding.inflate(layoutInflater)
+        binding = ActivityBasicBasketReceiverBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
         settingsToolBar()
 
-        binding.btnAlimentoNaoPerecivel.setOnClickListener {
-
-            startNonPerecibleFoodsActivity()
-
-        }
-        binding.btnCestaBasical.setOnClickListener {
-
-            startBasicBasketActivity()
-
-        }
-
     }
     private fun settingsToolBar() {
-        val toolbar = binding.toolbartypeFood
+        val toolbar = binding.toolbasicbasket
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setTitleTextColor(Color.WHITE)
         val titleText = resources.getString(R.string.receber_btn).toUpperCase()
@@ -68,20 +56,8 @@ class TypeOfFoodReceiver : AppCompatActivity() {
         }
     }
     private fun startSearchOrNewDonationActivity() {
-        val intent = Intent(this, TypeOfDonationReceiver::class.java)
+        val intent = Intent(this, TypesOfFoodDonor::class.java)
         startActivity(intent)
         finish()
     }
-    private fun startNonPerecibleFoodsActivity() {
-        val intent = Intent(this, NonPerishableFoodsReceiver::class.java)
-        startActivity(intent)
-        finish()
-    }
-    private fun startBasicBasketActivity() {
-        val intent = Intent(this, BasicBasketReceiver::class.java)
-        startActivity(intent)
-        finish()
-    }
-
-
 }

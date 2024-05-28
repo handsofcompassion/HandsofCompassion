@@ -14,10 +14,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.R
+import com.example.handsofcompassion.UI.Clothes.MensClothingChildrensDonor
+import com.example.handsofcompassion.UI.Clothes.MensClothingDonor
+import com.example.handsofcompassion.UI.Clothes.WomensClothingChildrensDonor
+import com.example.handsofcompassion.UI.Clothes.WomensClothingDonor
 import com.example.handsofcompassion.UI.SearchOrNewDonation
 import com.example.handsofcompassion.UI.TypeOfDonationDonor
 import com.example.handsofcompassion.databinding.ActivityTypeOfClothesDonorBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class TypeOfClothesDonor : AppCompatActivity() {
 
     private lateinit var binding: ActivityTypeOfClothesDonorBinding
@@ -27,6 +33,32 @@ class TypeOfClothesDonor : AppCompatActivity() {
         setContentView(binding.root)
 
         settingsToolBar()
+
+
+        binding.infantilMasculino.setOnClickListener {
+
+            startMensClothingChildrenActivity()
+
+        }
+
+        binding.masculino.setOnClickListener {
+
+            startMensClothingActivity()
+
+        }
+
+        binding.infantilFeminino.setOnClickListener {
+
+            startWomensClothingChildrenActivity()
+
+        }
+
+        binding.feminino.setOnClickListener {
+
+          startWomensClothingActivity()
+
+        }
+
 
     }
     private fun settingsToolBar() {
@@ -59,4 +91,26 @@ class TypeOfClothesDonor : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+    private fun startMensClothingChildrenActivity() {
+        val intent = Intent(this, MensClothingChildrensDonor::class.java)
+        startActivity(intent)
+        finish()
+    }
+    private fun startMensClothingActivity() {
+        val intent = Intent(this, MensClothingDonor::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun startWomensClothingActivity() {
+        val intent = Intent(this, WomensClothingDonor::class.java)
+        startActivity(intent)
+        finish()
+    }
+    private fun startWomensClothingChildrenActivity() {
+        val intent = Intent(this, WomensClothingChildrensDonor::class.java)
+        startActivity(intent)
+        finish()
+    }
+
 }

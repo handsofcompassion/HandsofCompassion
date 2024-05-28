@@ -6,10 +6,12 @@ import com.example.handsofcompassion.Data.Auth.Auth
 import com.example.handsofcompassion.Data.FireStore.DonorFireStore
 import com.example.handsofcompassion.Data.FireStore.EmployeesFireStore
 import com.example.handsofcompassion.Data.FireStore.ReceiverFireStore
+import com.example.handsofcompassion.Data.FireStore.StockFireStore
 import com.example.handsofcompassion.Repository.RepositoryAuth
 import com.example.handsofcompassion.Repository.RepositoryDonor
 import com.example.handsofcompassion.Repository.RepositoryEmployees
 import com.example.handsofcompassion.Repository.RepositoryReceiver
+import com.example.handsofcompassion.Repository.RepositoryStock
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module
@@ -96,5 +98,21 @@ object HiltProviders {
 
         return RepositoryReceiver(receiverFireStore)
     }
+
+
+    @Provides
+    @Singleton
+    fun stockFireStore(firestore: FirebaseFirestore, context: Context): StockFireStore {
+
+        return StockFireStore(firestore, context)
+    }
+
+    @Provides
+    @Singleton
+    fun repositoryStock(stock: StockFireStore): RepositoryStock {
+
+        return RepositoryStock(stock)
+    }
+
 
 }

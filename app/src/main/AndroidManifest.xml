@@ -16,6 +16,51 @@
         android:theme="@style/Theme.HandsOfCompassion"
         tools:targetApi="31">
         <activity
+            android:name=".UI.DonationSuccess"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Toys.ToysReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Toys.ToysDonor"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Clothes.WomensClothingChildrensReceivers"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Clothes.WomensClothingChildrensDonor"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Clothes.WomensClothingReceivers"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Clothes.WomensClothingDonor"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Clothes.MensClothingChildrensReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Clothes.MensClothingChildrensDonor"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Clothes.MensClothingDonor"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Clothes.MensClothingReceivers"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Foods.BasicBasketDonor"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Foods.BasicBasketReceiver"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Foods.NonPerishableFoodsDonor"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Foods.NonPerishableFoodsReceiver"
+            android:exported="false" />
+        <activity
             android:name=".UI.DonationsType.ui.TypeOfFoodReceiver"
             android:exported="false" />
         <activity
