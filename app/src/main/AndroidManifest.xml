@@ -16,6 +16,51 @@
         android:theme="@style/Theme.HandsOfCompassion"
         tools:targetApi="31">
         <activity
+            android:name=".UI.Lists.DetailList.ToysListDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.DetailList.WomansClothingChildrenListDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.DetailList.WomansClothingListDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.DetailList.MensClothingChildrenListDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.DetailList.MensClothingListDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.DetailList.NonPerecibleListDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.DetailList.BasicBasketListDetail"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.WomansClothingChildrenList"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.WomansClothingList"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.MensClothingChildrenList"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.MensClothingList"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.ToysList"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.NonPerishableList"
+            android:exported="false" />
+        <activity
+            android:name=".UI.Lists.BasicBasketList"
+            android:exported="false" />
+        <activity
+            android:name=".UI.SelectStockType"
+            android:exported="false" />
+        <activity
             android:name=".UI.DonationSuccess"
             android:exported="false" />
         <activity

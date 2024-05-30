@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Toys.ToysDonor">
+    tools:context=".UI.Lists.DetailList.NonPerecibleListDetail">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolnonPerecible"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:padding="30dp"
-        android:text="@string/tipoDeBrinquedo"
+        android:text="@string/selecioneAlimento"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/toolnonPerecible"
@@ -34,7 +34,7 @@
 
 
     <Spinner
-        android:id="@+id/spinnerTipo"
+        android:id="@+id/spinner"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -56,28 +56,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:padding="30dp"
-        android:text="@string/estadodeBrinquedo"
+        android:text="@string/validade"
         android:textSize="40dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerTipo"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
         tools:layout_editor_absoluteX="0dp" />
 
-    <Spinner
-        android:id="@+id/spinnerTamanho"
-        android:layout_width="250dp"
+    <com.vicmikhailau.maskededittext.MaskedEditText
+        android:id="@+id/edit_nascimento"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/roundend_backhroundedttext"
-        android:drawableEnd="@drawable/ic_arrow_drop_down"
-        android:gravity="center_horizontal"
-        android:padding="50dp"
-        android:paddingBottom="8dp"
-        android:spinnerMode="dropdown"
+        android:hint="@string/digitevalidade"
+        android:inputType="number"
+        android:padding="25dp"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:mask="##/##/####" />
 
     <TextView
         android:id="@+id/textView13"
@@ -85,14 +86,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:padding="30dp"
-        android:text="@string/quantidadeDeBrinquedo"
+        android:text="@string/quantoReceber"
         android:textSize="40dp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerTamanho"
+        app:layout_constraintTop_toBottomOf="@+id/edit_nascimento"
         tools:layout_editor_absoluteX="0dp" />
 
     <Spinner
-        android:id="@+id/spinnerEstado"
+        android:id="@+id/spinnerQuantidade"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -118,15 +119,12 @@
         android:background="@drawable/rectangle_button"
         android:backgroundTint="@color/green200"
         android:padding="25dp"
-        android:text="@string/doe_btn"
+        android:text="@string/receber_btn"
         android:textAlignment="center"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerEstado" />
-
-
-
+        app:layout_constraintTop_toBottomOf="@+id/spinnerQuantidade" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,7 +26,6 @@ class DonorAdapter(
     lateinit var dialog: AlertDialog
     private val firestore = FirebaseFirestore.getInstance()
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DonorViewHolder {
         val itemList = ItemDonorsBinding.inflate(LayoutInflater.from(context), parent, false)
         return DonorViewHolder(itemList)

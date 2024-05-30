@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="5dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginBottom="20dp"
+    android:padding="5dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:padding="60dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="20dp">
+
+            <!-- Item 1 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_1_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_1_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_1"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_1_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_1_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_1_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_1_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 2 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_2_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_1_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_2_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_2"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_2_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_2_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_2_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_2_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 3 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_3_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_2_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_3_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_3"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_3_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_3_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_3_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_3_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 4 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_4_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_3_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_4_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_4"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_4_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_4_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_4_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_4_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 5 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_5_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_4_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_5_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_5"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_5_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_5_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_5_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_5_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 6 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_6_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_5_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_6_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_6"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_6_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_6_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_6_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_6_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 7 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_7_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_6_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_7_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_7"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_7_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_7_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_7_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_7_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 8 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_8_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_7_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_8_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_8"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_8_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_8_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_8_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_8_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 9 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_9_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_8_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_9_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_9"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_9_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_9_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_9_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_9_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 10 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_10_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_9_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_10_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_10"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_10_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_10_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_10_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_10_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 11 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_11_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_10_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_11_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_11"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_11_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_11_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_11_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_11_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 12 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/item_12_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_11_layout"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp">
+
+                <TextView
+                    android:id="@+id/item_12_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/item_12"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent" />
+
+                <TextView
+                    android:id="@+id/item_12_response"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/item_12_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/item_12_label"
+                    app:layout_constraintBottom_toBottomOf="@+id/item_12_label" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Icons -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/item_12_layout"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/img_edit"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/baseline_edit_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/img_delete"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/img_delete"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginEnd="52dp"
+                    android:src="@drawable/baseline_delete_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

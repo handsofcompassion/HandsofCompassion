@@ -1,8 +1,26 @@
 package com.example.handsofcompassion.Data.FireStore
 
+import android.annotation.SuppressLint
 import android.content.Context
+import com.example.handsofcompassion.Adapter.AdapterBasicBasket
+import com.example.handsofcompassion.Adapter.AdapterMansClothing
+import com.example.handsofcompassion.Adapter.AdapterMensChildrenClothing
+import com.example.handsofcompassion.Adapter.AdapterNonPerishable
+import com.example.handsofcompassion.Adapter.AdapterToys
+import com.example.handsofcompassion.Adapter.AdapterWomansChildrenClothing
+import com.example.handsofcompassion.Adapter.AdapterWomansClothing
+import com.example.handsofcompassion.Adapter.DonorAdapter
+import com.example.handsofcompassion.Data.BasicBasket
+import com.example.handsofcompassion.Data.Donor
+import com.example.handsofcompassion.Data.MensChildrenClothing
+import com.example.handsofcompassion.Data.MensClothing
+import com.example.handsofcompassion.Data.NonPerishable
+import com.example.handsofcompassion.Data.Toys
+import com.example.handsofcompassion.Data.WomanChildrenClothing
+import com.example.handsofcompassion.Data.WomanClothing
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.example.handsofcompassion.R
+import com.example.handsofcompassion.UI.Lists.ToysList
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.UUID
@@ -176,5 +194,154 @@ class StockFireStore @Inject constructor(
                 listeners.onFailure(context.getString(R.string.erroserver))
             }
     }
+
+    @SuppressLint("NotifyDatasetChanged")
+    fun getNonPerecible(
+        nonPerecibleList: MutableList<NonPerishable>,
+        adapter: AdapterNonPerishable
+    ) {
+
+        firestore.collection("NonPerishable")
+            .orderBy("type").get()
+            .addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+                    for (document in task.result) {
+
+                        val nonPerecible = document.toObject(NonPerishable::class.java)
+                        nonPerecibleList.add(nonPerecible)
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
+    }
+
+    @SuppressLint("NotifyDatasetChanged")
+    fun getBasicBasket(
+        basicBasketList: MutableList<BasicBasket>,
+        adapter: AdapterBasicBasket
+    ) {
+
+        firestore.collection("BasicBasket")
+            .orderBy("item1").get()
+            .addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+                    for (document in task.result) {
+
+                        val basicBasket = document.toObject(BasicBasket::class.java)
+                        basicBasketList.add(basicBasket)
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
+    }
+
+@SuppressLint("NotifyDatasetChanged")
+    fun getMensClhoting(
+        mensClothingList: MutableList<MensClothing>,
+        adapter: AdapterMansClothing
+    ) {
+
+        firestore.collection("MensClothing")
+            .orderBy("typeClothing").get()
+            .addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+                    for (document in task.result) {
+
+                        val mensClothing = document.toObject(MensClothing::class.java)
+                        mensClothingList.add(mensClothing)
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
+    }
+
+    @SuppressLint("NotifyDatasetChanged")
+    fun getMensClhotingChildren(
+        mensClothingChildrenList: MutableList<MensChildrenClothing>,
+        adapter: AdapterMensChildrenClothing
+    ) {
+
+        firestore.collection("MensClothingChildren")
+            .orderBy("typeClothing").get()
+            .addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+                    for (document in task.result) {
+
+                        val mensClothingChildre = document.toObject(MensChildrenClothing::class.java)
+                        mensClothingChildrenList.add(mensClothingChildre)
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
+    }
+
+    @SuppressLint("NotifyDatasetChanged")
+    fun getWomansClothing(
+        womansClothingList: MutableList<WomanClothing>,
+        adapter: AdapterWomansClothing
+    ) {
+
+        firestore.collection("WomansClothing")
+            .orderBy("typeClothing").get()
+            .addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+                    for (document in task.result) {
+
+                        val womansClothing = document.toObject(WomanClothing::class.java)
+                        womansClothingList.add(womansClothing)
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
+    }
+
+    @SuppressLint("NotifyDatasetChanged")
+    fun getWomansClhotingChildren(
+        womanClothingChildrenList: MutableList<WomanChildrenClothing>,
+        adapter: AdapterWomansChildrenClothing
+    ) {
+
+        firestore.collection("MensClothingChildren")
+            .orderBy("typeClothing").get()
+            .addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+                    for (document in task.result) {
+
+                        val womansClothingChildre = document.toObject(WomanChildrenClothing::class.java)
+                        womanClothingChildrenList.add(womansClothingChildre)
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
+    }
+
+    @SuppressLint("NotifyDatasetChanged")
+    fun getToys(
+        toysList: MutableList<Toys>,
+        adapter: AdapterToys
+    ) {
+
+        firestore.collection("Toys")
+            .orderBy("type").get()
+            .addOnCompleteListener { task ->
+
+                if (task.isSuccessful) {
+                    for (document in task.result) {
+
+                        val toys = document.toObject(Toys::class.java)
+                        toysList.add(toys)
+                        adapter.notifyDataSetChanged()
+                    }
+                }
+            }
+    }
+
+
 }
 

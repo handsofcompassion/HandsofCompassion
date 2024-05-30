@@ -13,8 +13,5 @@ data class BasicBasket(
     val item9: String? = null,
     val item10: String? = null,
     val item11: String? = null,
-    val item12: String? = null,
-    val item13: String? = null,
-    val item14: String? = null,
-    val item15: String? = null
+    val item12: String? = null
 )

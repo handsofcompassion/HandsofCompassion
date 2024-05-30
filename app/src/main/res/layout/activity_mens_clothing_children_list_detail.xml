@@ -5,8 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Toys.ToysDonor">
-
+    tools:context=".UI.Lists.DetailList.MensClothingChildrenListDetail">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolnonPerecible"
         android:layout_width="match_parent"
@@ -26,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="84dp"
         android:padding="30dp"
-        android:text="@string/tipoDeBrinquedo"
+        android:text="@string/tipodeRoupa"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/toolnonPerecible"
@@ -56,7 +55,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:padding="30dp"
-        android:text="@string/estadodeBrinquedo"
+        android:text="@string/TamanhodeRoupa"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/spinnerTipo"
@@ -78,14 +77,13 @@
         app:layout_constraintHorizontal_bias="0.053"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
-
     <TextView
         android:id="@+id/textView13"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:padding="30dp"
-        android:text="@string/quantidadeDeBrinquedo"
+        android:text="@string/estadodeRoupa"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/spinnerTamanho"
@@ -124,9 +122,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinnerEstado" />
-
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

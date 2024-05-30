@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.Lists.DetailList.BasicBasketListDetail">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbasicbasket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:background="@color/purple"
+        android:padding="30dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="84dp"
+        android:padding="30dp"
+        android:text="@string/selcioneosALimentosdacestaa"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/toolbasicbasket"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <CheckBox
+        android:id="@+id/checkBoxArroz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/arroz"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFeijao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/feijao"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxArroz"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMacarrao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/macarrao"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxFeijao"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFarinhaTrigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/farinha_trigo"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCarneEnlatada" />
+
+    <CheckBox
+        android:id="@+id/checkBoxGraoBico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/graodebico"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxVinagre" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAveia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/aveia"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxGraoBico"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAcucar" />
+
+    <CheckBox
+        android:id="@+id/checkBoxQuinoa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/quinoa"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxCuscuz"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSopaEnlatada" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCuscuz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/cuscuz"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxMilho"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxMassaTomate" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMassaTomate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/massa_tomate"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxAcucar"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxMacarrao" />
+
+    <!-- Os demais CheckBoxes seguem a mesma lógica de adicionar a string correspondente -->
+
+
+    <CheckBox
+        android:id="@+id/checkBoxOleoVegetal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/oleo_vegetal"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxFarinhaTrigo" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAzeiteOliva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/azeite_oliva"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxOleoVegetal"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSopaPo" />
+
+    <CheckBox
+        android:id="@+id/checkBoxVinagre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/vinagre"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxArroz" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/sal"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxMacarrao"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAcucar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/acucar"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxVinagre"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxFeijao" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCafe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/cafe"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxCarneEnlatada"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCha" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/cha"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxLeitePo"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxQuinoa" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLeitePo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/leite_po"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxErvilhas"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCuscuz" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLeiteCondensado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/leite_condensado"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxSopaPo"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCafe" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSopaPo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/sopa_po"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxFarinhaTrigo"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxCarneEnlatada" />
+
+    <CheckBox
+        android:id="@+id/checkBoxErvilhas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/ervilhas"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxSardinhaEnlatada"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAveia" />
+
+    <CheckBox
+        android:id="@+id/checkBoxMilho"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/milho"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxAveia"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxMassaTomate" />
+
+    <CheckBox
+        android:id="@+id/checkBoxAtumEnlatado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/atum_enlatado"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxAzeiteOliva"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxLeiteCondensado" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSardinhaEnlatada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/sardinha_enlatada"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxGraoBico" />
+
+    <CheckBox
+        android:id="@+id/checkBoxCarneEnlatada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/carne_enlatada"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSardinhaEnlatada" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSopaEnlatada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/sopa_enlatada"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxMassaTomate"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxLeiteEvaporado" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLeiteEvaporado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/leite_evaporado"
+        android:textSize="25dp"
+        app:layout_constraintStart_toEndOf="@+id/checkBoxSal"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <Button
+        android:id="@+id/btn_alimento_nao_perecivel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rectangle_button"
+        android:backgroundTint="@color/green200"
+        android:padding="25dp"
+        android:text="@string/doe_btn"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxAtumEnlatado" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

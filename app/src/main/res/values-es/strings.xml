@@ -159,6 +159,30 @@
     <string name="alimentosalvo">Alimento Salvo com Sucesso.</string>
     <string name="roupasalvo">Roupa Salva com Sucesso.</string>
     <string name="brinquedosalvo">Brinquedo Salvo com Sucesso.</string>
-
-
+    <string name="tipoodebrinquedoo">Tipo de Brinquedo:</string>
+    <string name="estadoodebrinquedoo">Estado do Brinquedo:</string>
+    <string name="quantidadeedebrinquedoo">Quantidade de Brinquedos:</string>
+    <string name="tipooderoupaaa">Tipo de Roupa:</string>
+    <string name="estadoodaRoupaaa">Estado da Roupa:</string>
+    <string name="tamanhodaaaRoupaaa">Tamanho da Roupa:</string>
+    <string name="item_1">Item 1:</string>
+    <string name="item_2">Item 2:</string>
+    <string name="item_3">Item 3:</string>
+    <string name="item_4">Item 4:</string>
+    <string name="item_5">Item 5:</string>
+    <string name="item_6">Item 6:</string>
+    <string name="item_7">Item 7:</string>
+    <string name="item_8">Item 8:</string>
+    <string name="item_9">Item 9:</string>
+    <string name="item_10">Item 10:</string>
+    <string name="item_11">Item 11:</string>
+    <string name="item_12">Item 12:</string>
+    <string name="alimentotipo">Tipo de Alimento:</string>
+    <string name="validadealimento">Validade do Alimento:</string>
+    <string name="quantidade">Quantidade dos Alimentos:</string>
+    <string name="desejaExpluirBrinquedo">Excluir Brinquedo.</string>
+    <string name="temCerteza">Tem certeza?</string>
+    <string name="desejaExcluirRoupa">Excluir Roupa.</string>
+    <string name="desejaExcluirCesta">Excluir Cesta Básica.</string>
+    <string name="desejaexcluiralimento">Excluir Alimento.</string>
 </resources>

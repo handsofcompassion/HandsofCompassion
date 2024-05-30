@@ -43,6 +43,12 @@ class Principalattendant : AppCompatActivity() {
             startReceiversActivity()
 
         }
+
+        binding.CardVIewEstoque.setOnClickListener {
+
+            startStockActivity()
+
+        }
     }
 
     private fun startSelectionActivity() {
@@ -63,6 +69,11 @@ class Principalattendant : AppCompatActivity() {
     }
     private fun startReceiversActivity() {
         val intent = Intent(this, ReceiversList::class.java)
+        startActivity(intent)
+        finish()
+    }
+    private fun startStockActivity() {
+        val intent = Intent(this, SelectStockType::class.java)
         startActivity(intent)
         finish()
     }
