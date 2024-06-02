@@ -9,18 +9,13 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.Adapter.AdapterWomansClothing
-import com.example.handsofcompassion.Data.WomanChildrenClothing
 import com.example.handsofcompassion.Data.WomanClothing
 import com.example.handsofcompassion.R
-import com.example.handsofcompassion.UI.Principalattendant
+import com.example.handsofcompassion.UI.SelectStockType
 import com.example.handsofcompassion.ViewModel.ViewModelStock
-import com.example.handsofcompassion.databinding.ActivityWomansClothingChildrenListBinding
 import com.example.handsofcompassion.databinding.ActivityWomansClothingListBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,6 +31,8 @@ class WomansClothingList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityWomansClothingListBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        settingsToolBar()
 
         val rvWomans = binding.rvWomans
         adapterWomansClothing = AdapterWomansClothing(this, womansList)
@@ -71,7 +68,7 @@ class WomansClothingList : AppCompatActivity() {
     }
 
     private fun startPrincipalActivity() {
-        val intent = Intent(this, Principalattendant::class.java)
+        val intent = Intent(this, SelectStockType::class.java)
         startActivity(intent)
         finish()
     }

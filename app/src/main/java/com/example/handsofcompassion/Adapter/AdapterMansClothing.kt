@@ -33,8 +33,8 @@ class AdapterMansClothing (
         val mansClothing = mensClothingList[position]
 
      holder.type.text = mansClothing.typeClothing
-     holder.size.text = mansClothing.size
-     holder.state.text = mansClothing.state
+     holder.size.text = mansClothing.sizeClothing
+     holder.state.text = mansClothing.stateClothing
 
 
         holder.edt.setOnClickListener {
@@ -43,13 +43,14 @@ class AdapterMansClothing (
                 val intent = Intent(context, MensClothingListDetail::class.java)
                 intent.putExtra("id", mensClothingList[position].id)
                 intent.putExtra(ViewModelStock.TYPE_CLOTHING_MEN, mensClothingList[position].typeClothing)
-                intent.putExtra(ViewModelStock.SIZE_CLOTHING_MEN, mensClothingList[position].size)
-                intent.putExtra(ViewModelStock.STATE_CLOTHING_MEN, mensClothingList[position].state)
+                intent.putExtra(ViewModelStock.SIZE_CLOTHING_MEN, mensClothingList[position].sizeClothing)
+                intent.putExtra(ViewModelStock.STATE_CLOTHING_MEN, mensClothingList[position].stateClothing)
                 context.startActivity(intent)
                 context.finish()
             }
 
         }
+
         holder.delete.setOnClickListener {
 
             val id = mensClothingList[position].id

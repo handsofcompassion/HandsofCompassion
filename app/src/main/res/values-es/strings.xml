@@ -185,4 +185,7 @@
     <string name="desejaExcluirRoupa">Excluir Roupa.</string>
     <string name="desejaExcluirCesta">Excluir Cesta Básica.</string>
     <string name="desejaexcluiralimento">Excluir Alimento.</string>
+    <string name="atualizeEstoque">Atualize o Estoque:</string>
+    <string name="selecioneAlimentodoar">Selecione o Alimento que Gostaria de Doar.</string>
+    <string name="quantodoas">Quanto Você quer Doar?</string>
 </resources>

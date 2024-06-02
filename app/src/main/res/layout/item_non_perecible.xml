@@ -74,10 +74,10 @@
                 android:id="@+id/tv_validade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="40dp"
                 android:textSize="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.025"
+                app:layout_constraintHorizontal_bias="0.03"
                 app:layout_constraintStart_toEndOf="@+id/textView6"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tipoDealiemnto" />
 
@@ -98,10 +98,10 @@
                 android:id="@+id/tv_quantidadealimentos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="48dp"
                 android:textSize="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.025"
+                app:layout_constraintHorizontal_bias="0.027"
                 app:layout_constraintStart_toEndOf="@+id/textView8"
                 app:layout_constraintTop_toBottomOf="@+id/tv_validade" />
 

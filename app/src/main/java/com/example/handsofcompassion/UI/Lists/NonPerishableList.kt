@@ -9,20 +9,13 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
-import androidx.activity.enableEdgeToEdge
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.Adapter.AdapterNonPerishable
-import com.example.handsofcompassion.Adapter.DonorAdapter
-import com.example.handsofcompassion.Data.Donor
 import com.example.handsofcompassion.Data.NonPerishable
-import com.example.handsofcompassion.Objects.ItemSpacingDecoration
 import com.example.handsofcompassion.R
-import com.example.handsofcompassion.UI.Principalattendant
 import com.example.handsofcompassion.UI.SelectStockType
-import com.example.handsofcompassion.ViewModel.ViewModelDonor
 import com.example.handsofcompassion.ViewModel.ViewModelStock
 import com.example.handsofcompassion.databinding.ActivityNonPerishableListBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,7 +38,11 @@ class NonPerishableList : AppCompatActivity() {
         adapterNonPerecible = AdapterNonPerishable(this, nonPerecibleList)
         rvNonPerishable.adapter = adapterNonPerecible
 
+        Log.d("ActivityAdapter", "Adapter configurado com sucesso")
+
         viewModel.getNonPerecible(nonPerecibleList, adapterNonPerecible)
+
+
 
     }
     private fun settingsToolBar() {

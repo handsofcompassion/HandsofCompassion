@@ -8,17 +8,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.handsofcompassion.Data.MensChildrenClothing
 import com.example.handsofcompassion.Data.WomanClothing
 import com.example.handsofcompassion.R
-import com.example.handsofcompassion.UI.Lists.DetailList.MensClothingChildrenListDetail
 import com.example.handsofcompassion.UI.Lists.DetailList.WomansClothingListDetail
 import com.example.handsofcompassion.ViewModel.ViewModelStock
-import com.example.handsofcompassion.databinding.ItemMensBinding
-import com.example.handsofcompassion.databinding.ItemMensChildrenBinding
 import com.example.handsofcompassion.databinding.ItemWomansBinding
 import com.google.firebase.firestore.FirebaseFirestore
-
 
 
 class AdapterWomansClothing (
@@ -38,8 +33,8 @@ class AdapterWomansClothing (
     override fun onBindViewHolder(holder: WomanClothingViewHolder, position: Int) {
 
         holder.type.text = womanClothingList[position].typeClothing
-        holder.size.text = womanClothingList[position].size
-        holder.state.text = womanClothingList[position].state
+        holder.size.text = womanClothingList[position].sizeClothing
+        holder.state.text = womanClothingList[position].stateClothing
 
 
         holder.edt.setOnClickListener {
@@ -48,8 +43,8 @@ class AdapterWomansClothing (
                 val intent = Intent(context, WomansClothingListDetail::class.java)
                 intent.putExtra("id", womanClothingList[position].id)
                 intent.putExtra(ViewModelStock.TYPE_CLOTHING_WOMAN, womanClothingList[position].typeClothing)
-                intent.putExtra(ViewModelStock.SIZE_CLOTHING_WOMAN, womanClothingList[position].size)
-                intent.putExtra(ViewModelStock.STATE_CLOTHING_WOMAN, womanClothingList[position].state)
+                intent.putExtra(ViewModelStock.SIZE_CLOTHING_WOMAN, womanClothingList[position].sizeClothing)
+                intent.putExtra(ViewModelStock.STATE_CLOTHING_WOMAN, womanClothingList[position].stateClothing)
                 context.startActivity(intent)
                 context.finish()
             }

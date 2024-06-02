@@ -13,19 +13,14 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.DonationSuccess
 import com.example.handsofcompassion.UI.DonationsType.ui.TypesOfFoodDonor
-import com.example.handsofcompassion.UI.TypeOfDonationReceiver
 import com.example.handsofcompassion.ViewModel.ViewModelStock
 import com.example.handsofcompassion.databinding.ActivityNonPerishableFoodsDonorBinding
-import com.example.handsofcompassion.databinding.ActivityNonPerishableFoodsReceiverBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,7 +34,71 @@ class NonPerishableFoodsDonor : AppCompatActivity() {
         setContentView(binding.root)
 
         settingsToolBar()
+        spinnersConfiguration()
 
+
+        binding.btnAlimentoNaoPerecivel.setOnClickListener {
+            // Capturar os valores selecionados nos spinners
+            val selectedFood = binding.spinner.selectedItem.toString()
+            val selectedQuantity = binding.spinnerQuantidade.selectedItem.toString()
+            val validity = binding.editNascimento.text.toString()
+
+            // Chamar a função saveNonPerishable com os valores selecionados
+            viewModel.saveNonPerishable(selectedFood, validity, selectedQuantity, object : AuthListneers{
+                override fun onSucess(mensage: String) {
+
+                    Toast.makeText(applicationContext, mensage, Toast.LENGTH_LONG).show()
+                    startDonationIsSucsstivity()
+
+                }
+
+                override fun onFailure(error: String) {
+
+                    Toast.makeText(applicationContext, error, Toast.LENGTH_LONG).show()
+
+                }
+            })
+        }
+
+
+
+
+    }
+    private fun settingsToolBar() {
+        val toolbar = binding.toolnonPerecible
+        toolbar.setNavigationIcon(R.drawable.ic_back)
+        toolbar.setTitleTextColor(Color.WHITE)
+        val titleText = resources.getString(R.string.doe_btn).toUpperCase()
+        val title = SpannableString(titleText)
+
+        title.setSpan(
+            StyleSpan(Typeface.BOLD), 0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
+        )
+        title.setSpan(
+            ForegroundColorSpan(Color.WHITE), 0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
+        )
+        title.setSpan(
+            RelativeSizeSpan(1.5f),
+            0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
+        )
+
+        toolbar.title = title
+
+        toolbar.setNavigationOnClickListener {
+            startSearchOrNewDonationActivity()
+        }
+    }
+    private fun startSearchOrNewDonationActivity() {
+        val intent = Intent(this, TypesOfFoodDonor::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun startDonationIsSucsstivity() {
+        val intent = Intent(this, DonationSuccess::class.java)
+        startActivity(intent)
+    }
+    private fun spinnersConfiguration() {
         val itensSpinner = listOf(
             "Arroz",
             "Feijão",
@@ -126,74 +185,5 @@ class NonPerishableFoodsDonor : AppCompatActivity() {
             }
         }
 
-        binding.btnAlimentoNaoPerecivel.setOnClickListener {
-            // Capturar os valores selecionados nos spinners
-            val selectedFood = binding.spinner.selectedItem.toString()
-            val selectedQuantity = binding.spinnerQuantidade.selectedItem.toString()
-
-            // Chamar a função saveNonPerishable com os valores selecionados
-
-        }
-
-        binding.btnAlimentoNaoPerecivel.setOnClickListener {
-            // Capturar os valores selecionados nos spinners
-            val selectedFood = binding.spinner.selectedItem.toString()
-            val selectedQuantity = binding.spinnerQuantidade.selectedItem.toString()
-            val validity = binding.editNascimento.text.toString()
-
-            // Chamar a função saveNonPerishable com os valores selecionados
-            viewModel.saveNonPerishable(selectedFood, validity, selectedQuantity, object : AuthListneers{
-                override fun onSucess(mensage: String) {
-
-                    Toast.makeText(applicationContext, mensage, Toast.LENGTH_LONG).show()
-                    startDonationIsSucsstivity()
-
-                }
-
-                override fun onFailure(error: String) {
-
-                    Toast.makeText(applicationContext, error, Toast.LENGTH_LONG).show()
-
-                }
-            })
-        }
-
-
-
-
-    }
-    private fun settingsToolBar() {
-        val toolbar = binding.toolnonPerecible
-        toolbar.setNavigationIcon(R.drawable.ic_back)
-        toolbar.setTitleTextColor(Color.WHITE)
-        val titleText = resources.getString(R.string.doe_btn).toUpperCase()
-        val title = SpannableString(titleText)
-
-        title.setSpan(
-            StyleSpan(Typeface.BOLD), 0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
-        )
-        title.setSpan(
-            ForegroundColorSpan(Color.WHITE), 0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
-        )
-        title.setSpan(
-            RelativeSizeSpan(1.5f),
-            0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
-        )
-
-        toolbar.title = title
-
-        toolbar.setNavigationOnClickListener {
-            startSearchOrNewDonationActivity()
-        }
-    }
-    private fun startSearchOrNewDonationActivity() {
-        val intent = Intent(this, TypesOfFoodDonor::class.java)
-        startActivity(intent)
-        finish()
-    }
-
-    private fun startDonationIsSucsstivity() {
-        val intent = Intent(this, DonationSuccess::class.java)
-        startActivity(intent)
     }
 }

@@ -16,7 +16,6 @@ import com.example.handsofcompassion.Listneers.AuthListneers
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.DonationSuccess
 import com.example.handsofcompassion.UI.DonationsType.ui.TypesOfFoodDonor
-import com.example.handsofcompassion.UI.SelectionScreen
 import com.example.handsofcompassion.ViewModel.ViewModelStock
 import com.example.handsofcompassion.databinding.ActivityBasicBasketDonorBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,12 +23,12 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class BasicBasketDonor : AppCompatActivity() {
 
-  private lateinit var binding: ActivityBasicBasketDonorBinding
-  private val viewModel: ViewModelStock by viewModels()
+    private lateinit var binding: ActivityBasicBasketDonorBinding
+    private val viewModel: ViewModelStock by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       binding = ActivityBasicBasketDonorBinding.inflate(layoutInflater)
+        binding = ActivityBasicBasketDonorBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         settingsToolBar()
@@ -39,31 +38,31 @@ class BasicBasketDonor : AppCompatActivity() {
             viewModel.selectedItemsCheckBox.clear()
 
             viewModel.addItemToList(binding.checkBoxArroz)
-           viewModel.addItemToList(binding.checkBoxFeijao)
-           viewModel.addItemToList(binding.checkBoxMacarrao)
-           viewModel.addItemToList(binding.checkBoxFarinhaTrigo)
-           viewModel.addItemToList(binding.checkBoxGraoBico)
-           viewModel.addItemToList(binding.checkBoxAveia)
-           viewModel.addItemToList(binding.checkBoxQuinoa)
-           viewModel.addItemToList(binding.checkBoxCuscuz)
-          viewModel.addItemToList(binding.checkBoxMassaTomate)
-           viewModel.addItemToList(binding.checkBoxOleoVegetal)
-           viewModel.addItemToList(binding.checkBoxAzeiteOliva)
-           viewModel.addItemToList(binding.checkBoxVinagre)
-           viewModel.addItemToList(binding.checkBoxSal)
-           viewModel.addItemToList(binding.checkBoxAcucar)
-           viewModel.addItemToList(binding.checkBoxCafe)
-           viewModel.addItemToList(binding.checkBoxCha)
-           viewModel.addItemToList(binding.checkBoxLeitePo)
-           viewModel.addItemToList(binding.checkBoxLeiteCondensado)
-           viewModel.addItemToList(binding.checkBoxSopaPo)
-           viewModel.addItemToList(binding.checkBoxErvilhas)
-           viewModel.addItemToList(binding.checkBoxMilho)
-           viewModel.addItemToList(binding.checkBoxAtumEnlatado)
-           viewModel.addItemToList(binding.checkBoxSardinhaEnlatada)
-           viewModel.addItemToList(binding.checkBoxCarneEnlatada)
-           viewModel.addItemToList(binding.checkBoxSopaEnlatada)
-           viewModel.addItemToList(binding.checkBoxLeiteEvaporado)
+            viewModel.addItemToList(binding.checkBoxFeijao)
+            viewModel.addItemToList(binding.checkBoxMacarrao)
+            viewModel.addItemToList(binding.checkBoxFarinhaTrigo)
+            viewModel.addItemToList(binding.checkBoxGraoBico)
+            viewModel.addItemToList(binding.checkBoxAveia)
+            viewModel.addItemToList(binding.checkBoxQuinoa)
+            viewModel.addItemToList(binding.checkBoxCuscuz)
+            viewModel.addItemToList(binding.checkBoxMassaTomate)
+            viewModel.addItemToList(binding.checkBoxOleoVegetal)
+            viewModel.addItemToList(binding.checkBoxAzeiteOliva)
+            viewModel.addItemToList(binding.checkBoxVinagre)
+            viewModel.addItemToList(binding.checkBoxSal)
+            viewModel.addItemToList(binding.checkBoxAcucar)
+            viewModel.addItemToList(binding.checkBoxCafe)
+            viewModel.addItemToList(binding.checkBoxCha)
+            viewModel.addItemToList(binding.checkBoxLeitePo)
+            viewModel.addItemToList(binding.checkBoxLeiteCondensado)
+            viewModel.addItemToList(binding.checkBoxSopaPo)
+            viewModel.addItemToList(binding.checkBoxErvilhas)
+            viewModel.addItemToList(binding.checkBoxMilho)
+            viewModel.addItemToList(binding.checkBoxAtumEnlatado)
+            viewModel.addItemToList(binding.checkBoxSardinhaEnlatada)
+            viewModel.addItemToList(binding.checkBoxCarneEnlatada)
+            viewModel.addItemToList(binding.checkBoxSopaEnlatada)
+            viewModel.addItemToList(binding.checkBoxLeiteEvaporado)
 
             viewModel.saveBasicBasket(viewModel.selectedItemsCheckBox, object : AuthListneers {
                 override fun onSucess(mensage: String) {
@@ -81,14 +80,11 @@ class BasicBasketDonor : AppCompatActivity() {
             })
 
 
-
-
         }
 
 
-
-
     }
+
     private fun settingsToolBar() {
         val toolbar = binding.toolbasicbasket
         toolbar.setNavigationIcon(R.drawable.ic_back)
@@ -113,6 +109,7 @@ class BasicBasketDonor : AppCompatActivity() {
             startSearchOrNewDonationActivity()
         }
     }
+
     private fun startSearchOrNewDonationActivity() {
         val intent = Intent(this, TypesOfFoodDonor::class.java)
         startActivity(intent)

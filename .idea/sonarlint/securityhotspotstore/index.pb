@@ -183,8 +183,6 @@ Mapp/src/main/java/com/example/handsofcompassion/Repository/RepositoryStock.kt,
 Kapp/src/main/java/com/example/handsofcompassion/ViewModel/ViewModelStock.kt,2/d/2deca581bde60023f4e17acf46e9cc820b9c4cda
 u
 Eapp/src/main/java/com/example/handsofcompassion/UI/DonationSuccess.kt,b/8/b85e32de0a3cdef6a2cd4edde6274d4739ab2729
-{
-Kapp/src/main/java/com/example/handsofcompassion/UI/Lists/selectStockType.kt,7/a/7a1c0b8ce7080d736cf4a01745e1278760bb076e
 u
 Eapp/src/main/java/com/example/handsofcompassion/UI/selectStockType.kt,c/d/cd30d5285b84aa303d04db333a47bb710af5db3a
 u
@@ -193,8 +191,6 @@ Eapp/src/main/java/com/example/handsofcompassion/UI/SelectStockType.kt,4/a/4afa
 Kapp/src/main/java/com/example/handsofcompassion/UI/Lists/BasicBasketList.kt,f/c/fc7755d3df5cee1e0d269c2f2740a2c792d5d56b
 }
 Mapp/src/main/java/com/example/handsofcompassion/UI/Lists/NonPerishableList.kt,8/7/878014f35398d9f76d90a70b57ca4738d0db5970
-
-Oapp/src/main/java/com/example/handsofcompassion/UI/Lists/DetailList/ToysList.kt,8/4/84235d651716ee23fc9e05cbd1e1cbda337f8a6a
 |
 Lapp/src/main/java/com/example/handsofcompassion/UI/Lists/MensClothingList.kt,1/d/1db511b24de5aef4fad39eb7f5c067933a83c0a8
 „
@@ -223,8 +219,6 @@ v
 Fapp/src/main/java/com/example/handsofcompassion/Adapter/AdapterToys.kt,f/2/f2a4a800eae7da837fefcb8aaeb2b1d1023f54b5
 
 Oapp/src/main/java/com/example/handsofcompassion/Adapter/AdapterNonPerishable.kt,4/6/46711a9f619a169572bc657b43ae4fa3933b8d84
-~
-Napp/src/main/java/com/example/handsofcompassion/Adapter/AdaoterMansClothing.kt,2/d/2dfb7f41596552206bef7027d32592ec9818c636
 †
 Vapp/src/main/java/com/example/handsofcompassion/Adapter/AdapterMensChildrenClothing.kt,9/c/9c460b0fc6a5160064761e9226d9e6c5ace66aa9
 }

@@ -14,7 +14,6 @@ import com.example.handsofcompassion.Data.WomanChildrenClothing
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.Lists.DetailList.WomansClothingChildrenListDetail
 import com.example.handsofcompassion.ViewModel.ViewModelStock
-import com.example.handsofcompassion.databinding.ItemWomansBinding
 import com.example.handsofcompassion.databinding.ItemWomansChildrenBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -37,16 +36,16 @@ class AdapterWomansChildrenClothing
     override fun onBindViewHolder(holder: WomanChildrenClothingViewHolder, position: Int) {
 
         holder.type.text = womanChildrenClothingList[position].typeClothing
-        holder.size.text = womanChildrenClothingList[position].size
-        holder.state.text = womanChildrenClothingList[position].state
+        holder.size.text = womanChildrenClothingList[position].sizeClothing
+        holder.state.text = womanChildrenClothingList[position].stateClothing
 
         holder.edt.setOnClickListener {
             if (context is AppCompatActivity) {
                 val intent = Intent(context, WomansClothingChildrenListDetail::class.java)
                 intent.putExtra("id", womanChildrenClothingList[position].id)
                 intent.putExtra(ViewModelStock.TYPE_CLOTHING_WOMAN_CHILDREN, womanChildrenClothingList[position].typeClothing)
-                intent.putExtra(ViewModelStock.SIZE_CLOTHING_WOMAN_CHILDREN, womanChildrenClothingList[position].size)
-                intent.putExtra(ViewModelStock.STATE_CLOTHING_WOMAN_CHILDREN, womanChildrenClothingList[position].state)
+                intent.putExtra(ViewModelStock.SIZE_CLOTHING_WOMAN_CHILDREN, womanChildrenClothingList[position].sizeClothing)
+                intent.putExtra(ViewModelStock.STATE_CLOTHING_WOMAN_CHILDREN, womanChildrenClothingList[position].stateClothing)
                 context.startActivity(intent)
                 context.finish()
             }

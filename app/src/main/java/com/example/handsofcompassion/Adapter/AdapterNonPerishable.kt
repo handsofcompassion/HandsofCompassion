@@ -3,23 +3,16 @@ package com.example.handsofcompassion.Adapter
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.handsofcompassion.Data.MensChildrenClothing
 import com.example.handsofcompassion.Data.NonPerishable
 import com.example.handsofcompassion.R
-import com.example.handsofcompassion.UI.Lists.DetailList.DonorsListDetail
-import com.example.handsofcompassion.UI.Lists.DetailList.MensClothingChildrenListDetail
 import com.example.handsofcompassion.UI.Lists.DetailList.NonPerecibleListDetail
-import com.example.handsofcompassion.UI.Lists.DetailList.WomansClothingListDetail
-import com.example.handsofcompassion.ViewModel.ViewModelDonor
 import com.example.handsofcompassion.ViewModel.ViewModelStock
-import com.example.handsofcompassion.databinding.ItemMensBinding
-import com.example.handsofcompassion.databinding.ItemMensChildrenBinding
 import com.example.handsofcompassion.databinding.ItemNonPerecibleBinding
-import com.example.handsofcompassion.databinding.ItemWomansBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
 class AdapterNonPerishable  (
@@ -41,9 +34,13 @@ class AdapterNonPerishable  (
 
     override fun onBindViewHolder(holder: NonPerecibleViewHolder, position: Int) {
 
-        holder.type
-        holder.validity
-        holder.amount
+        val nonPerecible = nonPerishableList[position]
+
+        holder.type.text = nonPerecible.foods
+        holder.validity.text = nonPerecible.validity
+        holder.amount.text = nonPerecible.amount.toString()
+
+        Log.d("Adapter", "Binding item at position $position: ${holder.type}, ${holder.validity}, ${holder.amount}")
 
         holder.delete.setOnClickListener {
 
@@ -55,9 +52,9 @@ class AdapterNonPerishable  (
         holder.edt.setOnClickListener {
 
             if (context is AppCompatActivity) {
-                val intent = Intent(context, DonorsListDetail::class.java)
+                val intent = Intent(context, NonPerecibleListDetail::class.java)
                 intent.putExtra("id", nonPerishableList[position].id)
-                intent.putExtra(ViewModelStock.TYPE_FOOD, nonPerishableList[position].type)
+                intent.putExtra(ViewModelStock.TYPE_FOOD, nonPerishableList[position].foods)
                 intent.putExtra(ViewModelStock.VALIDATY_FOOD, nonPerishableList[position].validity)
                 intent.putExtra(ViewModelStock.AMOUNT_FOOD, nonPerishableList[position].amount)
                 context.startActivity(intent)

@@ -9,18 +9,13 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.Adapter.AdapterBasicBasket
 import com.example.handsofcompassion.Data.BasicBasket
 import com.example.handsofcompassion.R
-import com.example.handsofcompassion.UI.Principalattendant
 import com.example.handsofcompassion.UI.SelectStockType
 import com.example.handsofcompassion.ViewModel.ViewModelStock
-import com.example.handsofcompassion.databinding.ActivityBasicBasketDonorBinding
 import com.example.handsofcompassion.databinding.ActivityBasicBasketList2Binding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -44,10 +39,6 @@ class BasicBasketList : AppCompatActivity() {
         rvBasicBasket.adapter = adapterBasicBasket
 
         viewModel.getBasicBasket(basicBasketList,adapterBasicBasket)
-
-
-
-
 
     }
     private fun settingsToolBar() {

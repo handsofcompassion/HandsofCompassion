@@ -108,7 +108,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <Button
-        android:id="@+id/btn_alimento_nao_perecivel"
+        android:id="@+id/btn_mensCLothing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"

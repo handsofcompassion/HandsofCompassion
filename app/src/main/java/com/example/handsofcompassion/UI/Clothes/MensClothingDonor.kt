@@ -13,11 +13,8 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.DonationSuccess
@@ -37,7 +34,72 @@ class MensClothingDonor : AppCompatActivity() {
         setContentView(binding.root)
 
         settingsToolBar()
+        spinnerConfiguration()
 
+
+
+        binding.btnAlimentoNaoPerecivel.setOnClickListener {
+
+
+            val type =  binding.spinnerTipo.selectedItem.toString()
+            val size =  binding.spinnerTamanho.selectedItem.toString()
+            val amount =  binding.spinnerEstado.selectedItem.toString()
+
+            viewModel.mensClothingSave(type, size , amount, object :
+                AuthListneers {
+                override fun onSucess(mensage: String) {
+
+                    Toast.makeText(applicationContext, mensage, Toast.LENGTH_LONG).show()
+                    startDonationIsSucsstivity()
+
+                }
+
+                override fun onFailure(error: String) {
+
+                    Toast.makeText(applicationContext, error, Toast.LENGTH_LONG).show()
+
+                }
+            })
+
+        }
+
+
+    }
+    private fun settingsToolBar() {
+        val toolbar = binding.toolnonPerecible
+        toolbar.setNavigationIcon(R.drawable.ic_back)
+        toolbar.setTitleTextColor(Color.WHITE)
+        val titleText = resources.getString(R.string.doe_btn).toUpperCase()
+        val title = SpannableString(titleText)
+
+        title.setSpan(
+            StyleSpan(Typeface.BOLD), 0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
+        )
+        title.setSpan(
+            ForegroundColorSpan(Color.WHITE), 0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
+        )
+        title.setSpan(
+            RelativeSizeSpan(1.5f),
+            0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
+        )
+
+        toolbar.title = title
+
+        toolbar.setNavigationOnClickListener {
+            startSearchOrNewDonationActivity()
+        }
+    }
+    private fun startSearchOrNewDonationActivity() {
+        val intent = Intent(this, TypeOfClothesDonor::class.java)
+        startActivity(intent)
+        finish()
+    }
+    private fun startDonationIsSucsstivity() {
+        val intent = Intent(this, DonationSuccess::class.java)
+        startActivity(intent)
+    }
+
+    private fun spinnerConfiguration() {
 
         val itemSpinnerType = listOf(
             "Camisetas/T-shirts",
@@ -123,64 +185,5 @@ class MensClothingDonor : AppCompatActivity() {
             }
         }
 
-        binding.btnAlimentoNaoPerecivel.setOnClickListener {
-
-
-            val type =  binding.spinnerTipo.selectedItem.toString()
-            val size =  binding.spinnerTamanho.selectedItem.toString()
-            val amount =  binding.spinnerEstado.selectedItem.toString()
-
-            viewModel.mensClothingSave(type, size , amount, object :
-                AuthListneers {
-                override fun onSucess(mensage: String) {
-
-                    Toast.makeText(applicationContext, mensage, Toast.LENGTH_LONG).show()
-                    startDonationIsSucsstivity()
-
-                }
-
-                override fun onFailure(error: String) {
-
-                    Toast.makeText(applicationContext, error, Toast.LENGTH_LONG).show()
-
-                }
-            })
-
-        }
-
-
-    }
-    private fun settingsToolBar() {
-        val toolbar = binding.toolnonPerecible
-        toolbar.setNavigationIcon(R.drawable.ic_back)
-        toolbar.setTitleTextColor(Color.WHITE)
-        val titleText = resources.getString(R.string.doe_btn).toUpperCase()
-        val title = SpannableString(titleText)
-
-        title.setSpan(
-            StyleSpan(Typeface.BOLD), 0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
-        )
-        title.setSpan(
-            ForegroundColorSpan(Color.WHITE), 0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
-        )
-        title.setSpan(
-            RelativeSizeSpan(1.5f),
-            0, title.length, Spannable.SPAN_INCLUSIVE_INCLUSIVE
-        )
-
-        toolbar.title = title
-
-        toolbar.setNavigationOnClickListener {
-            startSearchOrNewDonationActivity()
-        }
-    }
-    private fun startSearchOrNewDonationActivity() {
-        val intent = Intent(this, TypeOfClothesDonor::class.java)
-        startActivity(intent)
-        finish()
-    }
-    private fun startDonationIsSucsstivity() {
-        val intent = Intent(this, DonationSuccess::class.java)
-        startActivity(intent)
     }
 }
