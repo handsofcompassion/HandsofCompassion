@@ -73,10 +73,10 @@
                 android:id="@+id/tv_estadoBrinquedo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="40dp"
                 android:textSize="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.025"
+                app:layout_constraintHorizontal_bias="0.023"
                 app:layout_constraintStart_toEndOf="@+id/textView6"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tipoDeBrinquedo" />
 
@@ -98,15 +98,16 @@
                 android:id="@+id/tv_quantidadeBriquedos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="128dp"
+                android:layout_marginTop="132dp"
                 android:textSize="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.111"
+                app:layout_constraintHorizontal_bias="0.032"
                 app:layout_constraintStart_toEndOf="@+id/textView8"
                 app:layout_constraintTop_toBottomOf="@+id/tv_tipoDeBrinquedo" />
 
             <ImageView
                 android:id="@+id/img_delete"
+                android:visibility="visible"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="28dp"
@@ -117,6 +118,7 @@
 
             <ImageView
                 android:id="@+id/img_edit"
+                android:visibility="visible"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="28dp"

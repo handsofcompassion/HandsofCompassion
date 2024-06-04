@@ -1,5 +1,6 @@
 package com.example.handsofcompassion.UI.Lists
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
@@ -10,6 +11,7 @@ import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
 import android.util.Log
+import android.widget.SearchView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.handsofcompassion.Adapter.AdapterNonPerishable
@@ -41,6 +43,33 @@ class NonPerishableList : AppCompatActivity() {
         Log.d("ActivityAdapter", "Adapter configurado com sucesso")
 
         viewModel.getNonPerecible(nonPerecibleList, adapterNonPerecible)
+
+        binding.editNonperecibles.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                viewModel.searchNonPerecibles(newText!!, nonPerecibleList, adapterNonPerecible)
+                return true
+            }
+
+        })
+
+        binding.editNonperecibles.setOnCloseListener(object : SearchView.OnCloseListener,
+            androidx.appcompat.widget.SearchView.OnCloseListener {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onClose(): Boolean {
+                binding.editNonperecibles.onActionViewCollapsed()
+                nonPerecibleList.clear()
+                adapterNonPerecible.notifyDataSetChanged()
+                viewModel.getNonPerecible(nonPerecibleList, adapterNonPerecible)
+                return true
+            }
+        })
+
 
 
 

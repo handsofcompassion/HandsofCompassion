@@ -1,5 +1,6 @@
 package com.example.handsofcompassion.UI.Lists
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
@@ -9,6 +10,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
+import android.widget.SearchView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -38,11 +40,39 @@ class ToysList : AppCompatActivity() {
 
         settingsToolBar()
 
-        val rvToys = binding.rvDonors
+        val rvToys = binding.rvToys
         adapterToys = AdapterToys(this, toysList)
         rvToys.adapter = adapterToys
 
         viewModel.getToys(toysList,adapterToys)
+
+
+        binding.editToys.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                viewModel.searchToys(newText!!, toysList, adapterToys)
+                return true
+            }
+
+        })
+
+        binding.editToys.setOnCloseListener(object : SearchView.OnCloseListener,
+            androidx.appcompat.widget.SearchView.OnCloseListener {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onClose(): Boolean {
+                binding.editToys.onActionViewCollapsed()
+                toysList.clear()
+                adapterToys.notifyDataSetChanged()
+                viewModel.getToys(toysList, adapterToys)
+                return true
+            }
+        })
+
 
 
     }

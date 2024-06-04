@@ -353,7 +353,7 @@ class RepositoryStock @Inject constructor(private val stockFireStore: StockFireS
     fun searchMensClothingChildren(
         typedText: String,
         mensClothingChildrenList: MutableList<MensChildrenClothing>,
-        adapter: AdapterMansClothing
+        adapter: AdapterMensChildrenClothing
     ) {
 
         stockFireStore.searchMensClothingChildren(

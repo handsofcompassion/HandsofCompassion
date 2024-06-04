@@ -1,5 +1,6 @@
 package com.example.handsofcompassion.UI.Lists
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
@@ -9,6 +10,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
+import android.widget.SearchView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.handsofcompassion.Adapter.AdapterBasicBasket
@@ -39,6 +41,32 @@ class BasicBasketList : AppCompatActivity() {
         rvBasicBasket.adapter = adapterBasicBasket
 
         viewModel.getBasicBasket(basicBasketList,adapterBasicBasket)
+
+        binding.editCestabasica.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                viewModel.searchBasketBasic(newText!!, basicBasketList, adapterBasicBasket)
+                return true
+            }
+
+        })
+
+        binding.editCestabasica.setOnCloseListener(object : SearchView.OnCloseListener,
+            androidx.appcompat.widget.SearchView.OnCloseListener {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onClose(): Boolean {
+                binding.editCestabasica.onActionViewCollapsed()
+                basicBasketList.clear()
+                adapterBasicBasket.notifyDataSetChanged()
+                viewModel.getBasicBasket(basicBasketList, adapterBasicBasket)
+                return true
+            }
+        })
 
     }
     private fun settingsToolBar() {

@@ -1,5 +1,6 @@
 package com.example.handsofcompassion.UI.Lists
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
@@ -9,6 +10,7 @@ import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.text.style.RelativeSizeSpan
 import android.text.style.StyleSpan
+import android.widget.SearchView
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -43,6 +45,33 @@ class MensClothingChildrenList : AppCompatActivity() {
         rvMensChildren.adapter = adapterMensChildrenClothing
 
         viewModel.getMensClhotingChildren( mensClothingList, adapterMensChildrenClothing)
+
+        binding.editMensChildren.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+
+                viewModel.searchMensClothingChildren(newText!!, mensClothingList, adapterMensChildrenClothing)
+                return true
+            }
+
+        })
+
+        binding.editMensChildren.setOnCloseListener(object : SearchView.OnCloseListener,
+            androidx.appcompat.widget.SearchView.OnCloseListener {
+            @SuppressLint("NotifyDataSetChanged")
+            override fun onClose(): Boolean {
+                binding.editMensChildren.onActionViewCollapsed()
+                mensClothingList.clear()
+                adapterMensChildrenClothing.notifyDataSetChanged()
+                viewModel.getMensClhotingChildren(mensClothingList, adapterMensChildrenClothing)
+                return true
+            }
+        })
+
 
 
 

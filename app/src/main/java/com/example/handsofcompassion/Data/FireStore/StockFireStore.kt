@@ -18,7 +18,9 @@ import com.example.handsofcompassion.Data.WomanChildrenClothing
 import com.example.handsofcompassion.Data.WomanClothing
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.example.handsofcompassion.R
+import com.google.android.gms.tasks.Tasks
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.QuerySnapshot
 import java.util.UUID
 import javax.inject.Inject
 
@@ -598,27 +600,33 @@ class StockFireStore @Inject constructor(
         basicBasketsList: MutableList<BasicBasket>,
         adapter: AdapterBasicBasket
     ) {
-
-        val query = firestore.collection(basicBasket)
-            .orderBy("item1")
-            .startAt(typedText)
-            .endAt(typedText + "\uf8ff")
-            .limit(2)
+        val queries = (1..12).map { itemIndex ->
+            firestore.collection(basicBasket)
+                .orderBy("item$itemIndex")
+                .startAt(typedText)
+                .endAt(typedText + "\uf8ff")
+                .limit(3)
+                .get()
+        }
 
         basicBasketsList.clear()
-        query.get().addOnCompleteListener { task ->
-            if (task.isSuccessful) {
-                val newBasicBasketList = mutableListOf<BasicBasket>()
 
-                for (document in task.result) {
-                    val basicBasket = document.toObject(BasicBasket::class.java)
-                    newBasicBasketList.add(basicBasket)
+        Tasks.whenAllSuccess<QuerySnapshot>(queries)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val newBasicBasketList = mutableListOf<BasicBasket>()
+
+                    task.result.forEach { querySnapshot ->
+                        for (document in querySnapshot) {
+                            val basicBasket = document.toObject(BasicBasket::class.java)
+                            newBasicBasketList.add(basicBasket)
+                        }
+                    }
+
+                    basicBasketsList.addAll(newBasicBasketList.distinctBy { it.id }) // Remove duplicatas e adiciona à lista existente
+                    adapter.notifyDataSetChanged() // Notifica o RecyclerView sobre as mudanças
                 }
-
-                basicBasketsList.addAll(newBasicBasketList) // Adiciona os novos receptores à lista existente
-                adapter.notifyDataSetChanged() // Notifica o RecyclerView sobre as mudanças
             }
-        }
     }
 
     @SuppressLint("NotifyDatasetChanged")
@@ -682,7 +690,7 @@ class StockFireStore @Inject constructor(
     fun searchMensClothingChildren(
         typedText: String,
         mensClothingChildrenList: MutableList<MensChildrenClothing>,
-        adapter: AdapterMansClothing
+        adapter: AdapterMensChildrenClothing
     ) {
 
         val query = firestore.collection(mensClothingChildren)
@@ -777,7 +785,7 @@ class StockFireStore @Inject constructor(
             .orderBy("type")
             .startAt(typedText)
             .endAt(typedText + "\uf8ff")
-            .limit(2)
+            .limit(3)
 
         toysList.clear()
         query.get().addOnCompleteListener { task ->
@@ -789,7 +797,7 @@ class StockFireStore @Inject constructor(
                     newToysList.add(toys)
                 }
 
-                newToysList.addAll(toysList) // Adiciona os novos receptores à lista existente
+                toysList.addAll(newToysList) // Adiciona os novos receptores à lista existente
                 adapter.notifyDataSetChanged() // Notifica o RecyclerView sobre as mudanças
             }
         }

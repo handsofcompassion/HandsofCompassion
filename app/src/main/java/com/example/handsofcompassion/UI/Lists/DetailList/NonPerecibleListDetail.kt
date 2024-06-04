@@ -53,10 +53,11 @@ class NonPerecibleListDetail : AppCompatActivity() {
 
     binding.btnAlimentoNaoPerecivelAtualizar.setOnClickListener {
 
+        val id = intent.extras!!.getString("id")
         val food = binding.spinner.selectedItem.toString()
         val validity = binding.editValidity.text.toString()
         val amount = binding.spinnerQuantidade.selectedItem.toString()
-        val id = intent.extras!!.getString("id")
+
 
 
         viewModel.updateNonPerecibles(id!!,food, validity, amount, adapterNonPerecible, object : AuthListneers{

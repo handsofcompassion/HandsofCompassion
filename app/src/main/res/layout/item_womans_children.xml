@@ -106,6 +106,7 @@
 
             <ImageView
                 android:id="@+id/img_delete"
+                android:visibility="visible"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="28dp"
@@ -116,6 +117,7 @@
 
             <ImageView
                 android:id="@+id/img_edit"
+                android:visibility="visible"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="28dp"

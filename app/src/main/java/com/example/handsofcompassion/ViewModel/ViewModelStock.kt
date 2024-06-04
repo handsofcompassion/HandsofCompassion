@@ -486,7 +486,7 @@ class ViewModelStock @Inject constructor(private val repositoryStock: Repository
     fun searchMensClothingChildren(
         typedText: String,
         mensClothingChildrenList: MutableList<MensChildrenClothing>,
-        adapter: AdapterMansClothing
+        adapter: AdapterMensChildrenClothing
     ) {
 
         viewModelScope.launch {
