@@ -14,12 +14,14 @@ import com.example.handsofcompassion.Objects.ItemSpacingDecoration
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.ViewModel.ViewModelDonor
 import com.example.handsofcompassion.databinding.ActivitySearchOrNewDonationBinding
+import com.example.handsofcompassion.databinding.ItemDonorsBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SearchOrNewDonation : AppCompatActivity() {
 
     private lateinit var binding: ActivitySearchOrNewDonationBinding
+    private lateinit var bindingItem: ItemDonorsBinding
     private lateinit var adapterDonors: DonorAdapter
     private val donorsList: MutableList<Donor> = mutableListOf()
     private val viewModel: ViewModelDonor by viewModels()
@@ -27,6 +29,8 @@ class SearchOrNewDonation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySearchOrNewDonationBinding.inflate(layoutInflater)
+        bindingItem = ItemDonorsBinding.inflate(layoutInflater)
+        setContentView(bindingItem.root)
         setContentView(binding.root)
 
 
@@ -34,6 +38,9 @@ class SearchOrNewDonation : AppCompatActivity() {
         adapterDonors = DonorAdapter(this, donorsList)
         rvDonors.adapter = adapterDonors
         rvDonors.addItemDecoration(ItemSpacingDecoration(this, 0))
+        bindingItem.imgDelete.visibility = View.GONE
+        bindingItem.imgEdit.visibility = View.GONE
+
 
 
 

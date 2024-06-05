@@ -5,21 +5,43 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UI.Foods.NonPerishableFoodsReceiver">
+    tools:context=".UI.Lists.NonPerishableList">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolnonPerecible"
+        android:id="@+id/toolbarnonPerecibles"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="80dp"
         android:background="@color/purple"
-        android:padding="30dp"
         android:textAlignment="center"
+        app:subtitleTextColor="@color/white"
+        android:padding="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:subtitleTextColor="@color/white" />
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/edit_nonperecibles"
+        android:queryHint="@string/digitenomedoador"
+        android:iconifiedByDefault="false"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/roundend_backhroundedttext"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbarnonPerecibles" />
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvNoperecibles"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="5dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_nonperecibles"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,9 +15,16 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.DonationsType.ui.TypeOfClothersReceiver
 import com.example.handsofcompassion.UI.DonationsType.ui.TypeOfFoodReceiver
+import com.example.handsofcompassion.UI.Toys.ToysReceiver
 import com.example.handsofcompassion.databinding.ActivityTypeOfDonationReceiverBinding
 
-class TypeOfDonationReceiver : AppCompatActivity() {
+class
+
+
+
+
+
+TypeOfDonationReceiver : AppCompatActivity() {
 
     private lateinit var binding: ActivityTypeOfDonationReceiverBinding
 
@@ -36,6 +43,11 @@ class TypeOfDonationReceiver : AppCompatActivity() {
         binding.btnRoupa.setOnClickListener {
 
             startTypeOfCothersActivity()
+
+        }
+        binding.btnBrinquedos.setOnClickListener {
+
+            startToysActivity()
 
         }
 
@@ -76,6 +88,12 @@ class TypeOfDonationReceiver : AppCompatActivity() {
     }
     private fun startTypeOfCothersActivity() {
         val intent = Intent(this, TypeOfClothersReceiver::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun startToysActivity() {
+        val intent = Intent(this, ToysReceiver::class.java)
         startActivity(intent)
         finish()
     }
