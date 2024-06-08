@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.handsofcompassion.Data.MensChildrenClothing
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.Lists.DetailList.MensClothingChildrenListDetail
+import com.example.handsofcompassion.UI.ReceiveDonation.MensChildrenProfile
 import com.example.handsofcompassion.ViewModel.ViewModelStock
 import com.example.handsofcompassion.databinding.ItemMensChildrenBinding
 import com.google.firebase.firestore.FirebaseFirestore
@@ -58,16 +59,15 @@ class AdapterMensChildrenClothing (
 
             //QUANDO FIZER SELECIONAR O BRINQUEDO COLOCAR AQUI A TELA CRIADA...
 
-//            if (context is AppCompatActivity) {
-//                val intent = Intent(context, ToysListDetail::class.java)
-//                intent.putExtra("id", toysList[position].id)
-//                intent.putExtra(ViewModelStock.TYPE_TOY_EXTRA, toysList[position].type)
-//                intent.putExtra(ViewModelStock.STATE_TOY_EXTRA, toysList[position].state)
-//                intent.putExtra(ViewModelStock.AMOUNT_TOY_EXTRA, toysList[position].amount)
-//                context.startActivity(intent)
-//                context.finish()
-//            }
-
+            if (context is AppCompatActivity) {
+                val intent = Intent(context, MensChildrenProfile::class.java)
+                intent.putExtra("id", mensClothingChildrenList[position].id)
+                intent.putExtra(ViewModelStock.TYPE_CLOTHING_MEN_CHILDREN, mensClothingChildrenList[position].typeClothing)
+                intent.putExtra(ViewModelStock.SIZE_CLOTHING_MEN_CHILDREN, mensClothingChildrenList[position].sizeClothing)
+                intent.putExtra(ViewModelStock.STATE_CLOTHING_MEN_CHILDREN, mensClothingChildrenList[position].stateClothing)
+                context.startActivity(intent)
+                context.finish()
+            }
 
         }
     }

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.handsofcompassion.Data.WomanChildrenClothing
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.Lists.DetailList.WomansClothingChildrenListDetail
+import com.example.handsofcompassion.UI.ReceiveDonation.WomansChildrenProfile
 import com.example.handsofcompassion.ViewModel.ViewModelStock
 import com.example.handsofcompassion.databinding.ItemWomansChildrenBinding
 import com.google.firebase.firestore.FirebaseFirestore
@@ -58,6 +59,15 @@ class AdapterWomansChildrenClothing
 
         holder.profile.setOnClickListener {
             //QUANDO FIZER SELECIONAR O BRINQUEDO COLOCAR AQUI A TELA CRIADA...
+            if (context is AppCompatActivity) {
+                val intent = Intent(context, WomansChildrenProfile::class.java)
+                intent.putExtra("id", womanChildrenClothingList[position].id)
+                intent.putExtra(ViewModelStock.TYPE_CLOTHING_WOMAN_CHILDREN, womanChildrenClothingList[position].typeClothing)
+                intent.putExtra(ViewModelStock.SIZE_CLOTHING_WOMAN_CHILDREN, womanChildrenClothingList[position].sizeClothing)
+                intent.putExtra(ViewModelStock.STATE_CLOTHING_WOMAN_CHILDREN, womanChildrenClothingList[position].stateClothing)
+                context.startActivity(intent)
+                context.finish()
+            }
         }
     }
 

@@ -736,7 +736,7 @@ class StockFireStore @Inject constructor(
 
                 for (document in task.result) {
                     val womansClothing = document.toObject(WomanClothing::class.java)
-                   newWomansClothingList.add(womansClothing)
+                    newWomansClothingList.add(womansClothing)
                 }
 
                 womansCLothingList.addAll(newWomansClothingList) // Adiciona os novos receptores à lista existente
@@ -804,5 +804,118 @@ class StockFireStore @Inject constructor(
 
     }
 
+    fun nonPereciblesUpdateOrDelete(
+        id: String,
+        amount: String?,
+        adapter: AdapterNonPerishable,
+        position: Int,
+        nonPerishableList: MutableList<NonPerishable>,
+        listeners: AuthListneers
+    ) {
+        if (amount.isNullOrEmpty()) {
+            listeners.onFailure(context.getString(R.string.preencha))
+            return
+        }
+
+        val decrementValue = amount.toIntOrNull() ?: 0
+        val db = firestore.collection(nonPerecible).document(id)
+
+        db.get().addOnSuccessListener { document ->
+            if (document != null && document.exists()) {
+                val currentAmount = document.getString("amount")?.toIntOrNull() ?: 0
+                val newAmount = currentAmount - decrementValue
+
+                if (newAmount > 1) {
+                    val nonPerishableData = hashMapOf<String, Any?>(
+                        "amount" to newAmount.toString(),
+                    )
+
+                    db.update(nonPerishableData.toMap())
+                        .addOnSuccessListener {
+                            listeners.onSucess(context.getString(R.string.dadosatualizados))
+                            adapter.notifyDataSetChanged()
+                        }
+                        .addOnFailureListener { e ->
+                            listeners.onFailure(context.getString(R.string.erroserver))
+                        }
+                } else if (newAmount <= 0) {
+                    db.delete()
+                        .addOnSuccessListener {
+                            try {
+                                nonPerishableList.removeAt(position)
+                                adapter.notifyDataSetChanged()
+                            } catch (e: IndexOutOfBoundsException) {
+                                // Handle index out of bounds exception
+                                e.printStackTrace()
+                            }
+                        }
+                        .addOnFailureListener { e ->
+                            listeners.onFailure(context.getString(R.string.erroserver))
+                        }
+                }
+            }
+        }.addOnFailureListener { e ->
+            listeners.onFailure(context.getString(R.string.erroserver))
+        }
+    }
+
+    fun toysUpdateOrDelete(
+        id: String,
+        amount: String?,
+        adapter: AdapterToys,
+        position: Int,
+        toysList: MutableList<Toys>,
+        listeners: AuthListneers
+    ) {
+        if (amount.isNullOrEmpty()) {
+            listeners.onFailure(context.getString(R.string.preencha))
+            return
+        }
+
+        val decrementValue = amount.toIntOrNull() ?: 0
+        val db = firestore.collection(toys).document(id)
+
+        db.get().addOnSuccessListener { document ->
+            if (document != null && document.exists()) {
+                val currentAmount = document.getString("amount")?.toIntOrNull() ?: 0
+                val newAmount = currentAmount - decrementValue
+
+                if (newAmount > 1) {
+                    val nonPerishableData = hashMapOf<String, Any?>(
+                        "amount" to newAmount.toString(),
+                    )
+
+                    db.update(nonPerishableData.toMap())
+                        .addOnSuccessListener {
+                            listeners.onSucess(context.getString(R.string.dadosatualizados))
+                            adapter.notifyDataSetChanged()
+                        }
+                        .addOnFailureListener { e ->
+                            listeners.onFailure(context.getString(R.string.erroserver))
+                        }
+                } else if (newAmount <= 0) {
+                    db.delete()
+                        .addOnSuccessListener {
+                            try {
+                                toysList.removeAt(position)
+                                adapter.notifyDataSetChanged()
+                            } catch (e: IndexOutOfBoundsException) {
+                                // Handle index out of bounds exception
+                                e.printStackTrace()
+                            }
+                        }
+                        .addOnFailureListener { e ->
+                            listeners.onFailure(context.getString(R.string.erroserver))
+                        }
+                }
+            }
+        }.addOnFailureListener { e ->
+            listeners.onFailure(context.getString(R.string.erroserver))
+        }
+    }
+
+
+
 }
+
 

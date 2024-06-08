@@ -20,13 +20,33 @@ import com.example.handsofcompassion.Data.WomanChildrenClothing
 import com.example.handsofcompassion.Data.WomanClothing
 import com.example.handsofcompassion.Listneers.AuthListneers
 import com.example.handsofcompassion.Repository.RepositoryStock
+import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class ViewModelStock @Inject constructor(private val repositoryStock: RepositoryStock) :
     ViewModel() {
+
+    private val _basicBasketList = MutableStateFlow<MutableList<BasicBasket>>(mutableListOf())
+    val basicBasketList = _basicBasketList.asStateFlow()
+    private val _nonPerecibleList = MutableStateFlow<MutableList<NonPerishable>>(mutableListOf())
+    val nonPerishableList = _nonPerecibleList.asStateFlow()
+    private val _mensClothingList = MutableStateFlow<MutableList<MensClothing>>(mutableListOf())
+    val mensClothingList = _mensClothingList.asStateFlow()
+    private val _mensClothingListChildrenList =
+        MutableStateFlow<MutableList<MensChildrenClothing>>(mutableListOf())
+    val mensClothingListChildrenList = _mensClothingListChildrenList.asStateFlow()
+    private val _womansCLothingList = MutableStateFlow<MutableList<WomanClothing>>(mutableListOf())
+    val womansCLothingList = _womansCLothingList.asStateFlow()
+    private val _womansClothingListChildrenList =
+        MutableStateFlow<MutableList<WomanChildrenClothing>>(mutableListOf())
+    val womansClothingListChildrenList = _womansClothingListChildrenList.asStateFlow()
+    private val _toysList = MutableStateFlow<MutableList<Toys>>(mutableListOf())
+    val toysList = _toysList.asStateFlow()
 
     companion object {
 
@@ -543,9 +563,178 @@ class ViewModelStock @Inject constructor(private val repositoryStock: Repository
                 adapter
             )
         }
+    }
+
+    fun deleteBasicBasketReceiver(id: String, position: Int) {
+        val fireStore = FirebaseFirestore.getInstance()
+        fireStore.collection("BasicBasket").document(id).delete()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val currentList = _basicBasketList.value
+                    if (position >= 0 && position < currentList.size) {
+                        val updatedList = currentList.toMutableList()
+                        updatedList.removeAt(position)
+                        _basicBasketList.value = updatedList
+                    }
+                }
+            }
+            .addOnFailureListener { }
+    }
+
+//    fun nonPereciblesUpdateOrDelete(
+//        //    context: Context,  // Adicionado contexto como parâmetro
+//        id: String,
+//        amount: String,
+//        //  nonPerishableList: MutableList<NonPerishable>,
+//        //  position: Int,
+//        adapter: AdapterNonPerishable,
+//        listeners: AuthListneers
+//    ) {
+//        viewModelScope.launch {
+//            repositoryStock.nonPereciblesUpdateOrDelete(
+//                // context,
+//                id,
+//                amount,
+//                //  nonPerishableList,
+//                //  position,
+//                adapter,
+//                listeners
+//            )
+//        }
+//
+//    }
+
+
+    fun deleteMensClothingReceiver(id: String, position: Int) {
+        val fireStore = FirebaseFirestore.getInstance()
+        fireStore.collection("MensClothing").document(id).delete()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val currentList = _mensClothingList.value
+                    if (position >= 0 && position < currentList.size) {
+                        val updatedList = currentList.toMutableList()
+                        updatedList.removeAt(position)
+                        _mensClothingList.value = updatedList
+                    }
+                }
+            }
+            .addOnFailureListener { }
+    }
+
+    fun deleteMensChildrenClothingReceiver(id: String, position: Int) {
+        val fireStore = FirebaseFirestore.getInstance()
+        fireStore.collection("MensClothingChildren").document(id).delete()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val currentList = _mensClothingListChildrenList.value
+                    if (position >= 0 && position < currentList.size) {
+                        val updatedList = currentList.toMutableList()
+                        updatedList.removeAt(position)
+                        _mensClothingListChildrenList.value = updatedList
+                    }
+                }
+            }
+            .addOnFailureListener { }
+    }
+
+    fun deleteWomansClothingReceiver(id: String, position: Int) {
+        val fireStore = FirebaseFirestore.getInstance()
+        fireStore.collection("WomansClothing").document(id).delete()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val currentList = _womansCLothingList.value
+                    if (position >= 0 && position < currentList.size) {
+                        val updatedList = currentList.toMutableList()
+                        updatedList.removeAt(position)
+                        _womansCLothingList.value = updatedList
+                    }
+                }
+            }
+            .addOnFailureListener { }
+    }
+
+    fun deleteWomansChildrenClothingReceiver(id: String, position: Int) {
+        val fireStore = FirebaseFirestore.getInstance()
+        fireStore.collection("WomansClothingChildren").document(id).delete()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val currentList = _womansClothingListChildrenList.value
+                    if (position >= 0 && position < currentList.size) {
+                        val updatedList = currentList.toMutableList()
+                        updatedList.removeAt(position)
+                        _womansClothingListChildrenList.value = updatedList
+                    }
+                }
+            }
+            .addOnFailureListener { }
+    }
+
+    fun deleteOrUpdateToysReceiver(id: String, position: Int) {
+        val fireStore = FirebaseFirestore.getInstance()
+        fireStore.collection("Toys").document(id).delete()
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    val currentList = _toysList.value
+                    if (position >= 0 && position < currentList.size) {
+                        val updatedList = currentList.toMutableList()
+                        updatedList.removeAt(position)
+                        _toysList.value = updatedList
+                    }
+                }
+            }
+            .addOnFailureListener { }
+    }
+
+    fun nonPereciblesUpdateOrDelete(
+        id: String,
+        amount: String?,
+        adapter: AdapterNonPerishable,
+        position: Int,
+        nonPerishableList: MutableList<NonPerishable>,
+        listeners: AuthListneers
+    ) {
+        viewModelScope.launch {
+
+            repositoryStock.nonPereciblesUpdateOrDelete(
+                id,
+                amount,
+                adapter,
+                position,
+                nonPerishableList,
+                listeners
+            )
+
+        }
 
     }
 
+    fun toysUpdateOrDelete(
+        id: String,
+        amount: String?,
+        adapter: AdapterToys,
+        position: Int,
+        nonPerishableList: MutableList<Toys>,
+        listeners: AuthListneers
+    ) {
+
+        viewModelScope.launch {
+            repositoryStock.toysUpdateOrDelete(
+                id,
+                amount,
+                adapter,
+                position,
+                nonPerishableList,
+                listeners
+            )
+        }
+    }
+
+
+    fun formatBirth(data: String?): String {
+        return data?.replace("(\\d{4})(\\d{2})(\\d{2})".toRegex(), "$3/$2/$1") ?: ""
+    }
 
 }
+
+
 

@@ -402,6 +402,42 @@ class RepositoryStock @Inject constructor(private val stockFireStore: StockFireS
             toysList,
             adapter
         )
+    }
+    fun nonPereciblesUpdateOrDelete(
+        id: String,
+        amount: String?,
+        adapter: AdapterNonPerishable,
+        position: Int,
+        nonPerishableList: MutableList<NonPerishable>,
+        listeners: AuthListneers
+    ) {
+
+        stockFireStore.nonPereciblesUpdateOrDelete(
+            id,
+            amount,
+            adapter,
+            position,
+            nonPerishableList,
+            listeners
+        )
 
     }
+
+    fun toysUpdateOrDelete(
+        id: String,
+        amount: String?,
+        adapter: AdapterToys,
+        position: Int,
+        nonPerishableList: MutableList<Toys>,
+        listeners: AuthListneers
+    ) {
+
+     stockFireStore.toysUpdateOrDelete(id,
+         amount,
+         adapter,
+         position,
+         nonPerishableList,
+         listeners)
+    }
+
 }

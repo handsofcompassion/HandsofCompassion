@@ -7,14 +7,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
-import com.example.handsofcompassion.Data.Donor
 import com.example.handsofcompassion.Data.Toys
 import com.example.handsofcompassion.R
-import com.example.handsofcompassion.UI.Lists.DetailList.DonorsListDetail
 import com.example.handsofcompassion.UI.Lists.DetailList.ToysListDetail
-import com.example.handsofcompassion.ViewModel.ViewModelDonor
+import com.example.handsofcompassion.UI.ReceiveDonation.ToysProfile
 import com.example.handsofcompassion.ViewModel.ViewModelStock
-import com.example.handsofcompassion.databinding.ItemDonorsBinding
 import com.example.handsofcompassion.databinding.ItemToysBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -63,15 +60,15 @@ class AdapterToys(
 
             //QUANDO FIZER SELECIONAR O BRINQUEDO COLOCAR AQUI A TELA CRIADA...
 
-//            if (context is AppCompatActivity) {
-//                val intent = Intent(context, ToysListDetail::class.java)
-//                intent.putExtra("id", toysList[position].id)
-//                intent.putExtra(ViewModelStock.TYPE_TOY_EXTRA, toysList[position].type)
-//                intent.putExtra(ViewModelStock.STATE_TOY_EXTRA, toysList[position].state)
-//                intent.putExtra(ViewModelStock.AMOUNT_TOY_EXTRA, toysList[position].amount)
-//                context.startActivity(intent)
-//                context.finish()
-//            }
+            if (context is AppCompatActivity) {
+                val intent = Intent(context, ToysProfile::class.java)
+                intent.putExtra("id", toysList[position].id)
+                intent.putExtra(ViewModelStock.TYPE_TOY_EXTRA, toysList[position].type)
+                intent.putExtra(ViewModelStock.STATE_TOY_EXTRA, toysList[position].state)
+                intent.putExtra(ViewModelStock.AMOUNT_TOY_EXTRA, toysList[position].amount)
+                context.startActivity(intent)
+                context.finish()
+            }
 
 
         }

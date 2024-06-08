@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ficamosfelizesemajudar"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="@string/semprequeprecisar"
+        android:textSize="25sp"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <TextView
+        android:id="@+id/textViewSocialMedia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/redessociais"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <ImageView
+        android:id="@+id/imageViewQRCode"
+        android:layout_width="500dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/qrcode_112501343_ed30b2a9a24a0e8343a585021e7bf55e"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/buttonClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fechar"
+        android:background="@drawable/rectangle_button"
+        android:textSize="22sp"/>
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="400dp"
+        android:layout_height="300dp"
+        android:src="@drawable/minimalisthands"
+        android:layout_marginTop="100dp"/>
+
+
+</LinearLayout>

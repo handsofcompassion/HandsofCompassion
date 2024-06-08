@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.handsofcompassion.Data.NonPerishable
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.Lists.DetailList.NonPerecibleListDetail
+import com.example.handsofcompassion.UI.ReceiveDonation.NonPereciblesProfile
 import com.example.handsofcompassion.ViewModel.ViewModelStock
 import com.example.handsofcompassion.databinding.ItemNonPerecibleBinding
 import com.google.firebase.firestore.FirebaseFirestore
@@ -64,6 +65,15 @@ class AdapterNonPerishable  (
 
         holder.profile.setOnClickListener {
 
+            if (context is AppCompatActivity) {
+                val intent = Intent(context, NonPereciblesProfile::class.java)
+                intent.putExtra("id", nonPerishableList[position].id)
+                intent.putExtra(ViewModelStock.TYPE_FOOD, nonPerishableList[position].foods)
+                intent.putExtra(ViewModelStock.VALIDATY_FOOD, nonPerishableList[position].validity)
+                intent.putExtra(ViewModelStock.AMOUNT_FOOD, nonPerishableList[position].amount)
+                context.startActivity(intent)
+                context.finish()
+            }
 
 
         }

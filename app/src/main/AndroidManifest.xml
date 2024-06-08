@@ -16,6 +16,30 @@
         android:theme="@style/Theme.HandsOfCompassion"
         tools:targetApi="31">
         <activity
+            android:name=".UI.ReceiverSuccess"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ReceiveDonation.ToysProfile"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ReceiveDonation.WomansProfile"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ReceiveDonation.WomansChildrenProfile"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ReceiveDonation.MensProfile"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ReceiveDonation.MensChildrenProfile"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ReceiveDonation.NonPereciblesProfile"
+            android:exported="false" />
+        <activity
+            android:name=".UI.ReceiveDonation.BasicBasketProfile"
+            android:exported="false" />
+        <activity
             android:name=".UI.Lists.DetailList.ToysListDetail"
             android:exported="false" />
         <activity

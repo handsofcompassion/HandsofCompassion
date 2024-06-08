@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.handsofcompassion.Data.WomanClothing
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.Lists.DetailList.WomansClothingListDetail
+import com.example.handsofcompassion.UI.ReceiveDonation.WomansProfile
 import com.example.handsofcompassion.ViewModel.ViewModelStock
 import com.example.handsofcompassion.databinding.ItemWomansBinding
 import com.google.firebase.firestore.FirebaseFirestore
@@ -61,15 +62,15 @@ class AdapterWomansClothing (
 
             //QUANDO FIZER SELECIONAR O BRINQUEDO COLOCAR AQUI A TELA CRIADA...
 
-//            if (context is AppCompatActivity) {
-//                val intent = Intent(context, ToysListDetail::class.java)
-//                intent.putExtra("id", toysList[position].id)
-//                intent.putExtra(ViewModelStock.TYPE_TOY_EXTRA, toysList[position].type)
-//                intent.putExtra(ViewModelStock.STATE_TOY_EXTRA, toysList[position].state)
-//                intent.putExtra(ViewModelStock.AMOUNT_TOY_EXTRA, toysList[position].amount)
-//                context.startActivity(intent)
-//                context.finish()
-//            }
+            if (context is AppCompatActivity) {
+                val intent = Intent(context, WomansProfile::class.java)
+                intent.putExtra("id", womanClothingList[position].id)
+                intent.putExtra(ViewModelStock.TYPE_CLOTHING_WOMAN, womanClothingList[position].typeClothing)
+                intent.putExtra(ViewModelStock.SIZE_CLOTHING_WOMAN, womanClothingList[position].sizeClothing)
+                intent.putExtra(ViewModelStock.STATE_CLOTHING_WOMAN, womanClothingList[position].stateClothing)
+                context.startActivity(intent)
+                context.finish()
+            }
 
 
         }

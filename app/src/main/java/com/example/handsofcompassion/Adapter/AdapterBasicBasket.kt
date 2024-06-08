@@ -10,6 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.handsofcompassion.Data.BasicBasket
 import com.example.handsofcompassion.R
 import com.example.handsofcompassion.UI.Lists.DetailList.BasicBasketListDetail
+import com.example.handsofcompassion.UI.ReceiveDonation.BasicBasketProfile
+import com.example.handsofcompassion.ViewModel.ViewModelStock
 import com.example.handsofcompassion.databinding.ItemBasicBasketBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -45,29 +47,29 @@ class AdapterBasicBasket(
         holder.item11.text = basicBasket.item11
         holder.item12.text = basicBasket.item12
 
-//        holder.edt.setOnClickListener {
-//
-//            if (context is AppCompatActivity) {
-//
-//                val basicBasket = basicBasketList[position]
-//                val intent = Intent(context, BasicBasketListDetail::class.java)
-//                intent.putExtra("id", basicBasketList[position].id)
-//                intent.putExtra(ViewModelStock.ITEM_1_EXTRA, basicBasket.item1)
-//                intent.putExtra(ViewModelStock.ITEM_2_EXTRA, basicBasket.item2)
-//                intent.putExtra(ViewModelStock.ITEM_3_EXTRA, basicBasket.item3)
-//                intent.putExtra(ViewModelStock.ITEM_4_EXTRA, basicBasket.item4)
-//                intent.putExtra(ViewModelStock.ITEM_5_EXTRA, basicBasket.item5)
-//                intent.putExtra(ViewModelStock.ITEM_6_EXTRA, basicBasket.item6)
-//                intent.putExtra(ViewModelStock.ITEM_7_EXTRA, basicBasket.item7)
-//                intent.putExtra(ViewModelStock.ITEM_8_EXTRA, basicBasket.item8)
-//                intent.putExtra(ViewModelStock.ITEM_9_EXTRA, basicBasket.item9)
-//                intent.putExtra(ViewModelStock.ITEM_10_EXTRA, basicBasket.item10)
-//                intent.putExtra(ViewModelStock.ITEM_11_EXTRA, basicBasket.item11)
-//                intent.putExtra(ViewModelStock.ITEM_12_EXTRA, basicBasket.item12)
-//                context.startActivity(intent)
-//                context.finish()
-//            }
-//        }
+        holder.edt.setOnClickListener {
+
+            if (context is AppCompatActivity) {
+
+                val basicBasket = basicBasketList[position]
+                val intent = Intent(context, BasicBasketListDetail::class.java)
+                intent.putExtra("id", basicBasketList[position].id)
+                intent.putExtra(ViewModelStock.ITEM_1_EXTRA, basicBasket.item1)
+                intent.putExtra(ViewModelStock.ITEM_2_EXTRA, basicBasket.item2)
+                intent.putExtra(ViewModelStock.ITEM_3_EXTRA, basicBasket.item3)
+                intent.putExtra(ViewModelStock.ITEM_4_EXTRA, basicBasket.item4)
+                intent.putExtra(ViewModelStock.ITEM_5_EXTRA, basicBasket.item5)
+                intent.putExtra(ViewModelStock.ITEM_6_EXTRA, basicBasket.item6)
+                intent.putExtra(ViewModelStock.ITEM_7_EXTRA, basicBasket.item7)
+                intent.putExtra(ViewModelStock.ITEM_8_EXTRA, basicBasket.item8)
+                intent.putExtra(ViewModelStock.ITEM_9_EXTRA, basicBasket.item9)
+                intent.putExtra(ViewModelStock.ITEM_10_EXTRA, basicBasket.item10)
+                intent.putExtra(ViewModelStock.ITEM_11_EXTRA, basicBasket.item11)
+                intent.putExtra(ViewModelStock.ITEM_12_EXTRA, basicBasket.item12)
+                context.startActivity(intent)
+                context.finish()
+            }
+        }
 
         holder.edt.setOnClickListener {
             if (context is AppCompatActivity) {
@@ -89,7 +91,26 @@ class AdapterBasicBasket(
 
         holder.profile.setOnClickListener {
 
+            if (context is AppCompatActivity) {
 
+                val basicBasket = basicBasketList[position]
+                val intent = Intent(context, BasicBasketProfile::class.java)
+                intent.putExtra("id", basicBasketList[position].id)
+                intent.putExtra(ViewModelStock.ITEM_1_EXTRA, basicBasket.item1)
+                intent.putExtra(ViewModelStock.ITEM_2_EXTRA, basicBasket.item2)
+                intent.putExtra(ViewModelStock.ITEM_3_EXTRA, basicBasket.item3)
+                intent.putExtra(ViewModelStock.ITEM_4_EXTRA, basicBasket.item4)
+                intent.putExtra(ViewModelStock.ITEM_5_EXTRA, basicBasket.item5)
+                intent.putExtra(ViewModelStock.ITEM_6_EXTRA, basicBasket.item6)
+                intent.putExtra(ViewModelStock.ITEM_7_EXTRA, basicBasket.item7)
+                intent.putExtra(ViewModelStock.ITEM_8_EXTRA, basicBasket.item8)
+                intent.putExtra(ViewModelStock.ITEM_9_EXTRA, basicBasket.item9)
+                intent.putExtra(ViewModelStock.ITEM_10_EXTRA, basicBasket.item10)
+                intent.putExtra(ViewModelStock.ITEM_11_EXTRA, basicBasket.item11)
+                intent.putExtra(ViewModelStock.ITEM_12_EXTRA, basicBasket.item12)
+                context.startActivity(intent)
+                context.finish()
+            }
 
 
         }

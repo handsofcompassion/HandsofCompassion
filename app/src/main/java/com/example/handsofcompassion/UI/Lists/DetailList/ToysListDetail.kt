@@ -69,9 +69,6 @@ class ToysListDetail : AppCompatActivity() {
 
         }
 
-
-
-
     }
 
     private fun settingsToolBar() {

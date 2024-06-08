@@ -184,6 +184,14 @@
     <string name="desejaexcluiralimento">Excluir Alimento.</string>
     <string name="atualizeEstoque">Atualize o Estoque:</string>
     <string name="quantodoas">Quanto Você quer Doar?</string>
+    <string name="desejareceberdescrito">Deseja Receber Essa Doação?</string>
+    <string name="ficamosfelizesemajudar">Ficamos Muito Felizes em Ajudar!</string>
+    <string name="semprequeprecisar">Sempre que Precisar Conte com nossa Ajudar.</string>
+    <string name="desejareceberdoacao">Deseja Receber Essa Doação?</string>
+    <string name="quantosReceber">Quantos Alimentos quer Receber?</string>
+    <string name="digiteQuantidade">Digite a Quantidade de Alimentos...</string>
+    <string name="quantosReceberbrinq">Quantos Brinquedos quer Receber?</string>
+    <string name="digiteQuantidadebrinq">Digite a Quantidade de Brinquedos...</string>
 </resources>
 
 
